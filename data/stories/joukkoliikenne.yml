@@ -1,0 +1,70 @@
+stories:
+  - story: Joukkoliikenne
+    steps:
+      - intent: P16.5_public_transport
+        user: miten bussit kulkee?
+        entities: []
+      - action: utter_public_transport
+      - action: municipality_form
+      - active_loop: municipality_form
+      - active_loop: null
+      - checkpoint: Joukkoliikenne__branches
+    metadata:
+      group: Joukkoliikenne
+  - story: Joukkoliikenne__Municipality
+    steps:
+      - checkpoint: Joukkoliikenne__branches
+      - slot_was_set:
+          - recommend_services_whole_area: false
+      - action: utter_public_transport_services
+      - action: action_recommend_services_by_intent_and_options
+      - checkpoint: Joukkoliikenne__Municipality__branches
+    metadata:
+      group: Joukkoliikenne
+  - story: Joukkoliikenne__Municipality__No success
+    steps:
+      - checkpoint: Joukkoliikenne__Municipality__branches
+      - slot_was_set:
+          - recommend_services_success: false
+      - checkpoint: link-to-Paluu alkuun/d91f6161-3ebe-4bee-86b0-d0fa9143bf99
+    metadata:
+      group: Joukkoliikenne
+  - story: Joukkoliikenne__Municipality__Success
+    steps:
+      - checkpoint: Joukkoliikenne__Municipality__branches
+      - slot_was_set:
+          - recommend_services_success: true
+      - checkpoint: >-
+          link-to-Palvelusuositus
+          palautekysely/8f58a5bb-84e1-4fd7-8135-7c5d2f218a14
+    metadata:
+      group: Joukkoliikenne
+  - story: Joukkoliikenne__Whole region
+    steps:
+      - checkpoint: Joukkoliikenne__branches
+      - slot_was_set:
+          - recommend_services_whole_area: true
+      - action: utter_public_transport_services
+      - action: action_recommend_services_by_intent_and_options
+      - checkpoint: Joukkoliikenne__Whole_region__branches
+    metadata:
+      group: Joukkoliikenne
+  - story: Joukkoliikenne__Whole region__No success
+    steps:
+      - checkpoint: Joukkoliikenne__Whole_region__branches
+      - slot_was_set:
+          - recommend_services_success: false
+      - checkpoint: link-to-Paluu alkuun/d91f6161-3ebe-4bee-86b0-d0fa9143bf99
+    metadata:
+      group: Joukkoliikenne
+  - story: Joukkoliikenne__Whole region__Success
+    steps:
+      - checkpoint: Joukkoliikenne__Whole_region__branches
+      - slot_was_set:
+          - recommend_services_success: true
+      - checkpoint: >-
+          link-to-Palvelusuositus
+          palautekysely/8f58a5bb-84e1-4fd7-8135-7c5d2f218a14
+    metadata:
+      group: Joukkoliikenne
+rules: []

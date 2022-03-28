@@ -1,0 +1,32 @@
+pipeline:
+  - name: WhitespaceTokenizer
+  - name: LexicalSyntacticFeaturizer
+  - name: CRFEntityExtractor
+  - name: LanguageModelFeaturizer
+    alias: bert
+    model_name: bert
+    model_weights: rasa/LaBSE
+    cache_dir: /app/models/bert
+  - name: DIETClassifier
+    featurizers:
+      - bert
+    entity_recognition: false
+    epochs: 100
+  - name: rasa_addons.nlu.components.gazette.Gazette
+    mode: ratio
+    min_score: 60
+  - name: >-
+      rasa_addons.nlu.components.intent_ranking_canonical_example_injector.IntentRankingCanonicalExampleInjector
+  - name: EntitySynonymMapper
+language: en
+
+
+policies:
+  - name: TEDPolicy
+    epochs: 10
+    max_history: 5
+  - name: RulePolicy
+    core_fallback_threshold: 0.6
+    core_fallback_action_name: "action_custom_fallback"
+    enable_fallback_prediction: True
+  - name: AugmentedMemoizationPolicy

@@ -1,0 +1,367 @@
+stories:
+  - story: Ammatillinen koulutus
+    steps:
+      - intent: P6.6_vocational_school
+        entities: []
+      - action: utter_vocational_school
+      - action: municipality_form
+      - active_loop: municipality_form
+      - active_loop: null
+      - checkpoint: Ammatillinen_koulutus__branches
+    metadata:
+      group: Koulutus
+  - story: Ammatillinen koulutus__Municipality
+    steps:
+      - checkpoint: Ammatillinen_koulutus__branches
+      - slot_was_set:
+          - recommend_services_whole_area: false
+      - action: utter_general_show_services_municipality
+      - action: action_recommend_services_by_class
+      - checkpoint: Ammatillinen_koulutus__Municipality__branches
+    metadata:
+      group: Koulutus
+  - story: Ammatillinen koulutus__Municipality__No services found
+    steps:
+      - checkpoint: Ammatillinen_koulutus__Municipality__branches
+      - slot_was_set:
+          - recommend_services_success: false
+      - checkpoint: link-to-Paluu alkuun/d91f6161-3ebe-4bee-86b0-d0fa9143bf99
+    metadata:
+      group: Koulutus
+  - story: Ammatillinen koulutus__Municipality__Services found
+    steps:
+      - checkpoint: Ammatillinen_koulutus__Municipality__branches
+      - slot_was_set:
+          - recommend_services_success: true
+      - checkpoint: >-
+          link-to-Palvelusuositus
+          palautekysely/8f58a5bb-84e1-4fd7-8135-7c5d2f218a14
+    metadata:
+      group: Koulutus
+  - story: Ammatillinen koulutus__Whole area
+    steps:
+      - checkpoint: Ammatillinen_koulutus__branches
+      - slot_was_set:
+          - recommend_services_whole_area: true
+      - action: utter_general_show_services_whole_area
+      - action: action_recommend_services_by_class
+      - checkpoint: Ammatillinen_koulutus__Whole_area__branches
+    metadata:
+      group: Koulutus
+  - story: Ammatillinen koulutus__Whole area__No services found
+    steps:
+      - checkpoint: Ammatillinen_koulutus__Whole_area__branches
+      - slot_was_set:
+          - recommend_services_success: false
+      - checkpoint: link-to-Paluu alkuun/d91f6161-3ebe-4bee-86b0-d0fa9143bf99
+    metadata:
+      group: Koulutus
+  - story: Ammatillinen koulutus__Whole area__Services found
+    steps:
+      - checkpoint: Ammatillinen_koulutus__Whole_area__branches
+      - slot_was_set:
+          - recommend_services_success: true
+      - checkpoint: >-
+          link-to-Palvelusuositus
+          palautekysely/8f58a5bb-84e1-4fd7-8135-7c5d2f218a14
+    metadata:
+      group: Koulutus
+  - story: Ammattikorkeakoulu
+    steps:
+      - intent: P6.9_university_of_applied_sciences
+        entities: []
+      - action: utter_uni_applied_sciences
+      - action: utter_student_financial_aid_hint
+      - checkpoint: >-
+          link-to-Palvelusuositus
+          palautekysely/8f58a5bb-84e1-4fd7-8135-7c5d2f218a14
+    metadata:
+      group: Koulutus
+  - story: Esiopetus
+    steps:
+      - intent: P6.1_preschool
+        entities: []
+      - action: utter_preschool
+      - action: municipality_form
+      - active_loop: municipality_form
+      - active_loop: null
+      - checkpoint: Esiopetus__branches
+    metadata:
+      group: Koulutus
+  - story: Esiopetus__Municipality
+    steps:
+      - checkpoint: Esiopetus__branches
+      - slot_was_set:
+          - recommend_services_whole_area: false
+      - action: utter_general_show_services_municipality
+      - action: action_recommend_services_by_intent_and_options
+      - checkpoint: Esiopetus__Municipality__branches
+    metadata:
+      group: Koulutus
+  - story: Esiopetus__Municipality__No services found
+    steps:
+      - checkpoint: Esiopetus__Municipality__branches
+      - slot_was_set:
+          - recommend_services_success: false
+      - checkpoint: link-to-Paluu alkuun/d91f6161-3ebe-4bee-86b0-d0fa9143bf99
+    metadata:
+      group: Koulutus
+  - story: Esiopetus__Municipality__Services found
+    steps:
+      - checkpoint: Esiopetus__Municipality__branches
+      - slot_was_set:
+          - recommend_services_success: true
+      - checkpoint: >-
+          link-to-Palvelusuositus
+          palautekysely/8f58a5bb-84e1-4fd7-8135-7c5d2f218a14
+    metadata:
+      group: Koulutus
+  - story: Esiopetus__Whole area
+    steps:
+      - checkpoint: Esiopetus__branches
+      - slot_was_set:
+          - recommend_services_whole_area: true
+      - action: utter_general_show_services_whole_area
+      - action: action_recommend_services_by_intent_and_options
+      - checkpoint: Esiopetus__Whole_area__branches
+    metadata:
+      group: Koulutus
+  - story: Esiopetus__Whole area__No services found
+    steps:
+      - checkpoint: Esiopetus__Whole_area__branches
+      - slot_was_set:
+          - recommend_services_success: false
+      - checkpoint: link-to-Paluu alkuun/d91f6161-3ebe-4bee-86b0-d0fa9143bf99
+    metadata:
+      group: Koulutus
+  - story: Esiopetus__Whole area__Services found
+    steps:
+      - checkpoint: Esiopetus__Whole_area__branches
+      - slot_was_set:
+          - recommend_services_success: true
+      - checkpoint: >-
+          link-to-Palvelusuositus
+          palautekysely/8f58a5bb-84e1-4fd7-8135-7c5d2f218a14
+    metadata:
+      group: Koulutus
+  - story: Lukio
+    steps:
+      - intent: P6.8_upper_secondary_school
+        entities: []
+      - action: utter_upper_secondary_school
+      - action: municipality_form
+      - active_loop: municipality_form
+      - active_loop: null
+      - checkpoint: Lukio__branches
+    metadata:
+      group: Koulutus
+  - story: Lukio__Municipality
+    steps:
+      - checkpoint: Lukio__branches
+      - slot_was_set:
+          - recommend_services_whole_area: false
+      - action: utter_general_show_services_municipality
+      - action: action_recommend_services_by_class
+      - checkpoint: Lukio__Municipality__branches
+    metadata:
+      group: Koulutus
+  - story: Lukio__Municipality__No services found
+    steps:
+      - checkpoint: Lukio__Municipality__branches
+      - slot_was_set:
+          - recommend_services_success: false
+      - checkpoint: link-to-Paluu alkuun/d91f6161-3ebe-4bee-86b0-d0fa9143bf99
+    metadata:
+      group: Koulutus
+  - story: Lukio__Municipality__Services found
+    steps:
+      - checkpoint: Lukio__Municipality__branches
+      - slot_was_set:
+          - recommend_services_success: true
+      - checkpoint: >-
+          link-to-Palvelusuositus
+          palautekysely/8f58a5bb-84e1-4fd7-8135-7c5d2f218a14
+    metadata:
+      group: Koulutus
+  - story: Lukio__Whole area
+    steps:
+      - checkpoint: Lukio__branches
+      - slot_was_set:
+          - recommend_services_whole_area: true
+      - action: utter_general_show_services_whole_area
+      - action: action_recommend_services_by_class
+      - checkpoint: Lukio__Whole_area__branches
+    metadata:
+      group: Koulutus
+  - story: Lukio__Whole area__No services found
+    steps:
+      - checkpoint: Lukio__Whole_area__branches
+      - slot_was_set:
+          - recommend_services_success: false
+      - checkpoint: link-to-Paluu alkuun/d91f6161-3ebe-4bee-86b0-d0fa9143bf99
+    metadata:
+      group: Koulutus
+  - story: Lukio__Whole area__Services found
+    steps:
+      - checkpoint: Lukio__Whole_area__branches
+      - slot_was_set:
+          - recommend_services_success: true
+      - checkpoint: >-
+          link-to-Palvelusuositus
+          palautekysely/8f58a5bb-84e1-4fd7-8135-7c5d2f218a14
+    metadata:
+      group: Koulutus
+  - story: Päivähoito
+    steps:
+      - intent: P6.1_daycare
+        entities: []
+      - action: utter_daycare
+      - action: municipality_form
+      - active_loop: municipality_form
+      - active_loop: null
+      - checkpoint: Päivähoito__branches
+    metadata:
+      group: Koulutus
+  - story: Päivähoito__Municipality
+    steps:
+      - checkpoint: Päivähoito__branches
+      - slot_was_set:
+          - recommend_services_whole_area: false
+      - action: utter_general_show_services_municipality
+      - action: action_recommend_services_by_intent_and_options
+      - checkpoint: Päivähoito__Municipality__branches
+    metadata:
+      group: Koulutus
+  - story: Päivähoito__Municipality__No services found
+    steps:
+      - checkpoint: Päivähoito__Municipality__branches
+      - slot_was_set:
+          - recommend_services_success: false
+      - checkpoint: link-to-Paluu alkuun/d91f6161-3ebe-4bee-86b0-d0fa9143bf99
+    metadata:
+      group: Koulutus
+  - story: Päivähoito__Municipality__Services found
+    steps:
+      - checkpoint: Päivähoito__Municipality__branches
+      - slot_was_set:
+          - recommend_services_success: true
+      - checkpoint: >-
+          link-to-Palvelusuositus
+          palautekysely/8f58a5bb-84e1-4fd7-8135-7c5d2f218a14
+    metadata:
+      group: Koulutus
+  - story: Päivähoito__Whole area
+    steps:
+      - checkpoint: Päivähoito__branches
+      - slot_was_set:
+          - recommend_services_whole_area: true
+      - action: utter_general_show_services_whole_area
+      - action: action_recommend_services_by_intent_and_options
+      - checkpoint: Päivähoito__Whole_area__branches
+    metadata:
+      group: Koulutus
+  - story: Päivähoito__Whole area__No services found
+    steps:
+      - checkpoint: Päivähoito__Whole_area__branches
+      - slot_was_set:
+          - recommend_services_success: false
+      - checkpoint: link-to-Paluu alkuun/d91f6161-3ebe-4bee-86b0-d0fa9143bf99
+    metadata:
+      group: Koulutus
+  - story: Päivähoito__Whole area__Services found
+    steps:
+      - checkpoint: Päivähoito__Whole_area__branches
+      - slot_was_set:
+          - recommend_services_success: true
+      - checkpoint: >-
+          link-to-Palvelusuositus
+          palautekysely/8f58a5bb-84e1-4fd7-8135-7c5d2f218a14
+    metadata:
+      group: Koulutus
+  - story: Peruskoulu
+    steps:
+      - intent: P6.2_basic_school
+        entities: []
+      - action: utter_basic_school
+      - action: municipality_form
+      - active_loop: municipality_form
+      - active_loop: null
+      - checkpoint: Peruskoulu__branches
+    metadata:
+      group: Koulutus
+  - story: Peruskoulu__Municipality
+    steps:
+      - checkpoint: Peruskoulu__branches
+      - slot_was_set:
+          - recommend_services_whole_area: false
+      - action: utter_general_show_services_municipality
+      - action: action_recommend_services_by_class
+      - checkpoint: Peruskoulu__Municipality__branches
+    metadata:
+      group: Koulutus
+  - story: Peruskoulu__Municipality__No services found
+    steps:
+      - checkpoint: Peruskoulu__Municipality__branches
+      - slot_was_set:
+          - recommend_services_success: false
+      - checkpoint: link-to-Paluu alkuun/d91f6161-3ebe-4bee-86b0-d0fa9143bf99
+    metadata:
+      group: Koulutus
+  - story: Peruskoulu__Municipality__Services found
+    steps:
+      - checkpoint: Peruskoulu__Municipality__branches
+      - slot_was_set:
+          - recommend_services_success: true
+      - checkpoint: >-
+          link-to-Palvelusuositus
+          palautekysely/8f58a5bb-84e1-4fd7-8135-7c5d2f218a14
+    metadata:
+      group: Koulutus
+  - story: Peruskoulu__Whole area
+    steps:
+      - checkpoint: Peruskoulu__branches
+      - slot_was_set:
+          - recommend_services_whole_area: true
+      - action: utter_general_show_services_whole_area
+      - action: action_recommend_services_by_class
+      - checkpoint: Peruskoulu__Whole_area__branches
+    metadata:
+      group: Koulutus
+  - story: Peruskoulu__Whole area__No services found
+    steps:
+      - checkpoint: Peruskoulu__Whole_area__branches
+      - slot_was_set:
+          - recommend_services_success: false
+      - checkpoint: link-to-Paluu alkuun/d91f6161-3ebe-4bee-86b0-d0fa9143bf99
+    metadata:
+      group: Koulutus
+  - story: Peruskoulu__Whole area__Services found
+    steps:
+      - checkpoint: Peruskoulu__Whole_area__branches
+      - slot_was_set:
+          - recommend_services_success: true
+      - checkpoint: >-
+          link-to-Palvelusuositus
+          palautekysely/8f58a5bb-84e1-4fd7-8135-7c5d2f218a14
+    metadata:
+      group: Koulutus
+  - story: Yleissivu
+    steps:
+      - intent: P6_education
+        entities: []
+      - action: utter_education
+      - action: utter_education_select_level
+    metadata:
+      group: Koulutus
+  - story: Yliopistot
+    steps:
+      - intent: P6.9_university
+        entities: []
+      - action: utter_university
+      - action: utter_student_financial_aid_hint
+      - checkpoint: >-
+          link-to-Palvelusuositus
+          palautekysely/8f58a5bb-84e1-4fd7-8135-7c5d2f218a14
+    metadata:
+      group: Koulutus
+rules: []

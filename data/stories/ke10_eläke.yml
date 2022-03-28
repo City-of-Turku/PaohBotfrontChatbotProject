@@ -1,0 +1,50 @@
+stories:
+  - story: Eläkkeelle jääminen
+    steps:
+      - intent: KE10_pension
+        entities: []
+      - action: utter_pension
+      - action: utter_pension_more_services
+      - checkpoint: Eläkkeelle_jääminen__branches
+    metadata:
+      group: KE10 Eläke
+  - story: Eläkkeelle jääminen__No
+    steps:
+      - checkpoint: Eläkkeelle_jääminen__branches
+      - intent: 'no'
+        entities: []
+      - checkpoint: link-to-Paluu alkuun/d91f6161-3ebe-4bee-86b0-d0fa9143bf99
+    metadata:
+      group: KE10 Eläke
+  - story: Eläkkeelle jääminen__Yes
+    steps:
+      - checkpoint: Eläkkeelle_jääminen__branches
+      - or:
+          - intent: KE10_pension
+            entities: []
+          - intent: 'yes'
+            entities: []
+      - action: utter_pension_show_more_services
+      - action: action_recommend_services_by_intent_and_options
+      - checkpoint: Eläkkeelle_jääminen__Yes__branches
+    metadata:
+      group: KE10 Eläke
+  - story: Eläkkeelle jääminen__Yes__No success
+    steps:
+      - checkpoint: Eläkkeelle_jääminen__Yes__branches
+      - slot_was_set:
+          - recommend_services_success: false
+      - checkpoint: link-to-Paluu alkuun/d91f6161-3ebe-4bee-86b0-d0fa9143bf99
+    metadata:
+      group: KE10 Eläke
+  - story: Eläkkeelle jääminen__Yes__Success
+    steps:
+      - checkpoint: Eläkkeelle_jääminen__Yes__branches
+      - slot_was_set:
+          - recommend_services_success: true
+      - checkpoint: >-
+          link-to-Palvelusuositus
+          palautekysely/8f58a5bb-84e1-4fd7-8135-7c5d2f218a14
+    metadata:
+      group: KE10 Eläke
+rules: []

@@ -1,0 +1,1616 @@
+version: "2.0"
+nlu:
+- intent: KE10_pension
+  metadata:
+    language: en
+  examples:
+  - text: |
+      Pension
+    metadata:
+      canonical: true
+  - text: |
+      Retirement
+  - text: |
+      Retirement allowance
+- intent: P1.1_rent_living
+  metadata:
+    language: en
+  examples:
+  - text: |
+      I want to rent an apartment.
+    metadata:
+      canonical: true
+  - text: |
+      Rent apartments
+  - text: |
+      Rental
+- intent: P1.2_owner_occupation
+  metadata:
+    language: en
+  examples:
+  - text: |
+      I want services related to owner occupied housing.
+    metadata:
+      canonical: true
+  - text: |
+      Owned house
+  - text: |
+      Owner-occupation
+- intent: P1.5_moving
+  metadata:
+    language: en
+  examples:
+  - text: |
+      I am going to move to Kaarina
+  - text: |
+      I want to move to Turku
+  - text: |
+      I will change the locality
+  - text: |
+      I'm moving
+    metadata:
+      canonical: true
+  - text: |
+      Where can I find relocation notifications?
+  - text: |
+      Where can I get a move notification?
+  - text: |
+      how do i make a move notification?
+  - text: |
+      moving notification
+  - text: |
+      what kind of notifications are needed for moving?
+  - text: |
+      what notifications do I make when I change residence?
+  - text: |
+      what should i do if i move?
+- intent: P15.3_loan
+  metadata:
+    language: en
+  examples:
+  - text: |
+      Are there any alternatives for loan?
+    metadata:
+      canonical: true
+  - text: |
+      How to get loan?
+  - text: |
+      What types of loan exist?
+- intent: P15.5_distraint
+  metadata:
+    language: en
+  examples:
+  - text: |
+      Distraint
+    metadata:
+      canonical: true
+  - text: |
+      I'm in distraint.
+  - text: |
+      What to d in distraint?
+- intent: P1_living
+  metadata:
+    language: en
+  examples:
+  - text: |
+      Apartments
+    metadata:
+      canonical: true
+  - text: |
+      Housing
+  - text: |
+      I search apartment services.
+  - text: |
+      Living
+- intent: P25.1_library
+  metadata:
+    language: en
+  examples:
+  - text: |
+      I need library services thanks
+  - text: |
+      I want to borrow books
+  - text: |
+      I want to go to library
+  - text: |
+      Library services
+    metadata:
+      canonical: true
+  - text: |
+      Where is the nearest library?
+  - text: |
+      how do i get to the library
+  - text: |
+      library
+  - text: |
+      library service
+  - text: |
+      library's services
+  - text: |
+      where can i borrow a book
+- intent: P3.1_divorce
+  metadata:
+    language: en
+  examples:
+  - text: |
+      Conclusion of marriage
+    metadata:
+      canonical: true
+  - text: |
+      Divorce
+  - text: |
+      Divorce application
+  - text: |
+      End of marriage
+  - text: |
+      How can I get divorce?
+  - text: |
+      I want divorce
+  - text: |
+      I want divorce my husband
+  - text: |
+      I want divorce my wife
+  - text: |
+      divorce
+  - text: |
+      how to divorce?
+- intent: P3.1_marriage
+  metadata:
+    language: en
+  examples:
+  - text: |
+      Getting married
+    metadata:
+      canonical: true
+  - text: |
+      I want marry my boyfriend
+  - text: |
+      I want marry my girlfriend
+  - text: |
+      I want to get married
+  - text: |
+      Marriage
+  - text: |
+      Relationship
+  - text: |
+      Wedding
+  - text: |
+      how to get married?
+  - text: |
+      marriage
+- intent: P3.2_having_child
+  metadata:
+    language: en
+  examples:
+  - text: |
+      Getting a child
+    metadata:
+      canonical: true
+  - text: |
+      Giving birth
+  - text: |
+      Have a child
+  - text: |
+      I'm about to have a baby.
+- intent: P3.4_lastenhoitopalvelut
+  metadata:
+    language: en
+  examples:
+  - text: |
+      Childcare services
+    metadata:
+      canonical: true
+  - text: |
+      child day care places
+  - text: |
+      childcare services
+  - text: |
+      childrens' daycare
+  - text: |
+      day care places
+  - text: |
+      how do i get a childcare place?
+  - text: |
+      i need support to take care of my child
+  - text: |
+      i want help with childcare
+  - text: |
+      services for my child’s day care
+  - text: |
+      where can i get babysitting services
+- intent: P4.10_social_assistance_benefit
+  metadata:
+    language: en
+  examples:
+  - text: |
+      Basic income support
+    metadata:
+      canonical: true
+  - text: |
+      How to apply for social credit
+  - text: |
+      I want basic income benefit
+  - text: |
+      I want income support benefit
+  - text: |
+      What supplements must be provided with preventive income support
+  - text: |
+      What supplements must be provided with supplementary income support
+  - text: |
+      Where can I get income support
+  - text: |
+      Where is preventive income support granted?
+  - text: |
+      Where is supplementary income support granted?
+  - text: |
+      Why don’t I get all my income support from one place
+  - text: |
+      help getting income support
+  - text: |
+      income support
+  - text: |
+      support for livelihoods
+  - text: |
+      tell me how can i get income support?
+  - text: |
+      where can i get basic income benefit
+- intent: P4.1_housing_allowance
+  metadata:
+    language: en
+  examples:
+  - text: |
+      Housing allowance
+    metadata:
+      canonical: true
+  - text: |
+      I need allowance for housing
+  - text: |
+      housing allowance
+  - text: |
+      how can I get housing allowance?
+  - text: |
+      tell me about housing allowance
+  - text: |
+      what is housing allowance?
+- intent: P4.3_kotitalouspalvelut
+  metadata:
+    language: en
+  examples:
+  - text: |
+      Home services
+    metadata:
+      canonical: true
+  - text: |
+      desire to get help for domestic chores
+  - text: |
+      help to home
+  - text: |
+      help to house keeping
+  - text: |
+      help with housekeeping
+  - text: |
+      home services
+  - text: |
+      how do i get help with home chores
+  - text: |
+      how do i get home service
+  - text: |
+      i want household services
+  - text: |
+      want help with home chores
+  - text: |
+      where are the household services?
+- intent: P6.1_preschool
+  metadata:
+    language: en
+  examples:
+  - text: |
+      Pre school
+    metadata:
+      canonical: true
+  - text: |
+      Preschool
+- intent: P6.2_basic_school
+  metadata:
+    language: en
+  examples:
+  - text: |
+      Basic school
+    metadata:
+      canonical: true
+  - text: |
+      Elementary school
+  - text: |
+      Public school
+- intent: P6.6_vocational_school
+  metadata:
+    language: en
+  examples:
+  - text: |
+      Second degree vocational
+    metadata:
+      canonical: true
+  - text: |
+      Vocational school
+- intent: P6.8_upper_secondary_school
+  metadata:
+    language: en
+  examples:
+  - text: |
+      High school
+    metadata:
+      canonical: true
+  - text: |
+      Upper secondary school
+- intent: P6.9_university
+  metadata:
+    language: en
+  examples:
+  - text: |
+      Academic
+    metadata:
+      canonical: true
+  - text: |
+      Academy
+  - text: |
+      Bachelor of sciences
+  - text: |
+      College
+  - text: |
+      Master of Science
+  - text: |
+      University
+- intent: P6.9_university_of_applied_sciences
+  metadata:
+    language: en
+  examples:
+  - text: |
+      University of applied sciences
+    metadata:
+      canonical: true
+- intent: P6_education
+  metadata:
+    language: en
+  examples:
+  - text: |
+      Education
+    metadata:
+      canonical: true
+  - text: |
+      Financial aid for students
+  - text: |
+      School
+  - text: |
+      Studies
+  - text: |
+      Study
+- intent: P6_financial_aid_for_students
+  metadata:
+    language: en
+  examples:
+  - text: |
+      Financial_aid_for students
+    metadata:
+      canonical: true
+  - text: |
+      Study grant
+- intent: P8.2_elections
+  metadata:
+    language: en
+  examples:
+  - text: |
+      Election
+    metadata:
+      canonical: true
+  - text: |
+      How to vote?
+  - text: |
+      Political parties
+  - text: |
+      Voting
+  - text: |
+      Where to vote?
+- intent: P8.3_citizens_initiative
+  metadata:
+    language: en
+  examples:
+  - text: |
+      Citizens initiative
+    metadata:
+      canonical: true
+- intent: back_to_start
+  metadata:
+    language: en
+  examples:
+  - text: |
+      I want back to beginning
+    metadata:
+      canonical: true
+  - text: |
+      I want reset this
+  - text: |
+      back to start
+  - text: |
+      get back to start
+  - text: |
+      go back to start
+  - text: |
+      reset
+  - text: |
+      reset conversation
+  - text: |
+      restart
+  - text: |
+      restart converstation
+- intent: chitchat.bye
+  metadata:
+    language: en
+  examples:
+  - text: |
+      bye
+  - text: |
+      bye bye
+    metadata:
+      canonical: true
+  - text: |
+      goodbye
+  - text: |
+      have to go
+  - text: |
+      see you
+  - text: |
+      stop
+  - text: |
+      until tomorrow!
+- intent: chitchat.greet
+  metadata:
+    language: en
+  examples:
+  - text: |
+      Hello
+    metadata:
+      canonical: true
+  - text: |
+      good afternoon
+  - text: |
+      good day
+  - text: |
+      good morning
+  - text: |
+      hi
+  - text: |
+      howdy
+  - text: |
+      morning
+  - text: |
+      what's up
+- intent: feedback_negative
+  metadata:
+    language: en
+  examples:
+  - text: |
+      bad
+    metadata:
+      canonical: true
+  - text: |
+      bad services
+  - text: |
+      badly
+  - text: |
+      didn't go so well
+  - text: |
+      incorrect recommendations
+  - text: |
+      not good
+  - text: |
+      pretty bad
+  - text: |
+      wrong
+  - text: |
+      wrong services
+- intent: feedback_positive
+  metadata:
+    language: en
+  examples:
+  - text: |
+      excellent
+    metadata:
+      canonical: true
+  - text: |
+      good
+  - text: |
+      good recommendations
+  - text: |
+      good services
+  - text: |
+      quite nice
+  - text: |
+      quite okay
+  - text: |
+      really good
+  - text: |
+      very good
+  - text: |
+      well thanks
+- intent: general_service_search
+  metadata:
+    language: en
+  examples:
+  - text: |
+      I want from [turusta]{"entity": "municipality", "value": "Turku"}
+    metadata:
+      canonical: true
+  - text: |
+      I want [kustavista]{"entity": "municipality", "value": "Kustavi"}
+    metadata:
+      canonical: true
+  - text: |
+      I want services from [aurasta]{"entity": "municipality", "value": "Aura"}
+    metadata:
+      canonical: true
+  - text: |
+      I want to look for services
+  - text: |
+      I want to search freely some services
+  - text: |
+      Search services freely
+    metadata:
+      canonical: true
+  - text: |
+      Something in [turussa]{"entity": "municipality", "value": "Turku"}
+  - text: |
+      are there something in [Aurassa]{"entity": "municipality", "value": "Aura"}?
+  - text: |
+      are there something in [kemiönsaarella]{"entity": "municipality", "value": "Kemi\u00f6nsaari"}
+    metadata:
+      canonical: true
+  - text: |
+      does [kaarinalla]{"entity": "municipality", "value": "Kaarina"} have services?
+    metadata:
+      canonical: true
+  - text: |
+      find services
+  - text: |
+      find services freely
+  - text: |
+      free search
+  - text: |
+      from [Paimio](municipality)
+    metadata:
+      canonical: true
+  - text: |
+      from [Turku](municipality)
+  - text: |
+      from [askaisilta]{"entity": "municipality", "value": "Myn\u00e4m\u00e4ki"}
+    metadata:
+      canonical: true
+  - text: |
+      from [dragsfjärd]{"entity": "municipality", "value": "Kemi\u00f6nsaari"}
+  - text: |
+      from [kaarina]{"entity": "municipality", "value": "Kaarina"}
+  - text: |
+      from [kemiönsaari]{"entity": "municipality", "value": "Kemi\u00f6nsaari"}
+  - text: |
+      from [koskelta]{"entity": "municipality", "value": "Koski Tl"}
+    metadata:
+      canonical: true
+  - text: |
+      from [koski]{"entity": "municipality", "value": "Koski Tl"}
+  - text: |
+      from [kyröstä]{"entity": "municipality", "value": "P\u00f6yty\u00e4"}
+    metadata:
+      canonical: true
+  - text: |
+      from [laitila]{"entity": "municipality", "value": "Laitila"}
+    metadata:
+      canonical: true
+  - text: |
+      from [laitilasta]{"entity": "municipality", "value": "Laitila"}
+  - text: |
+      from [lieto]{"entity": "municipality", "value": "Lieto"}
+    metadata:
+      canonical: true
+  - text: |
+      from [loimaa]{"entity": "municipality", "value": "Loimaa"}
+    metadata:
+      canonical: true
+  - text: |
+      from [marttila]{"entity": "municipality", "value": "Marttila"}
+    metadata:
+      canonical: true
+  - text: |
+      from [masku]{"entity": "municipality", "value": "Masku"}
+    metadata:
+      canonical: true
+  - text: |
+      from [mynämäki]{"entity": "municipality", "value": "Myn\u00e4m\u00e4ki"}
+  - text: |
+      from [naantali]{"entity": "municipality", "value": "Naantali"}
+    metadata:
+      canonical: true
+  - text: |
+      from [nousiainen]{"entity": "municipality", "value": "Nousiainen"}
+    metadata:
+      canonical: true
+  - text: |
+      from [oripää]{"entity": "municipality", "value": "Orip\u00e4\u00e4"}
+    metadata:
+      canonical: true
+  - text: |
+      from [paimio]{"entity": "municipality", "value": "Paimio"}
+  - text: |
+      from [parainen]{"entity": "municipality", "value": "Parainen"}
+    metadata:
+      canonical: true
+  - text: |
+      from [pyhäranta]{"entity": "municipality", "value": "Pyh\u00e4ranta"}
+    metadata:
+      canonical: true
+  - text: |
+      from [raisio]{"entity": "municipality", "value": "Raisio"}
+    metadata:
+      canonical: true
+  - text: |
+      from [rusko]{"entity": "municipality", "value": "Rusko"}
+    metadata:
+      canonical: true
+  - text: |
+      from [salo]{"entity": "municipality", "value": "Salo"}
+    metadata:
+      canonical: true
+  - text: |
+      from [sauvo]{"entity": "municipality", "value": "Sauvo"}
+    metadata:
+      canonical: true
+  - text: |
+      from [somero]{"entity": "municipality", "value": "Somero"}
+    metadata:
+      canonical: true
+  - text: |
+      from [taivassalo]{"entity": "municipality", "value": "Taivassalo"}
+    metadata:
+      canonical: true
+  - text: |
+      from [turku]{"entity": "municipality", "value": "Turku"}
+  - text: |
+      from [turusta]{"entity": "municipality", "value": "Turku"}
+  - text: |
+      from [uusikaupunki]{"entity": "municipality", "value": "Uusikaupunki"}
+    metadata:
+      canonical: true
+  - text: |
+      from [vehmaa]{"entity": "municipality", "value": "Vehmaa"}
+    metadata:
+      canonical: true
+  - text: |
+      have services in [auralla]{"entity": "municipality", "value": "Aura"}?
+  - text: |
+      in [kemiönsaaresta]{"entity": "municipality", "value": "Kemi\u00f6nsaari"}
+  - text: |
+      in [koskella]{"entity": "municipality", "value": "Koski Tl"}
+  - text: |
+      in [turulla]{"entity": "municipality", "value": "Turku"}
+  - text: |
+      in [yläne]{"entity": "municipality", "value": "P\u00f6yty\u00e4"}
+  - text: |
+      in [Åbo]{"entity": "municipality", "value": "Turku"}
+  - text: |
+      is there something in [Turussa]{"entity": "municipality", "value": "Turku"}?
+  - text: |
+      [kaarinan]{"entity": "municipality", "value": "Kaarina"} services
+  - text: |
+      [kemiönsaaren]{"entity": "municipality", "value": "Kemi\u00f6nsaari"} services
+  - text: |
+      [koski tl:n]{"entity": "municipality", "value": "Koski Tl"} services
+  - text: |
+      [kustavin]{"entity": "municipality", "value": "Kustavi"} services
+  - text: |
+      look services for me
+  - text: |
+      search freely
+  - text: |
+      seek services from [turusta]{"entity": "municipality", "value": "Turku"}
+  - text: |
+      service search
+  - text: |
+      services from [Lemusta]{"entity": "municipality", "value": "Myn\u00e4m\u00e4ki"}
+  - text: |
+      services in [Paimiosta]{"entity": "municipality", "value": "Paimio"}
+  - text: |
+      services in [kaarinasta]{"entity": "municipality", "value": "Kaarina"}
+  - text: |
+      services in [koski tlssä]{"entity": "municipality", "value": "Koski Tl"}
+  - text: |
+      show from [Kustavilta]{"entity": "municipality", "value": "Kustavi"}
+  - text: |
+      show from [laitilan]{"entity": "municipality", "value": "Laitila"}
+  - text: |
+      show [kaarinassa]{"entity": "municipality", "value": "Kaarina"}
+  - text: |
+      show services from [aura]{"entity": "municipality", "value": "Aura"}
+  - text: |
+      show services in [Kemiönsaaressa]{"entity": "municipality", "value": "Kemi\u00f6nsaari"}
+  - text: |
+      show [turun]{"entity": "municipality", "value": "Turku"} services
+  - text: |
+      tell me from [laitilasta]{"entity": "municipality", "value": "Laitila"} services
+  - text: |
+      want from [kemiöltä]{"entity": "municipality", "value": "Kemi\u00f6nsaari"}
+  - text: |
+      want [kyröstä]{"entity": "municipality", "value": "P\u00f6yty\u00e4"}
+  - text: |
+      well [Aura](municipality)
+  - text: |
+      well [Koskelta]{"entity": "municipality", "value": "Koski Tl"}
+  - text: |
+      well [Mietoisilta]{"entity": "municipality", "value": "Myn\u00e4m\u00e4ki"}
+  - text: |
+      well [kyröltä]{"entity": "municipality", "value": "P\u00f6yty\u00e4"}
+  - text: |
+      well [taalintehtaalla]{"entity": "municipality", "value": "Kemi\u00f6nsaari"}
+  - text: |
+      well [turku]{"entity": "municipality", "value": "Turku"}
+  - text: |
+      what are in [Kustavilla]{"entity": "municipality", "value": "Kustavi"}?
+  - text: |
+      what are in [Laitilalla]{"entity": "municipality", "value": "Laitila"}
+  - text: |
+      what services there are in [Laitilalla]{"entity": "municipality", "value": "Laitila"}?
+- intent: give_feedback
+  metadata:
+    language: en
+  examples:
+  - text: |
+      I have feedback
+    metadata:
+      canonical: true
+  - text: |
+      I have feedback for you
+  - text: |
+      I want give feedback
+  - text: |
+      feedback
+  - text: |
+      give feedback
+  - text: |
+      how can I give feedback
+- intent: help
+  metadata:
+    language: en
+  examples:
+  - text: |
+      I need help
+    metadata:
+      canonical: true
+  - text: |
+      help
+  - text: |
+      how can you help me?
+  - text: |
+      how do you work?
+  - text: |
+      please help me
+  - text: |
+      what can you do?
+- intent: ke14_death
+  metadata:
+    language: en
+  examples:
+  - text: |
+      Death of a close person
+  - text: |
+      Death of a relative
+    metadata:
+      canonical: true
+  - text: |
+      close person died
+  - text: |
+      death
+  - text: |
+      death of my family member
+  - text: |
+      my family member died
+  - text: |
+      my friend died
+  - text: |
+      my parent died
+- intent: ke8_change_job
+  metadata:
+    language: en
+  examples:
+  - text: |
+      I want change to my job
+    metadata:
+      canonical: true
+  - text: |
+      I want new job challenges
+  - text: |
+      I want to change job
+  - text: |
+      I would like to change my work
+  - text: |
+      change my workplace
+  - text: |
+      changing jobs
+  - text: |
+      get me new job
+  - text: |
+      how can I change my career
+  - text: |
+      how do i get a changed career?
+  - text: |
+      i want to change jobs
+  - text: |
+      job changes
+  - text: |
+      needed a change in my career
+- intent: ke8_find_jobs
+  metadata:
+    language: en
+  examples:
+  - text: |
+      How do I apply for jobs
+    metadata:
+      canonical: true
+  - text: |
+      I want to apply for jobs
+  - text: |
+      applying for a job
+  - text: |
+      find me job
+  - text: |
+      help me to search jobs
+  - text: |
+      job hunting
+  - text: |
+      job search
+  - text: |
+      tell me how i get a job
+  - text: |
+      where can I find new jobs?
+- intent: ke8_lay_off
+  metadata:
+    language: en
+  examples:
+  - text: |
+      I am laid off
+    metadata:
+      canonical: true
+  - text: |
+      I am laid off from my work
+  - text: |
+      I had to be laid off
+  - text: |
+      I had to lay off
+  - text: |
+      I need help with my lay-off
+  - text: |
+      I was laid off
+  - text: |
+      Is there support for laid off?
+  - text: |
+      Lay-off
+  - text: |
+      how do i work in layoffs?
+  - text: |
+      how will i do if I was laid off
+  - text: |
+      i am about to get laid off
+  - text: |
+      what do i do when laid off?
+- intent: ke8_losing_job
+  metadata:
+    language: en
+  examples:
+  - text: |
+      I am about to get unemployed
+  - text: |
+      I am between jobs
+  - text: |
+      I don't have work
+  - text: |
+      I got fired
+  - text: |
+      I got fired from my work
+  - text: |
+      I lost my job
+    metadata:
+      canonical: true
+  - text: |
+      don't have job
+  - text: |
+      how do i get support for employment
+  - text: |
+      i want help with work matters
+  - text: |
+      my work is finished
+  - text: |
+      need help finding a job
+  - text: |
+      unemployment
+  - text: |
+      what do i do when i get fired?
+  - text: |
+      where can i get unemployment benefits
+- intent: ke8_other
+  metadata:
+    language: en
+  examples:
+  - text: |
+      I want something else
+    metadata:
+      canonical: true
+  - text: |
+      other services
+  - text: |
+      something else
+  - text: |
+      something else please
+  - text: |
+      tell me other choices
+- intent: ke8_unemployment_benefits
+  metadata:
+    language: en
+  examples:
+  - text: |
+      I want support to my unemployment
+  - text: |
+      Unemployment benefits
+    metadata:
+      canonical: true
+  - text: |
+      help me to get unemployment benefits
+  - text: |
+      how can I get unemployment benefits
+  - text: |
+      show unemployment benefits
+  - text: |
+      tell me about unemployment benefit
+  - text: |
+      what do i do to get unemployment benefits?
+  - text: |
+      where can I get unemployment benefit?
+- intent: ke8_unemployment_registration
+  metadata:
+    language: en
+  examples:
+  - text: |
+      I want to register as unemployed
+    metadata:
+      canonical: true
+  - text: |
+      Registering as an unemployed jobseeker
+  - text: |
+      do I have to register as unemployed with the TE Office?
+  - text: |
+      help me register as unemployed
+  - text: |
+      how do I report as unemployed jobseeker?
+- intent: ke9_debt
+  metadata:
+    language: en
+  examples:
+  - text: |
+      Burdened by debt
+    metadata:
+      canonical: true
+  - text: |
+      I am in bad debt
+  - text: |
+      I am in debt
+  - text: |
+      I have loans
+  - text: |
+      I have so much debt
+  - text: |
+      I owe a lot and I don't know what to do
+  - text: |
+      debt
+  - text: |
+      how do i manage my debts?
+  - text: |
+      i have a lot of debt
+  - text: |
+      my money went into loans
+- intent: leisure_services
+  metadata:
+    language: en
+  examples:
+  - text: |
+      I want services for hobbies
+    metadata:
+      canonical: true
+  - text: |
+      Leisure services
+  - text: |
+      are the services for free time?
+  - text: |
+      free time
+  - text: |
+      i like leisure activities
+  - text: |
+      leisure
+  - text: |
+      leisure activities
+  - text: |
+      services for leisure
+- intent: no
+  metadata:
+    language: en
+  examples:
+  - text: |
+      I don't want
+    metadata:
+      canonical: true
+  - text: |
+      No
+  - text: |
+      Nope
+  - text: |
+      do not
+  - text: |
+      don't
+  - text: |
+      never
+  - text: |
+      no thank you
+  - text: |
+      no thanks
+  - text: |
+      no way
+  - text: |
+      thanks but no thanks
+- intent: social_benefits
+  metadata:
+    language: en
+  examples:
+  - text: |
+      How to get money?
+    metadata:
+      canonical: true
+  - text: |
+      I'm out of money.
+  - text: |
+      Subsidies
+  - text: |
+      Subsidy
+  - text: |
+      Where to get money?
+- intent: sports_service_search
+  metadata:
+    language: en
+  examples:
+  - text: |
+      Are there any services for sports?
+    metadata:
+      canonical: true
+  - text: |
+      I like exercising
+  - text: |
+      I like sports
+  - text: |
+      I want sports services
+  - text: |
+      Ice hockey
+  - text: |
+      Sports services
+  - text: |
+      i like to play sports
+  - text: |
+      sport
+  - text: |
+      sport services
+  - text: |
+      sports
+  - text: |
+      would there be any sports services?
+- intent: swear_words
+  metadata:
+    language: en
+  examples:
+  - text: |
+      dammit
+    metadata:
+      canonical: true
+  - text: |
+      fuck
+  - text: |
+      fuck you
+  - text: |
+      go fuck yourself!
+  - text: |
+      go to hell
+  - text: |
+      hell
+  - text: |
+      oh shit
+  - text: |
+      screw you!
+  - text: |
+      shitty bot
+  - text: |
+      you are shit
+- intent: tell_joke
+  metadata:
+    language: en
+  examples:
+  - text: |
+      I want jokes
+    metadata:
+      canonical: true
+  - text: |
+      could you show me a joke?
+  - text: |
+      could you tell joke?
+  - text: |
+      do you have jokes?
+  - text: |
+      do you know jokes?
+  - text: |
+      tell joke
+  - text: |
+      tell me joke
+- intent: thank_you
+  metadata:
+    language: en
+  examples:
+  - text: |
+      Thank you!
+    metadata:
+      canonical: true
+  - text: |
+      thank you
+  - text: |
+      thanks
+  - text: |
+      thanks a lot
+- intent: what_time_is_it
+  metadata:
+    language: en
+  examples:
+  - text: |
+      Do you have the time?
+  - text: |
+      could you tell me the time
+  - text: |
+      how much is the clock?
+    metadata:
+      canonical: true
+  - text: |
+      what does the clock show?
+  - text: |
+      what time is it?
+  - text: |
+      what's the time?
+- intent: who_are_you
+  metadata:
+    language: en
+  examples:
+  - text: |
+      are you bot?
+    metadata:
+      canonical: true
+  - text: |
+      are you human?
+  - text: |
+      can you tell me who are you
+  - text: |
+      tell me about yourself
+  - text: |
+      tell me who are you?
+  - text: |
+      who are you?
+- intent: yes
+  metadata:
+    language: en
+  examples:
+  - text: |
+      Alright
+    metadata:
+      canonical: true
+  - text: |
+      Ok
+  - text: |
+      Yes
+  - text: |
+      absolutely
+  - text: |
+      of course
+  - text: |
+      okay
+  - text: |
+      please yes
+  - text: |
+      sure
+  - text: |
+      yea
+  - text: |
+      yeah
+  - text: |
+      yes please
+- synonym: Turku
+  examples: |
+    - turusta
+    - turussa
+    - turku
+    - turulla
+    - Åbo
+    - Turussa
+    - turun
+    - turulta
+    - åbo
+- synonym: Kustavi
+  examples: |
+    - kustavista
+    - kustavin
+    - Kustavilta
+    - Kustavilla
+    - kustavi
+    - kustavilla
+    - kustavilta
+    - kustavissa
+- synonym: Aura
+  examples: |
+    - aurasta
+    - Aurassa
+    - auralla
+    - aura
+    - auran
+    - auralta
+    - aurassa
+- synonym: Kemiönsaari
+  examples: |
+    - kemiönsaarella
+    - dragsfjärd
+    - kemiönsaari
+    - kemiönsaaresta
+    - kemiönsaaren
+    - Kemiönsaaressa
+    - kemiöltä
+    - taalintehtaalla
+    - kimito
+    - kemiönsaarelta
+    - kemiönsaaressa
+    - kemiöstä
+    - taalintehtaalta
+    - taalintehdas
+- synonym: Kaarina
+  examples: |
+    - kaarinalla
+    - kaarina
+    - kaarinan
+    - kaarinasta
+    - kaarinassa
+    - kaarinalta
+- synonym: Mynämäki
+  examples: |
+    - askaisilta
+    - mynämäki
+    - Lemusta
+    - Mietoisilta
+    - mynämäellä
+    - mynämäeltä
+    - mynämäessä
+    - mynämäestä
+    - askainen
+    - askaisista
+    - lemu
+    - lemusta
+    - mietoinen
+    - mietoisista
+- synonym: Koski Tl
+  examples: |
+    - koskelta
+    - koski
+    - koskella
+    - koski tl:n
+    - koski tlssä
+    - Koskelta
+    - koski tl
+- synonym: Pöytyä
+  examples: |
+    - kyröstä
+    - yläne
+    - kyröltä
+    - pöytyä
+    - pöytyällä
+    - pöytyältä
+    - pöytyässä
+    - pöytyästä
+    - kyrö
+    - kyrössä
+    - yläneellä
+    - yläneeltä
+    - karinaisista
+    - heikinsuolta
+    - riihikoskelta
+    - auvaisista
+- synonym: Laitila
+  examples: |
+    - laitila
+    - laitilasta
+    - laitilan
+    - Laitilalla
+    - laitilalla
+    - laitilalta
+    - laitilassa
+- synonym: Lieto
+  examples: |
+    - lieto
+    - liedolla
+    - liedolta
+    - liedossa
+    - liedosta
+- synonym: Loimaa
+  examples: |
+    - loimaa
+    - loimaalla
+    - loimaalta
+    - loimaassa
+    - loimaasta
+- synonym: Marttila
+  examples: |
+    - marttila
+    - marttilalla
+    - marttilalta
+    - marttilassa
+    - marttilasta
+- synonym: Masku
+  examples: |
+    - masku
+    - maskulla
+    - maskulta
+    - maskussa
+    - maskusta
+- synonym: Naantali
+  examples: |
+    - naantali
+    - naantalilla
+    - naantalilta
+    - naantalissa
+    - naantalista
+- synonym: Nousiainen
+  examples: |
+    - nousiainen
+    - nousiaisilla
+    - nousiaisilta
+    - nousiaisissa
+    - nousiaisista
+- synonym: Oripää
+  examples: |
+    - oripää
+    - oripäällä
+    - oripäältä
+    - oripäässä
+    - oripäästä
+- synonym: Paimio
+  examples: |
+    - paimio
+    - Paimiosta
+    - paimiolla
+    - paimiolta
+    - paimiossa
+    - paimiosta
+- synonym: Parainen
+  examples: |
+    - parainen
+    - paraisilla
+    - paraisilta
+    - paraisissa
+    - paraisista
+- synonym: Pyhäranta
+  examples: |
+    - pyhäranta
+    - pyhärannalla
+    - pyhärannalta
+    - pyhärannassa
+    - pyhärannasta
+- synonym: Raisio
+  examples: |
+    - raisio
+    - raisiolla
+    - raisiolta
+    - raisiossa
+    - raisiosta
+- synonym: Rusko
+  examples: |
+    - rusko
+    - ruskolla
+    - ruskolta
+    - ruskossa
+    - ruskosta
+- synonym: Salo
+  examples: |
+    - salo
+    - salolla
+    - salolta
+    - salossa
+    - salosta
+- synonym: Sauvo
+  examples: |
+    - sauvo
+    - sauvolla
+    - sauvolta
+    - sauvossa
+    - sauvosta
+- synonym: Somero
+  examples: |
+    - somero
+    - somerolla
+    - somerolta
+    - somerossa
+    - somerosta
+- synonym: Taivassalo
+  examples: |
+    - taivassalo
+    - taivassalolla
+    - taivassalolta
+    - taivassalossa
+    - taivassalosta
+- synonym: Uusikaupunki
+  examples: |
+    - uusikaupunki
+    - uudellakaupungilla
+    - uudellakaupungilta
+    - uudessakaupungissa
+    - uudessakaupungista
+- synonym: Vehmaa
+  examples: |
+    - vehmaa
+    - vehmaalla
+    - vehmaalta
+    - vehmaassa
+    - vehmaasta
+- gazette: municipality
+  examples: |
+    - Aura
+    - Kaarina
+    - Kemiönsaari
+    - Koski Tl
+    - Kustavi
+    - Laitila
+    - Lieto
+    - Loimaa
+    - Marttila
+    - Masku
+    - Mynämäki
+    - Naantali
+    - Nousiainen
+    - Oripää
+    - Paimio
+    - Parainen
+    - Pyhäranta
+    - Pöytyä
+    - Raisio
+    - Rusko
+    - Salo
+    - Sauvo
+    - Somero
+    - Taivassalo
+    - Turku
+    - Uusikaupunki
+    - Vehmaa
+    - askainen
+    - askaisista
+    - auralla
+    - auralta
+    - aurassa
+    - aurasta
+    - dragsfjärd
+    - kaarinalla
+    - kaarinalta
+    - kaarinassa
+    - kaarinasta
+    - kemiönsaarella
+    - kemiönsaarelta
+    - kemiönsaaressa
+    - kemiönsaaresta
+    - kemiöstä
+    - kimito
+    - koskella
+    - koskesta
+    - kustavilla
+    - kustavilta
+    - kustavissa
+    - kustavista
+    - kyrö
+    - kyrössä
+    - kyröstä
+    - laitilalla
+    - laitilalta
+    - laitilassa
+    - laitilasta
+    - lemu
+    - lemusta
+    - liedolla
+    - liedolta
+    - liedossa
+    - liedosta
+    - loimaalla
+    - loimaalta
+    - loimaassa
+    - loimaasta
+    - marttilalla
+    - marttilalta
+    - marttilassa
+    - marttilasta
+    - maskulla
+    - maskulta
+    - maskussa
+    - maskusta
+    - mietoinen
+    - mietoisista
+    - mynämäellä
+    - mynämäeltä
+    - mynämäessä
+    - mynämäestä
+    - naantalilla
+    - naantalilta
+    - naantalissa
+    - naantalista
+    - nousiaisilla
+    - nousiaisilta
+    - nousiaisissa
+    - nousiaisista
+    - oripäällä
+    - oripäältä
+    - oripäässä
+    - oripäästä
+    - paimiolla
+    - paimiolta
+    - paimiossa
+    - paimiosta
+    - paraisilla
+    - paraisilta
+    - paraisissa
+    - paraisista
+    - pyhärannalla
+    - pyhärannalta
+    - pyhärannassa
+    - pyhärannasta
+    - pöytyällä
+    - pöytyältä
+    - pöytyässä
+    - pöytyästä
+    - raisiolla
+    - raisiolta
+    - raisiossa
+    - raisiosta
+    - ruskolla
+    - ruskolta
+    - ruskossa
+    - ruskosta
+    - salolla
+    - salolta
+    - salossa
+    - salosta
+    - sauvolla
+    - sauvolta
+    - sauvossa
+    - sauvosta
+    - somerolla
+    - somerolta
+    - somerossa
+    - somerosta
+    - taalintehdas
+    - taalintehtaalta
+    - taivassalolla
+    - taivassalolta
+    - taivassalossa
+    - taivassalosta
+    - turulla
+    - turulta
+    - turussa
+    - turusta
+    - uudellakaupungilla
+    - uudellakaupungilta
+    - uudessakaupungissa
+    - uudessakaupungista
+    - vehmaalla
+    - vehmaalta
+    - vehmaassa
+    - vehmaasta
+    - yläne
+    - yläneellä
+    - yläneeltä
+    - åbo

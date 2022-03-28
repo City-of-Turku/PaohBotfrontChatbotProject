@@ -1,0 +1,169 @@
+stories:
+  - story: Kirjasto
+    steps:
+      - intent: P25.1_library
+        user: haluan kirjastoon
+        entities: []
+      - action: utter_library_intro
+      - action: utter_library_search_more
+      - checkpoint: Kirjasto__branches
+    metadata:
+      group: Vapaa-aika
+  - story: Kirjasto__No more
+    steps:
+      - checkpoint: Kirjasto__branches
+      - intent: 'no'
+        entities: []
+      - checkpoint: link-to-Paluu alkuun/d91f6161-3ebe-4bee-86b0-d0fa9143bf99
+    metadata:
+      group: Vapaa-aika
+  - story: Kirjasto__Show more
+    steps:
+      - checkpoint: Kirjasto__branches
+      - intent: 'yes'
+        entities: []
+      - action: municipality_form
+      - active_loop: municipality_form
+      - active_loop: null
+      - checkpoint: Kirjasto__Show_more__branches
+    metadata:
+      group: Vapaa-aika
+  - story: Kirjasto__Show more__Municipality
+    steps:
+      - checkpoint: Kirjasto__Show_more__branches
+      - slot_was_set:
+          - recommend_services_whole_area: false
+      - action: utter_library_services_municipality
+      - action: action_recommend_services_by_class
+      - checkpoint: Kirjasto__Show_more__Municipality__branches
+    metadata:
+      group: Vapaa-aika
+  - story: Kirjasto__Show more__Municipality__No services found
+    steps:
+      - checkpoint: Kirjasto__Show_more__Municipality__branches
+      - slot_was_set:
+          - recommend_services_success: false
+      - checkpoint: link-to-Paluu alkuun/d91f6161-3ebe-4bee-86b0-d0fa9143bf99
+    metadata:
+      group: Vapaa-aika
+  - story: Kirjasto__Show more__Municipality__Services found
+    steps:
+      - checkpoint: Kirjasto__Show_more__Municipality__branches
+      - slot_was_set:
+          - recommend_services_success: true
+      - checkpoint: >-
+          link-to-Palvelusuositus
+          palautekysely/8f58a5bb-84e1-4fd7-8135-7c5d2f218a14
+    metadata:
+      group: Vapaa-aika
+  - story: Kirjasto__Show more__Whole area
+    steps:
+      - checkpoint: Kirjasto__Show_more__branches
+      - slot_was_set:
+          - recommend_services_whole_area: true
+      - action: utter_library_services_whole_area
+      - action: action_recommend_services_by_class
+      - checkpoint: Kirjasto__Show_more__Whole_area__branches
+    metadata:
+      group: Vapaa-aika
+  - story: Kirjasto__Show more__Whole area__No services found
+    steps:
+      - checkpoint: Kirjasto__Show_more__Whole_area__branches
+      - slot_was_set:
+          - recommend_services_success: false
+      - checkpoint: link-to-Paluu alkuun/d91f6161-3ebe-4bee-86b0-d0fa9143bf99
+    metadata:
+      group: Vapaa-aika
+  - story: Kirjasto__Show more__Whole area__Services found
+    steps:
+      - checkpoint: Kirjasto__Show_more__Whole_area__branches
+      - slot_was_set:
+          - recommend_services_success: true
+      - checkpoint: >-
+          link-to-Palvelusuositus
+          palautekysely/8f58a5bb-84e1-4fd7-8135-7c5d2f218a14
+    metadata:
+      group: Vapaa-aika
+  - story: Urheilu
+    steps:
+      - intent: leisure_services
+        user: vapaa-aika
+        entities: []
+      - action: utter_leisure_intro
+      - action: utter_leisure_intro2
+      - intent: sports_service_search
+        entities: []
+      - action: utter_sports_intro
+      - action: action_reset_need_text_slots
+      - action: sports_service_search_form
+      - active_loop: sports_service_search_form
+      - active_loop: null
+      - checkpoint: Urheilu__branches
+    metadata:
+      group: Vapaa-aika
+  - story: Urheilu__Municipality
+    steps:
+      - checkpoint: Urheilu__branches
+      - slot_was_set:
+          - recommend_services_whole_area: false
+      - action: utter_search_sports_services_municipality
+      - action: action_recommend_services
+      - checkpoint: Urheilu__Municipality__branches
+    metadata:
+      group: Vapaa-aika
+  - story: Urheilu__Municipality__No services found
+    steps:
+      - checkpoint: Urheilu__Municipality__branches
+      - slot_was_set:
+          - recommend_services_success: false
+      - checkpoint: link-to-Paluu alkuun/d91f6161-3ebe-4bee-86b0-d0fa9143bf99
+    metadata:
+      group: Vapaa-aika
+  - story: Urheilu__Municipality__Services found
+    steps:
+      - checkpoint: Urheilu__Municipality__branches
+      - slot_was_set:
+          - recommend_services_success: true
+      - checkpoint: >-
+          link-to-Palvelusuositus
+          palautekysely/8f58a5bb-84e1-4fd7-8135-7c5d2f218a14
+    metadata:
+      group: Vapaa-aika
+  - story: Urheilu__Whole area
+    steps:
+      - checkpoint: Urheilu__branches
+      - slot_was_set:
+          - recommend_services_whole_area: true
+      - action: utter_search_sports_services_whole_area
+      - action: action_recommend_services
+      - checkpoint: Urheilu__Whole_area__branches
+    metadata:
+      group: Vapaa-aika
+  - story: Urheilu__Whole area__No services found
+    steps:
+      - checkpoint: Urheilu__Whole_area__branches
+      - slot_was_set:
+          - recommend_services_success: false
+      - checkpoint: link-to-Paluu alkuun/d91f6161-3ebe-4bee-86b0-d0fa9143bf99
+    metadata:
+      group: Vapaa-aika
+  - story: Urheilu__Whole area__Services found
+    steps:
+      - checkpoint: Urheilu__Whole_area__branches
+      - slot_was_set:
+          - recommend_services_success: true
+      - checkpoint: >-
+          link-to-Palvelusuositus
+          palautekysely/8f58a5bb-84e1-4fd7-8135-7c5d2f218a14
+    metadata:
+      group: Vapaa-aika
+  - story: Vapaa-aika intro
+    steps:
+      - intent: leisure_services
+        user: vapaa-aika
+        entities: []
+      - action: utter_leisure_intro
+      - action: utter_leisure_intro2
+    metadata:
+      group: Vapaa-aika
+rules: []

@@ -1,0 +1,96 @@
+stories:
+  - story: Avioero
+    steps:
+      - intent: P3.1_divorce
+        entities: []
+      - action: utter_divorce
+      - action: utter_divorce2
+      - action: utter_divorce_services
+      - action: action_recommend_services_by_intent_and_options
+      - checkpoint: Avioero__branches
+    metadata:
+      group: Perhe
+  - story: Avioero__No success
+    steps:
+      - checkpoint: Avioero__branches
+      - slot_was_set:
+          - recommend_services_success: false
+      - checkpoint: link-to-Paluu alkuun/d91f6161-3ebe-4bee-86b0-d0fa9143bf99
+    metadata:
+      group: Perhe
+  - story: Avioero__Success
+    steps:
+      - checkpoint: Avioero__branches
+      - slot_was_set:
+          - recommend_services_success: true
+      - checkpoint: >-
+          link-to-Palvelusuositus
+          palautekysely/8f58a5bb-84e1-4fd7-8135-7c5d2f218a14
+    metadata:
+      group: Perhe
+  - story: Avioliitto
+    steps:
+      - intent: P3.1_marriage
+        entities: []
+      - action: utter_marriage
+      - action: utter_marriage2
+      - action: utter_marriage_services
+      - action: action_recommend_services_by_intent_and_options
+      - checkpoint: Avioliitto__branches
+    metadata:
+      group: Perhe
+  - story: Avioliitto__No success
+    steps:
+      - checkpoint: Avioliitto__branches
+      - slot_was_set:
+          - recommend_services_success: false
+      - checkpoint: link-to-Paluu alkuun/d91f6161-3ebe-4bee-86b0-d0fa9143bf99
+    metadata:
+      group: Perhe
+  - story: Avioliitto__Success
+    steps:
+      - checkpoint: Avioliitto__branches
+      - slot_was_set:
+          - recommend_services_success: true
+      - checkpoint: >-
+          link-to-Palvelusuositus
+          palautekysely/8f58a5bb-84e1-4fd7-8135-7c5d2f218a14
+    metadata:
+      group: Perhe
+  - story: Lapsen saaminen
+    steps:
+      - intent: P3.2_having_child
+        entities: []
+      - action: utter_having_child_general
+      - action: action_recommend_services_by_intent_and_options
+      - checkpoint: Lapsen_saaminen__branches
+    metadata:
+      group: Perhe
+  - story: Lapsen saaminen__No success
+    steps:
+      - checkpoint: Lapsen_saaminen__branches
+      - slot_was_set:
+          - recommend_services_success: false
+      - checkpoint: link-to-Paluu alkuun/d91f6161-3ebe-4bee-86b0-d0fa9143bf99
+    metadata:
+      group: Perhe
+  - story: Lapsen saaminen__Success
+    steps:
+      - checkpoint: Lapsen_saaminen__branches
+      - slot_was_set:
+          - recommend_services_success: true
+      - checkpoint: >-
+          link-to-Palvelusuositus
+          palautekysely/8f58a5bb-84e1-4fd7-8135-7c5d2f218a14
+    metadata:
+      group: Perhe
+  - story: Perhe yleissivu
+    steps:
+      - intent: P3_family
+        user: perhepalvelut
+        entities: []
+      - action: utter_family
+      - action: utter_family_choices
+    metadata:
+      group: Perhe
+rules: []

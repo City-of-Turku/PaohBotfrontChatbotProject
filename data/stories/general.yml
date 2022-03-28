@@ -1,0 +1,179 @@
+stories:
+  - story: Aloitus
+    steps:
+      - or:
+          - intent: get_started
+            entities: []
+          - intent: chitchat.greet
+            entities: []
+      - action: utter_get_started
+      - action: utter_get_started_buttons
+    metadata:
+      group: General
+  - story: Anna palautetta
+    steps:
+      - intent: give_feedback
+        user: anna palautetta
+        entities: []
+      - action: utter_give_feedback
+      - action: utter_give_feedback2
+      - checkpoint: Anna_palautetta__branches
+    metadata:
+      group: General
+  - story: Anna palautetta__Negative feedback
+    steps:
+      - checkpoint: Anna_palautetta__branches
+      - or:
+          - intent: feedback_negative
+            entities: []
+          - intent: 'no'
+            entities: []
+      - action: utter_feedback_negative
+      - checkpoint: link-to-Paluu alkuun/d91f6161-3ebe-4bee-86b0-d0fa9143bf99
+    metadata:
+      group: General
+  - story: Anna palautetta__Positive feedback
+    steps:
+      - checkpoint: Anna_palautetta__branches
+      - or:
+          - intent: feedback_positive
+            entities: []
+          - intent: 'yes'
+            entities: []
+      - action: utter_feedback_positive
+      - checkpoint: link-to-Paluu alkuun/d91f6161-3ebe-4bee-86b0-d0fa9143bf99
+    metadata:
+      group: General
+  - story: Ei
+    steps:
+      - intent: 'no'
+        entities: []
+      - action: utter_no
+    metadata:
+      group: General
+  - story: Feedback reminder
+    steps:
+      - intent: EXTERNAL_feedback_reminder
+        entities: []
+      - action: utter_back_to_start
+    metadata:
+      group: General
+  - story: Kyllä
+    steps:
+      - intent: 'yes'
+        entities: []
+      - action: utter_yes
+    metadata:
+      group: General
+  - story: Mitä osaat
+    steps:
+      - or:
+          - intent: help
+            user: mitä osaat
+            entities: []
+          - intent: who_are_you
+            user: kuka olet?
+            entities: []
+      - action: utter_who_are_you
+      - action: utter_get_started_choose_life_event
+    metadata:
+      group: General
+  - story: Negatiivinen palaute
+    steps:
+      - intent: feedback_negative
+        entities: []
+      - action: utter_feedback_negative
+      - checkpoint: link-to-Paluu alkuun/d91f6161-3ebe-4bee-86b0-d0fa9143bf99
+    metadata:
+      group: General
+  - story: Paluu alkuun
+    steps:
+      - checkpoint: link-to-Paluu alkuun/d91f6161-3ebe-4bee-86b0-d0fa9143bf99
+      - action: utter_back_to_start
+    metadata:
+      group: General
+  - story: Palvelusuositus palautekysely
+    steps:
+      - checkpoint: >-
+          link-to-Palvelusuositus
+          palautekysely/8f58a5bb-84e1-4fd7-8135-7c5d2f218a14
+      - action: action_set_feedback_reminder
+      - action: utter_feedback
+      - checkpoint: Palvelusuositus_palautekysely__branches
+    metadata:
+      group: General
+  - story: Palvelusuositus palautekysely__Negative feedback
+    steps:
+      - checkpoint: Palvelusuositus_palautekysely__branches
+      - or:
+          - intent: feedback_negative
+            entities: []
+          - intent: 'no'
+            entities: []
+      - action: utter_feedback_negative
+      - checkpoint: link-to-Paluu alkuun/d91f6161-3ebe-4bee-86b0-d0fa9143bf99
+    metadata:
+      group: General
+  - story: Palvelusuositus palautekysely__Positive feedback
+    steps:
+      - checkpoint: Palvelusuositus_palautekysely__branches
+      - or:
+          - intent: feedback_positive
+            entities: []
+          - intent: 'yes'
+            entities: []
+      - action: utter_feedback_positive
+      - checkpoint: link-to-Paluu alkuun/d91f6161-3ebe-4bee-86b0-d0fa9143bf99
+    metadata:
+      group: General
+  - story: Positiivinen palaute
+    steps:
+      - intent: feedback_positive
+        entities: []
+      - action: utter_feedback_positive
+      - checkpoint: link-to-Paluu alkuun/d91f6161-3ebe-4bee-86b0-d0fa9143bf99
+    metadata:
+      group: General
+rules:
+  - rule: Hyvästit
+    condition: []
+    steps:
+      - intent: chitchat.bye
+      - action: utter_bye
+    metadata:
+      group: General
+  - rule: Kellonaika
+    condition: []
+    steps:
+      - intent: what_time_is_it
+        user: paljonko kello on?
+        entities: []
+      - action: utter_what_time_is_it
+    metadata:
+      group: General
+  - rule: Kiitos
+    condition: []
+    steps:
+      - intent: thank_you
+        user: kiitos
+        entities: []
+      - action: utter_thank_you
+    metadata:
+      group: General
+  - rule: Kirosanat
+    condition: []
+    steps:
+      - intent: swear_words
+        entities: []
+      - action: utter_back_to_start
+    metadata:
+      group: General
+  - rule: Vitsit
+    condition: []
+    steps:
+      - intent: tell_joke
+        user: kerro vitsi
+        entities: []
+      - action: utter_tell_joke
+    metadata:
+      group: General

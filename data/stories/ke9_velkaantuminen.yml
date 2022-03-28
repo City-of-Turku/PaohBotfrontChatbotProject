@@ -1,0 +1,59 @@
+stories:
+  - story: Ulosotto
+    steps:
+      - intent: P15.5_distraint
+        entities: []
+      - action: utter_distraint_general
+      - action: utter_distraint_more
+      - action: utter_distraint_services
+      - action: action_recommend_services_by_class
+      - checkpoint: Ulosotto__branches
+    metadata:
+      group: KE9 Velkaantuminen
+  - story: Ulosotto__No success
+    steps:
+      - checkpoint: Ulosotto__branches
+      - slot_was_set:
+          - recommend_services_success: false
+      - checkpoint: link-to-Paluu alkuun/d91f6161-3ebe-4bee-86b0-d0fa9143bf99
+    metadata:
+      group: KE9 Velkaantuminen
+  - story: Ulosotto__Success
+    steps:
+      - checkpoint: Ulosotto__branches
+      - slot_was_set:
+          - recommend_services_success: true
+      - checkpoint: >-
+          link-to-Palvelusuositus
+          palautekysely/8f58a5bb-84e1-4fd7-8135-7c5d2f218a14
+    metadata:
+      group: KE9 Velkaantuminen
+  - story: Velkaantuminen
+    steps:
+      - intent: ke9_debt
+        user: velkaantuminen
+        entities: []
+      - action: utter_ke9_intro
+      - action: action_recommend_services_by_intent
+      - checkpoint: Velkaantuminen__branches
+    metadata:
+      group: KE9 Velkaantuminen
+  - story: Velkaantuminen__No services found
+    steps:
+      - checkpoint: Velkaantuminen__branches
+      - slot_was_set:
+          - recommend_services_success: false
+      - checkpoint: link-to-Paluu alkuun/d91f6161-3ebe-4bee-86b0-d0fa9143bf99
+    metadata:
+      group: KE9 Velkaantuminen
+  - story: Velkaantuminen__Services found
+    steps:
+      - checkpoint: Velkaantuminen__branches
+      - slot_was_set:
+          - recommend_services_success: true
+      - checkpoint: >-
+          link-to-Palvelusuositus
+          palautekysely/8f58a5bb-84e1-4fd7-8135-7c5d2f218a14
+    metadata:
+      group: KE9 Velkaantuminen
+rules: []

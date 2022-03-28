@@ -1,0 +1,155 @@
+stories:
+  - story: Asuminen
+    steps:
+      - intent: P1_living
+        entities: []
+      - action: utter_living_general
+    metadata:
+      group: Asuminen
+  - story: Muuttaminen
+    steps:
+      - intent: P1.5_moving
+        entities: []
+      - action: utter_P1.5_moving_intro
+      - checkpoint: >-
+          link-to-Palvelusuositus
+          palautekysely/8f58a5bb-84e1-4fd7-8135-7c5d2f218a14
+    metadata:
+      group: Asuminen
+  - story: Omistusasuminen
+    steps:
+      - intent: P1.2_owner_occupation
+        entities: []
+      - action: utter_owner_occupation_general
+      - action: action_reset_municipality_slot_if_region
+      - action: municipality_form
+      - active_loop: municipality_form
+      - active_loop: null
+      - checkpoint: Omistusasuminen__branches
+    metadata:
+      group: Asuminen
+  - story: Omistusasuminen__Municipality
+    steps:
+      - checkpoint: Omistusasuminen__branches
+      - slot_was_set:
+          - recommend_services_whole_area: false
+      - action: utter_owner_occupation_more
+      - action: action_recommend_services_by_class
+      - checkpoint: Omistusasuminen__Municipality__branches
+    metadata:
+      group: Asuminen
+  - story: Omistusasuminen__Municipality__No success
+    steps:
+      - checkpoint: Omistusasuminen__Municipality__branches
+      - slot_was_set:
+          - recommend_services_success: false
+      - checkpoint: link-to-Paluu alkuun/d91f6161-3ebe-4bee-86b0-d0fa9143bf99
+    metadata:
+      group: Asuminen
+  - story: Omistusasuminen__Municipality__Success
+    steps:
+      - checkpoint: Omistusasuminen__Municipality__branches
+      - slot_was_set:
+          - recommend_services_success: true
+      - checkpoint: >-
+          link-to-Palvelusuositus
+          palautekysely/8f58a5bb-84e1-4fd7-8135-7c5d2f218a14
+    metadata:
+      group: Asuminen
+  - story: Omistusasuminen__Whole area
+    steps:
+      - checkpoint: Omistusasuminen__branches
+      - slot_was_set:
+          - recommend_services_whole_area: true
+      - action: utter_owner_occupation_more
+      - action: action_recommend_services_by_class
+      - checkpoint: Omistusasuminen__Whole_area__branches
+    metadata:
+      group: Asuminen
+  - story: Omistusasuminen__Whole area__No success
+    steps:
+      - checkpoint: Omistusasuminen__Whole_area__branches
+      - slot_was_set:
+          - recommend_services_success: false
+      - checkpoint: link-to-Paluu alkuun/d91f6161-3ebe-4bee-86b0-d0fa9143bf99
+    metadata:
+      group: Asuminen
+  - story: Omistusasuminen__Whole area__Success
+    steps:
+      - checkpoint: Omistusasuminen__Whole_area__branches
+      - slot_was_set:
+          - recommend_services_success: true
+      - checkpoint: >-
+          link-to-Palvelusuositus
+          palautekysely/8f58a5bb-84e1-4fd7-8135-7c5d2f218a14
+    metadata:
+      group: Asuminen
+  - story: Vuokra-asuminen
+    steps:
+      - intent: P1.1_rent_living
+        entities: []
+      - action: utter_rent_living_general
+      - action: action_reset_municipality_slot_if_region
+      - action: municipality_form
+      - active_loop: municipality_form
+      - active_loop: null
+      - checkpoint: Vuokra-asuminen__branches
+    metadata:
+      group: Asuminen
+  - story: Vuokra-asuminen__Municipality
+    steps:
+      - checkpoint: Vuokra-asuminen__branches
+      - slot_was_set:
+          - recommend_services_whole_area: false
+      - action: utter_rent_living_more
+      - action: action_recommend_services_by_class
+      - checkpoint: Vuokra-asuminen__Municipality__branches
+    metadata:
+      group: Asuminen
+  - story: Vuokra-asuminen__Municipality__No success
+    steps:
+      - checkpoint: Vuokra-asuminen__Municipality__branches
+      - slot_was_set:
+          - recommend_services_success: false
+      - checkpoint: link-to-Paluu alkuun/d91f6161-3ebe-4bee-86b0-d0fa9143bf99
+    metadata:
+      group: Asuminen
+  - story: Vuokra-asuminen__Municipality__Success
+    steps:
+      - checkpoint: Vuokra-asuminen__Municipality__branches
+      - slot_was_set:
+          - recommend_services_success: true
+      - checkpoint: >-
+          link-to-Palvelusuositus
+          palautekysely/8f58a5bb-84e1-4fd7-8135-7c5d2f218a14
+    metadata:
+      group: Asuminen
+  - story: Vuokra-asuminen__Whole area
+    steps:
+      - checkpoint: Vuokra-asuminen__branches
+      - slot_was_set:
+          - recommend_services_whole_area: true
+      - action: utter_rent_living_more
+      - action: action_recommend_services_by_class
+      - checkpoint: Vuokra-asuminen__Whole_area__branches
+    metadata:
+      group: Asuminen
+  - story: Vuokra-asuminen__Whole area__No success
+    steps:
+      - checkpoint: Vuokra-asuminen__Whole_area__branches
+      - slot_was_set:
+          - recommend_services_success: false
+      - checkpoint: link-to-Paluu alkuun/d91f6161-3ebe-4bee-86b0-d0fa9143bf99
+    metadata:
+      group: Asuminen
+  - story: Vuokra-asuminen__Whole area__Success
+    steps:
+      - checkpoint: Vuokra-asuminen__Whole_area__branches
+      - slot_was_set:
+          - recommend_services_success: true
+      - checkpoint: >-
+          link-to-Palvelusuositus
+          palautekysely/8f58a5bb-84e1-4fd7-8135-7c5d2f218a14
+    metadata:
+      group: Asuminen
+rules: []

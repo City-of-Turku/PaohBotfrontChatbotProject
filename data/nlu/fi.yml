@@ -1,0 +1,2683 @@
+version: "2.0"
+nlu:
+- intent: KE10_pension
+  metadata:
+    language: fi
+  examples:
+  - text: |
+      Eläke
+    metadata:
+      canonical: true
+  - text: |
+      Eläkeläinen
+  - text: |
+      Eläkeläiselle
+  - text: |
+      Eläkeläisten palveluita
+  - text: |
+      Eläkkeelle
+  - text: |
+      Eläkkeen
+  - text: |
+      Eläköidyn
+  - text: |
+      Eläköityminen
+  - text: |
+      Etsin tietoa eläkkeistä.
+  - text: |
+      Jään eläkkeelle
+  - text: |
+      Jään eläkkeelle.
+  - text: |
+      Kansaneläke
+  - text: |
+      Miten osa-aikaeläkkeelle?
+  - text: |
+      Olen jäämässä eläkkeelle.
+  - text: |
+      Osa-aikaeläke
+  - text: |
+      Työeläke
+  - text: |
+      haluan tietoa eläkkeistä
+  - text: |
+      kerros jotain eläkkeelle jäämisestä
+  - text: |
+      miten pääsen eläkkeelle?
+  - text: |
+      miten saan eläkettä?
+  - text: |
+      tarvitsen apua eläkeasioihin
+- intent: P1.1_rent_living
+  metadata:
+    language: fi
+  examples:
+  - text: |
+      Etsin vuokra-asuntoa.
+    metadata:
+      canonical: true
+  - text: |
+      Mistä vuokra-asunto?
+  - text: |
+      Miten löydän vuokra-asunnon?
+  - text: |
+      Vapaat vuokra-asunnot.
+  - text: |
+      Vuokra-asuminen
+  - text: |
+      Vuokra-asunnot [Laitila](municipality)
+    metadata:
+      canonical: true
+  - text: |
+      Vuokralaiselle
+  - text: |
+      Vuokralaisen
+  - text: |
+      Vuokralaista
+  - text: |
+      Vuokralle
+  - text: |
+      Vuokrattavat asunnot
+  - text: |
+      Vuokrattavissa olevat asunnot.
+  - text: |
+      haluan vuokra-asunnon
+  - text: |
+      miten saan vuokrakämpän
+  - text: |
+      vuokraasunnot
+  - text: |
+      vuokrakämppä
+- intent: P1.2_owner_occupation
+  metadata:
+    language: fi
+  examples:
+  - text: |
+      Asunnon osto.
+    metadata:
+      canonical: true
+  - text: |
+      Haluan oman asunnon.
+  - text: |
+      Mistä saan ostettua asunnon?
+  - text: |
+      Oma asunto
+  - text: |
+      Oma asunto.
+  - text: |
+      Omistusasunto
+  - text: |
+      haluan ostaa kämpän
+  - text: |
+      haluan ostaa talon
+  - text: |
+      omistusasuminen
+- intent: P1.5_moving
+  metadata:
+    language: fi
+  examples:
+  - text: |
+      Apua muuttamiseen.
+  - text: |
+      Apua muuttoon.
+  - text: |
+      Haluan muuttaa [Turkuun]{"entity": "municipality", "value": "Turku"}
+    metadata:
+      canonical: true
+  - text: |
+      Haluan muuttaa.
+  - text: |
+      Mistä löydän muutto ilmoitukset?
+  - text: |
+      Mistä saan muuttoilmoituksen
+  - text: |
+      Miten muutan?
+  - text: |
+      Mä muutan kaarinaan
+  - text: |
+      Olen muuttamassa
+    metadata:
+      canonical: true
+  - text: |
+      Olen muuttamassa.
+  - text: |
+      millaisia ilmoituksia tarvitaan muutossa?
+  - text: |
+      miten muutan paikkakuntaa?
+  - text: |
+      miten teen muuttoilmoituksen?
+  - text: |
+      mitä ilmotuksia teen muuttaessa asuinpaikkaa?
+  - text: |
+      mitä mun pitää tehdä, jos muutan
+  - text: |
+      muutan paikkakuntaa
+  - text: |
+      muutan uudelle paikkakunnalle
+  - text: |
+      muuttaminen
+  - text: |
+      muuttoilmoitus
+- intent: P15.3_loan
+  metadata:
+    language: fi
+  examples:
+  - text: |
+      Haluan asuntolainan.
+    metadata:
+      canonical: true
+  - text: |
+      Haluan hakea lainaa.
+  - text: |
+      Laina
+  - text: |
+      Lainan vaihtoehdot
+  - text: |
+      Mistä saan lainaa?
+  - text: |
+      Miten saan sosiaalista luottoa.
+  - text: |
+      Mitä eri lainatyyppejä on?
+  - text: |
+      Taritsen lainan
+  - text: |
+      Tietoa lainoista
+  - text: |
+      Tietoa luotoista
+  - text: |
+      Vaihtoehtoja lainalle.
+  - text: |
+      lainat
+  - text: |
+      luotot
+  - text: |
+      luotto
+  - text: |
+      mikä on sosiaalinen luotto?
+  - text: |
+      tarvitsen lainaa
+  - text: |
+      voinko saada sosiaalista luottoa
+- intent: P15.5_distraint
+  metadata:
+    language: fi
+  examples:
+  - text: |
+      Jouduin ulosottoon.
+  - text: |
+      Miten päästä pois ulosotosta?
+  - text: |
+      Mitä tehdä ulosotossa?
+  - text: |
+      Mitä voin tehdä, kun jouduin ulosottoon?
+  - text: |
+      Tietoa ulosotosta
+  - text: |
+      Ulosotto
+    metadata:
+      canonical: true
+- intent: P16.5_public_transport
+  metadata:
+    language: fi
+  examples:
+  - text: |
+      Bussiliikenne
+  - text: |
+      Joukkoliikenne
+  - text: |
+      Joukkoliikennetiedot
+  - text: |
+      Julkinen liikenne
+  - text: |
+      Julkisen liikenteen palvelut
+  - text: |
+      Liikenne
+  - text: |
+      föli
+  - text: |
+      föli kiinnostaisi kovasti
+  - text: |
+      haluan nähdä fölin aikataulut
+  - text: |
+      joukkoliikenne
+  - text: |
+      mikä on föli?
+  - text: |
+      miten bussit kulkee?
+    metadata:
+      canonical: true
+  - text: |
+      miten dösä kulkee?
+  - text: |
+      miten föli kulkee?
+  - text: |
+      miten linja-autot kulkee
+  - text: |
+      miten löydän dösään?
+  - text: |
+      miten nysse kulkee?
+  - text: |
+      miten pääsen nysseen
+  - text: |
+      onko [turussa]{"entity": "municipality", "value": "Turku"} raitiovaunua?
+    metadata:
+      canonical: true
+  - text: |
+      pitäis päästä bussilla kultarantaan
+- intent: P1_living
+  metadata:
+    language: fi
+  examples:
+  - text: |
+      Asuminen
+    metadata:
+      canonical: true
+  - text: |
+      Asumisasiat
+  - text: |
+      Asunnot
+  - text: |
+      Asunto
+  - text: |
+      Etsin asumisen palveluita?
+  - text: |
+      Mistä asunto?
+  - text: |
+      Tietoa asumisesta.
+  - text: |
+      asunnot
+  - text: |
+      haluan tietoa asunnoista
+  - text: |
+      tarvitsen tietoa asumiseen
+- intent: P25.1_library
+  metadata:
+    language: fi
+  examples:
+  - text: |
+      Kirjastopalvelut
+    metadata:
+      canonical: true
+  - text: |
+      haluan kirjastoon
+  - text: |
+      haluan lainata kirjoja
+  - text: |
+      kirjasto
+  - text: |
+      kirjasto palvelu
+  - text: |
+      kirjaston palvelut
+  - text: |
+      kirjastopalveluita
+  - text: |
+      missä lähin kirjasto?
+  - text: |
+      mistä pääsen lainaamaan kirjan
+  - text: |
+      miten pääsen kirjastoon
+- intent: P3.1_divorce
+  metadata:
+    language: fi
+  examples:
+  - text: |
+      Avioero
+    metadata:
+      canonical: true
+  - text: |
+      Avioerohakemus
+  - text: |
+      Avioliiton purkaminen
+  - text: |
+      Avioliitosta eroaminen
+  - text: |
+      Aviosta eroaminen
+  - text: |
+      Ero
+  - text: |
+      Haluan eron
+  - text: |
+      Miten saan avioeron?
+  - text: |
+      avioero
+  - text: |
+      haluan avioeron
+  - text: |
+      haluan erota
+  - text: |
+      haluan erota miehestäni
+  - text: |
+      haluan erota vaimostani
+  - text: |
+      kerro avioerosta
+  - text: |
+      miten saan avioeron?
+  - text: |
+      olen eroamassa
+- intent: P3.1_marriage
+  metadata:
+    language: fi
+  examples:
+  - text: |
+      Avio
+    metadata:
+      canonical: true
+  - text: |
+      Avio liitto
+  - text: |
+      Avioliitto
+  - text: |
+      Aviopari
+  - text: |
+      Haluan naimisiin.
+  - text: |
+      Häät
+  - text: |
+      Naimisiin
+  - text: |
+      Olen menossa avioliittoon.
+  - text: |
+      Parisuhde
+  - text: |
+      Vihkiminen
+  - text: |
+      Vihkimys
+  - text: |
+      avioliitto
+  - text: |
+      haluan avioliittoon
+  - text: |
+      haluan naimisiin
+  - text: |
+      kerro avioliitosta
+  - text: |
+      mitä teen avioliitossa?
+  - text: |
+      olen menossa naimisiin
+- intent: P3.2_having_child
+  metadata:
+    language: fi
+  examples:
+  - text: |
+      Lapsen saaminen
+  - text: |
+      Lapsen saanti
+  - text: |
+      Lapsen synnyttäminen
+  - text: |
+      Minulle tulee vauva.
+  - text: |
+      Olen saamassa lapsen.
+    metadata:
+      canonical: true
+  - text: |
+      Olen tulossa isäksi.
+  - text: |
+      Olen tulossa äidiksi.
+  - text: |
+      Saan vauvan.
+  - text: |
+      Synnytys
+  - text: |
+      Tulossa perheenlisäystä.
+  - text: |
+      Vauvan saanti
+- intent: P3.4_lastenhoitopalvelut
+  metadata:
+    language: fi
+  examples:
+  - text: |
+      Lastenhoitopalvelut
+    metadata:
+      canonical: true
+  - text: |
+      haluan apua lasten hoitoon
+  - text: |
+      mistä saan lastenhoitopalvelut
+  - text: |
+      miten saan lastenhoitopaikan?
+  - text: |
+      palveluita lastenhoitoon
+  - text: |
+      tarvitsen tukea lapseni hoitamiseen
+- intent: P3_family
+  metadata:
+    language: fi
+  examples:
+  - text: |
+      Apua perheelle
+  - text: |
+      Apua perheen asioihin
+  - text: |
+      Etsin palveluita perheelle.
+  - text: |
+      Haluan palveluita perheelleni
+  - text: |
+      Perhe
+  - text: |
+      Perheen
+  - text: |
+      Perheeseen
+  - text: |
+      Perhepalvelut kiinnostaa
+  - text: |
+      Tietoa perheistä
+  - text: |
+      kerro palveluista perheille
+  - text: |
+      perhe
+  - text: |
+      perheasiat
+  - text: |
+      perheiden palvelut
+  - text: |
+      perheille apua
+  - text: |
+      perhepalvelut
+    metadata:
+      canonical: true
+- intent: P4.10_social_assistance_benefit
+  metadata:
+    language: fi
+  examples:
+  - text: |
+      Kelan toimeentulotuki
+  - text: |
+      Mihin ehkäisevää toimeentulotukea myönnetään
+  - text: |
+      Mihin täydentävää toimeentulotukea myönnetään
+  - text: |
+      Miksi en saa kaikkea toimeentulotukea yhdestä paikasta
+  - text: |
+      Mistä saan toimeentulotukea
+    metadata:
+      canonical: true
+  - text: |
+      Miten haetaan sosiaalista luottoa
+  - text: |
+      Miten saan toimeentulotukea?
+  - text: |
+      Mitä liitteitä täytyy toimittaa liittyen ehkäisevään toimeentulotukeen
+  - text: |
+      Mitä liitteitä täytyy toimittaa liittyen täydentävään toimeentulotukeen
+  - text: |
+      Tarvitsen tukea toimeentuloon.
+  - text: |
+      auta saamaan toimeentulotukea
+  - text: |
+      haluan perustoimeentulotukea
+  - text: |
+      haluan toimeentulotukee
+  - text: |
+      kerro miten voin saada toimeentulotuet?
+  - text: |
+      mistä voin saada perustoimeentulotukee
+  - text: |
+      miten saan toimeentulotukee kun ei oo rahaa?
+  - text: |
+      perustoimeentulotuki
+  - text: |
+      toimeentulotuki
+  - text: |
+      tukea toimeentuloon
+- intent: P4.1_housing_allowance
+  metadata:
+    language: fi
+  examples:
+  - text: |
+      Asumisen tuki
+    metadata:
+      canonical: true
+  - text: |
+      Asumistuet
+  - text: |
+      Asumistuki
+  - text: |
+      Kelan asumistuki
+  - text: |
+      Tukea asumiseen
+  - text: |
+      asumistuki
+  - text: |
+      haluan asumistukea
+  - text: |
+      haluan tiedää tuesta asumiseen
+  - text: |
+      kerro asumisen tuista?
+  - text: |
+      miten saan asumistukea?
+- intent: P4.3_kotitalouspalvelut
+  metadata:
+    language: fi
+  examples:
+  - text: |
+      Kotitalouspalvelut
+    metadata:
+      canonical: true
+  - text: |
+      apua kodin hoitoon
+  - text: |
+      apua kodinhoitoon
+  - text: |
+      apua kotiin
+  - text: |
+      haluan kotitalouspalveluita
+  - text: |
+      haluun apua kodin askareisiin
+  - text: |
+      haluun jeesiä kotiaskareisiin
+  - text: |
+      kodin palvelut
+  - text: |
+      kotiin palveluita
+  - text: |
+      kotitaloudelle
+  - text: |
+      missä kotitalouspalveuita?
+  - text: |
+      miten saan apua kotitöihin
+  - text: |
+      miten saan kotitalouspalvelun
+  - text: |
+      palvelut kotiin
+- intent: P5.10_oral_health
+  metadata:
+    language: fi
+  examples:
+  - text: |
+      Haluan hammashoitoajan.
+  - text: |
+      Haluan hammaslääkäriajan.
+  - text: |
+      Haluan hammaslääkäriin
+    metadata:
+      canonical: true
+  - text: |
+      Hammashoito
+  - text: |
+      Hammaslääkäri
+  - text: |
+      Hammaslääkäriin
+  - text: |
+      Hammastarkastus
+  - text: |
+      Suuhygienisti
+  - text: |
+      Suun terveydenhuolto
+  - text: |
+      Tarvitsen hammastarkastuksen
+  - text: |
+      apua hampaiden hoitoon
+  - text: |
+      hammaslääkäri
+  - text: |
+      hammaslääkärit
+  - text: |
+      hampaani on kipeä
+  - text: |
+      hampaassani on reikä
+  - text: |
+      miten pääsen hammaslääkäriin
+  - text: |
+      mulla on hammas kipeä
+- intent: P5.1_basic_healthcare
+  metadata:
+    language: fi
+  examples:
+  - text: |
+      Etsin perusterveydenhuollon palveluita.
+    metadata:
+      canonical: true
+  - text: |
+      Haluan lääkäriin?
+  - text: |
+      Lääkäriin
+  - text: |
+      Missä on terveyskeskus?
+  - text: |
+      Miten pääsen lääkärin vastaanotolle?
+  - text: |
+      Miten pääsen terveyskeskukseen?
+  - text: |
+      Miten saan ajan lääkärille?
+  - text: |
+      Perusterveydenhoito
+  - text: |
+      Perusterveydenhuolto
+  - text: |
+      Terveyskeskus
+  - text: |
+      Terveystarkastus
+  - text: |
+      apua perusterveyden hoitoon
+  - text: |
+      haluan terveystarkastukseen
+  - text: |
+      kerro perusterveyspalveluista
+  - text: |
+      miten pääsen perusterveyshuoltoon
+  - text: |
+      perusterveydenhuollon palvelut
+  - text: |
+      perusterveyshoito
+- intent: P5.2_maternity_clinic
+  metadata:
+    language: fi
+  examples:
+  - text: |
+      Missä on äitiysneuvola?
+  - text: |
+      Mistä löydän neuvolat
+    metadata:
+      canonical: true
+  - text: |
+      Miten pääsen äitiysneuvolaan?
+  - text: |
+      Neuvola
+  - text: |
+      Neuvolan yhteystiedot
+  - text: |
+      Neuvolapalvelut
+  - text: |
+      haluan neuvolaan
+  - text: |
+      missä on neuvolat
+  - text: |
+      miten pääsen neuvolaan
+  - text: |
+      miten saan neuvolapalveluita?
+  - text: |
+      neuvola
+  - text: |
+      tarvitsen neuvolasta apua
+  - text: |
+      Äitiysneuvola
+- intent: P5.3_vaccination
+  metadata:
+    language: fi
+  examples:
+  - text: |
+      Haluan rokotteen
+    metadata:
+      canonical: true
+  - text: |
+      Hauan koronarokotteen
+  - text: |
+      Influenssarokote
+  - text: |
+      Koronarokote
+  - text: |
+      Koronavirus
+  - text: |
+      Kuinka saan rokotusajan?
+  - text: |
+      Lista rokotteista
+  - text: |
+      Missä pääsen rokotukseen?
+  - text: |
+      Miten varaan ajan koronarokotukseen?
+  - text: |
+      Muut rokotukset
+  - text: |
+      Näytä kansallinen rokotusohjelma.
+  - text: |
+      Rokotus
+  - text: |
+      Rokotusohjelma
+  - text: |
+      Tietoa rokotuksista
+  - text: |
+      mistä saan rokotteen
+  - text: |
+      rokotukset
+  - text: |
+      tarviin koronarokokotteen
+- intent: P5.5_first_aid
+  metadata:
+    language: fi
+  examples:
+  - text: |
+      Ensiapu
+    metadata:
+      canonical: true
+  - text: |
+      Ensiapupaikat
+  - text: |
+      Ensiavun palvelut
+  - text: |
+      Lähin päivystys.
+  - text: |
+      Miten pääsen päivystykseen?
+  - text: |
+      Näytä ensiapuohjeet.
+  - text: |
+      Päivystyksen palvelut
+  - text: |
+      Päivystyksen puhelinnumero
+  - text: |
+      Päivystys
+  - text: |
+      Päivystyspaikat
+  - text: |
+      Tarvitsen ensiapua.
+  - text: |
+      Tarvitsen päivystystä.
+  - text: |
+      ensiapu
+  - text: |
+      haluan ensiapuun
+  - text: |
+      haluan ensiavun päivystykseen
+  - text: |
+      miten pääsen ensiapuun
+- intent: P5.6_special_care
+  metadata:
+    language: fi
+  examples:
+  - text: |
+      Erikoishoito
+    metadata:
+      canonical: true
+  - text: |
+      Erikoissairaanhoito
+  - text: |
+      Etsin sairaalahoidon palveluita.
+  - text: |
+      Keskussairaala
+  - text: |
+      Missä on erikoissairaahoito?
+  - text: |
+      Miten pääsen sairaanhoitoon?
+  - text: |
+      Näytä erikoissairaanhoidon palvelut.
+  - text: |
+      Sairaalahoito
+  - text: |
+      Sairaanhoito
+  - text: |
+      haluan erikoissairaanhoitoon
+  - text: |
+      haluan sairaalaan
+  - text: |
+      missä on sairaala?
+  - text: |
+      miten pääsen sairaalaan
+  - text: |
+      sairaala
+  - text: |
+      tarvitsen apua sairaalaan
+- intent: P5_healthcare
+  metadata:
+    language: fi
+  examples:
+  - text: |
+      Etsin terveydenhoidon palveluita.
+  - text: |
+      Etsin terveydenhuollon palveluita.
+    metadata:
+      canonical: true
+  - text: |
+      Näytä terveyspalvelut.
+  - text: |
+      Terveydenhoito
+  - text: |
+      Terveydenhuolto
+  - text: |
+      Terveys
+  - text: |
+      Terveyspalvelut
+  - text: |
+      apua terveyteen
+  - text: |
+      haluan apua terveyteen
+  - text: |
+      tarvitsen terveyspalveluita
+  - text: |
+      terveyspalvelut
+- intent: P6.1_daycare
+  metadata:
+    language: fi
+  examples:
+  - text: |
+      Haluan lapselle päivähoitopaikan.
+    metadata:
+      canonical: true
+  - text: |
+      Lähin päiväkoti
+  - text: |
+      Mistä päivähoitopaikka?
+  - text: |
+      Miten päivähoitoa?
+  - text: |
+      Näytä varhaiskasvatuksen palveluita.
+  - text: |
+      Päivähoidon
+  - text: |
+      Päivähoito
+  - text: |
+      Päivähoitoa
+  - text: |
+      Päivähoitoon
+  - text: |
+      Päiväkoti
+  - text: |
+      Varhaiskasvatus
+  - text: |
+      lasten päivähoito
+  - text: |
+      lasten päivähoitopaikat
+  - text: |
+      palveluita lapseni päivähoitoon
+  - text: |
+      päivähoitopaikat
+- intent: P6.1_preschool
+  metadata:
+    language: fi
+  examples:
+  - text: |
+      Esikoulu
+    metadata:
+      canonical: true
+  - text: |
+      Esikoulupaikat
+  - text: |
+      Esikoulut
+  - text: |
+      Esikouluun
+  - text: |
+      Esiopetukseen
+  - text: |
+      Esiopetus
+  - text: |
+      Esiopetusmahdollisuudet
+  - text: |
+      Esiopetuspaikka
+  - text: |
+      Etsin esiopetuspaikkoja
+  - text: |
+      Haluan tietoa esikouluista.
+  - text: |
+      Missä esikoulut ovat?
+  - text: |
+      Missä esikoulut?
+  - text: |
+      Miten lapsi esikouluun?
+  - text: |
+      kerro minulle esikouluista
+  - text: |
+      miten lapseni pääsee esikouluun
+- intent: P6.2_basic_school
+  metadata:
+    language: fi
+  examples:
+  - text: |
+      Ala-aste
+  - text: |
+      Alakoulu
+  - text: |
+      Etsin peruskouluja.
+  - text: |
+      Lista peruskouluista.
+  - text: |
+      Missä on lähin peruskoulu?
+  - text: |
+      Mistä löytyy ala-aste?
+  - text: |
+      Näytä alueen peruskoulut.
+  - text: |
+      Perusaste
+  - text: |
+      Peruskoulu
+    metadata:
+      canonical: true
+  - text: |
+      Perusopetus
+  - text: |
+      Yläaste
+  - text: |
+      Yläkoulu
+- intent: P6.6_vocational_school
+  metadata:
+    language: fi
+  examples:
+  - text: |
+      Amikset
+    metadata:
+      canonical: true
+  - text: |
+      Ammatillinen koulutus
+  - text: |
+      Ammattikoulu
+  - text: |
+      Haluan ammattikouluun.
+  - text: |
+      Missä on lähin amis?
+  - text: |
+      Mitä ammattioppilaitoksia tiedät?
+  - text: |
+      Mitä voin opiskella ammattikoulussa?
+  - text: |
+      Näytä ammattikoulut.
+  - text: |
+      Toisen asteen ammatillinen
+- intent: P6.8_upper_secondary_school
+  metadata:
+    language: fi
+  examples:
+  - text: |
+      Abiturientti
+    metadata:
+      canonical: true
+  - text: |
+      Haluan mennä opiskelemaan lukioon.
+  - text: |
+      Haluan ylioppilaaksi.
+  - text: |
+      Lukio
+  - text: |
+      Lukiokoulutus
+  - text: |
+      Lukiolainen
+  - text: |
+      Lukioon
+  - text: |
+      Mikä on paras lukio?
+  - text: |
+      Miten pääsen lukioon?
+  - text: |
+      Mitä lukioita täällä on?
+  - text: |
+      Näytä lukiot.
+  - text: |
+      YO-kirjoitukset
+  - text: |
+      Ylioppilas
+  - text: |
+      Ylioppilaskirjoitukset
+- intent: P6.9_university
+  metadata:
+    language: fi
+  examples:
+  - text: |
+      Akateeminen
+    metadata:
+      canonical: true
+  - text: |
+      Akatemia
+  - text: |
+      Diplomi-insinööri
+  - text: |
+      Estin yliopistoja.
+  - text: |
+      Haluan filosofian masiteriksi.
+  - text: |
+      Haluan maisteriksi.
+  - text: |
+      Haluan tohtoriksi.
+  - text: |
+      Hauan yliopistolle.
+  - text: |
+      Kandidaatti
+  - text: |
+      Maisteri
+  - text: |
+      Missä on lähin yliopisto?
+  - text: |
+      Missä voi opiskella diplomi-insinööriksi?
+  - text: |
+      Mistä saan kandin tutkinnon?
+  - text: |
+      Miten pääsen lisensiaatiksi.
+  - text: |
+      Miten pääsen yliopistoon?
+  - text: |
+      Näytä yliopistot
+  - text: |
+      Yliopisto
+  - text: |
+      Yliopistollinen
+  - text: |
+      Yliopistot
+- intent: P6.9_university_of_applied_sciences
+  metadata:
+    language: fi
+  examples:
+  - text: |
+      AMK
+    metadata:
+      canonical: true
+  - text: |
+      Ammattikorkeakoulu
+  - text: |
+      Ammattikorkeakoulutus
+  - text: |
+      Haluan amkiin
+  - text: |
+      Haluan mennä AMK
+  - text: |
+      Kerro ammattikorkeakouluista
+  - text: |
+      Mitä ammattikorkeakouluja löytyy?
+  - text: |
+      Näytä ammattikorkeakoulut.
+  - text: |
+      ammattikorkeakoulu
+  - text: |
+      haluan amk
+  - text: |
+      haluan ammattikorkeaan
+  - text: |
+      haluan ammattikorkeakouluun
+- intent: P6_education
+  metadata:
+    language: fi
+  examples:
+  - text: |
+      Etsin tietoa kouluista.
+    metadata:
+      canonical: true
+  - text: |
+      Haluan kouluun.
+  - text: |
+      Hauan opiskelemaan
+  - text: |
+      Hauan opiskelemaan.
+  - text: |
+      Hauan suorittaa tutkinnon.
+  - text: |
+      Kerro, mitä minun pitäisi opiskella.
+  - text: |
+      Koulu
+  - text: |
+      Koulut
+  - text: |
+      Koulutus
+  - text: |
+      Missä voin opiskella?
+  - text: |
+      Miten pääsen kouluun?
+  - text: |
+      Mitä voin opiskella?
+  - text: |
+      Näytä koulut.
+  - text: |
+      Opinnot
+  - text: |
+      Opiskelu
+  - text: |
+      Opisto
+  - text: |
+      Opistot
+  - text: |
+      Oppilaitokset
+  - text: |
+      Tukea opintoihin
+  - text: |
+      Tutkinto
+- intent: P6_financial_aid_for_students
+  metadata:
+    language: fi
+  examples:
+  - text: |
+      Haluan hakea opintotukea.
+    metadata:
+      canonical: true
+  - text: |
+      Kelan opintotuki
+  - text: |
+      Mistä hakea opintotuki?
+  - text: |
+      Mistä saan opintotukea?
+  - text: |
+      Opintoraha
+  - text: |
+      Opintotuki
+  - text: |
+      Tukea opiskelijalle
+  - text: |
+      Tuki opintoihin
+  - text: |
+      Tuki opiskelijalle
+  - text: |
+      Tuki opiskeluun
+- intent: P8.2_elections
+  metadata:
+    language: fi
+  examples:
+  - text: |
+      Aluevaalien ehdokkaat.
+    metadata:
+      canonical: true
+  - text: |
+      Aluevaalit
+  - text: |
+      EU-vaalit
+  - text: |
+      Eduskuntavaalit
+  - text: |
+      Ehdokaslista
+  - text: |
+      Europarlamenttivaalit
+  - text: |
+      Koska on vaalit?
+  - text: |
+      Kunnallisvaalit
+  - text: |
+      Kuntavaalit
+  - text: |
+      Missä voin äänestöö?
+  - text: |
+      Missä äänestyspaikat?
+  - text: |
+      Mitä puolueita voi äänestää?
+  - text: |
+      Presidentinvaalit
+  - text: |
+      Puolueet
+  - text: |
+      Seuraavat vaalit
+  - text: |
+      Tietoa vaaleista
+  - text: |
+      Vaalien ehdokkaat
+  - text: |
+      Vaalipiirit
+  - text: |
+      Vaalit
+  - text: |
+      haluan äänestää
+  - text: |
+      kerro presidentinvaaleista
+  - text: |
+      miten äänestän aluevaaleissa?
+  - text: |
+      miten äänestän presidenttiä?
+  - text: |
+      Äänestys
+  - text: |
+      Äänestäminen
+  - text: |
+      Äänestämisvaihtoehdot
+- intent: P8.3_citizens_initiative
+  metadata:
+    language: fi
+  examples:
+  - text: |
+      Haluan kannattaa kansalaisaloitetta.
+  - text: |
+      Kansalaisaloite
+    metadata:
+      canonical: true
+  - text: |
+      Kansalasaloitteet
+  - text: |
+      Kuntalaisaloite
+  - text: |
+      Missä voin tehdä kansalaisaloitteen?
+  - text: |
+      Miten voin kannattaa kansalaisaloitetta?
+  - text: |
+      haluan tehdä kansalaisaloitteen
+  - text: |
+      haluan tehdä kuntalaisaloitteen
+  - text: |
+      kansalaisaloitteet
+  - text: |
+      kerro kansalaisaloitteista
+  - text: |
+      kerro kuntalaisaloitteista
+  - text: |
+      kuntalaisaloitteet
+  - text: |
+      mikä on kansalaisaloite?
+  - text: |
+      mikä on kuntalaisaloite?
+- intent: P8_politics
+  metadata:
+    language: fi
+  examples:
+  - text: |
+      Kansalaisen vaikuttaminen
+    metadata:
+      canonical: true
+  - text: |
+      Kansalaisen vaikutusmahdollisuudet
+  - text: |
+      Politiikka
+  - text: |
+      Vaikuttamismahdollisuudet
+  - text: |
+      apua kansalaisvaikuttamiseen
+  - text: |
+      haluan tietää kansalaisvaikuttamisesta
+  - text: |
+      kansalaisvaikuttaminen
+  - text: |
+      kerro politiikasta
+  - text: |
+      miten pääsen politiikkaan
+  - text: |
+      miten voin vaikuttaa kansalaisena?
+  - text: |
+      politiikka
+- intent: all_municipalities
+  metadata:
+    language: fi
+  examples:
+  - text: |
+      haluan kaikista kunnista
+  - text: |
+      kaikista kunnista
+  - text: |
+      kaikki kunnat
+    metadata:
+      canonical: true
+  - text: |
+      kaikkien kuntien palvelut
+  - text: |
+      koko alueen palvelut
+  - text: |
+      koko maakunnan
+- intent: back_to_start
+  metadata:
+    language: fi
+  examples:
+  - text: |
+      aloita alusta
+  - text: |
+      aloita uudestaan
+  - text: |
+      aloitappa uudestaan
+  - text: |
+      haluan aloittaa alusta
+  - text: |
+      haluan aloittaa uudestaan
+  - text: |
+      haluan nollata keskustelun
+  - text: |
+      haluan resetoida keskustelun
+  - text: |
+      mene alkuun
+  - text: |
+      mene takaisin alkuun
+  - text: |
+      nollaa keskustelu
+  - text: |
+      palaa alkuun
+    metadata:
+      canonical: true
+- intent: chitchat.bye
+  metadata:
+    language: fi
+  examples:
+  - text: |
+      hei hei
+    metadata:
+      canonical: true
+  - text: |
+      heippa
+  - text: |
+      huomiseen
+  - text: |
+      lopeta
+  - text: |
+      moi moi
+  - text: |
+      nekämisiin
+  - text: |
+      pitää mennä
+- intent: chitchat.greet
+  metadata:
+    language: fi
+  examples:
+  - text: |
+      hei
+    metadata:
+      canonical: true
+  - text: |
+      hello
+  - text: |
+      hey
+  - text: |
+      huomenia
+  - text: |
+      huomenta
+  - text: |
+      moi
+  - text: |
+      moiii
+  - text: |
+      moikka
+  - text: |
+      moikku
+  - text: |
+      morjes
+  - text: |
+      moro
+  - text: |
+      moro moro
+  - text: |
+      moroo
+  - text: |
+      päivää
+  - text: |
+      tere
+  - text: |
+      terve
+- intent: feedback_negative
+  metadata:
+    language: fi
+  examples:
+  - text: |
+      aika huonosti
+    metadata:
+      canonical: true
+  - text: |
+      ei menny nappiin
+  - text: |
+      huono
+  - text: |
+      huonoja palveluita
+  - text: |
+      huonosti
+  - text: |
+      kehnosti
+  - text: |
+      väärin
+  - text: |
+      vääriä palveluita
+  - text: |
+      vääriä suosituksia
+- intent: feedback_positive
+  metadata:
+    language: fi
+  examples:
+  - text: |
+      hyvin
+    metadata:
+      canonical: true
+  - text: |
+      hyviä suosituksia
+  - text: |
+      hyvää palvelua
+  - text: |
+      ihan jees
+  - text: |
+      ihan ok
+  - text: |
+      kiitos hyvin
+  - text: |
+      tosi hyvin
+- intent: general_service_search
+  metadata:
+    language: fi
+  examples:
+  - text: |
+      Etsi vapaasti palveluita
+    metadata:
+      canonical: true
+  - text: |
+      Nuorisotilat [Turku](municipality)
+    metadata:
+      canonical: true
+  - text: |
+      Onko [Turussa]{"entity": "municipality", "value": "Turku"} nuoriso tiloja?
+  - text: |
+      [Oripää](municipality)
+    metadata:
+      canonical: true
+  - text: |
+      [Paimio](municipality)
+    metadata:
+      canonical: true
+  - text: |
+      Pyöräilyreitit [Turku](municipality)
+  - text: |
+      [Raisio](municipality)
+    metadata:
+      canonical: true
+  - text: |
+      [Turku](municipality)
+  - text: |
+      [Turku](municipality) kunoradat
+  - text: |
+      [askaisilta]{"entity": "municipality", "value": "Myn\u00e4m\u00e4ki"}
+    metadata:
+      canonical: true
+  - text: |
+      [dragsfjärd]{"entity": "municipality", "value": "Kemi\u00f6nsaari"}
+    metadata:
+      canonical: true
+  - text: |
+      etsi mulle palveluita
+  - text: |
+      etsi vapaasti
+  - text: |
+      hae palveluita
+  - text: |
+      hae vapaasti palveluita
+  - text: |
+      haluaisin [turusta]{"entity": "municipality", "value": "Turku"}
+  - text: |
+      haluan etsii palvelut
+  - text: |
+      haluan etsiä palveluita
+  - text: |
+      haluan [kemiöltä]{"entity": "municipality", "value": "Kemi\u00f6nsaari"}
+  - text: |
+      haluan [kustavista]{"entity": "municipality", "value": "Kustavi"}
+    metadata:
+      canonical: true
+  - text: |
+      haluan [kyröstä]{"entity": "municipality", "value": "P\u00f6yty\u00e4"}
+    metadata:
+      canonical: true
+  - text: |
+      haluan palveluita [aurasta]{"entity": "municipality", "value": "Aura"}
+    metadata:
+      canonical: true
+  - text: |
+      haluan palveluita [turusta]{"entity": "municipality", "value": "Turku"}
+  - text: |
+      haluan [turusta]{"entity": "municipality", "value": "Turku"}
+  - text: |
+      [kaarina]{"entity": "municipality", "value": "Kaarina"}
+    metadata:
+      canonical: true
+  - text: |
+      [kaarinan]{"entity": "municipality", "value": "Kaarina"} palvelut
+  - text: |
+      [kemiönsaaren]{"entity": "municipality", "value": "Kemi\u00f6nsaari"} palveut
+  - text: |
+      [kemiönsaaresta]{"entity": "municipality", "value": "Kemi\u00f6nsaari"}
+  - text: |
+      [kemiönsaari]{"entity": "municipality", "value": "Kemi\u00f6nsaari"}
+  - text: |
+      kerro [laitilasta]{"entity": "municipality", "value": "Laitila"} palveluita
+    metadata:
+      canonical: true
+  - text: |
+      [kimito]{"entity": "municipality", "value": "Kemi\u00f6nsaari"}
+  - text: |
+      [koskella]{"entity": "municipality", "value": "Koski Tl"}
+    metadata:
+      canonical: true
+  - text: |
+      [koskella tl]{"entity": "municipality", "value": "Koski Tl"}
+  - text: |
+      [koskelta]{"entity": "municipality", "value": "Koski Tl"}
+  - text: |
+      [koski]{"entity": "municipality", "value": "Koski Tl"}
+  - text: |
+      [koski tln]{"entity": "municipality", "value": "Koski Tl"} palvelut
+  - text: |
+      [kustavin]{"entity": "municipality", "value": "Kustavi"} palvelut
+  - text: |
+      [kyröstä]{"entity": "municipality", "value": "P\u00f6yty\u00e4"}
+  - text: |
+      [laitila]{"entity": "municipality", "value": "Laitila"}
+  - text: |
+      [laitilasta]{"entity": "municipality", "value": "Laitila"}
+  - text: |
+      [lieto]{"entity": "municipality", "value": "Lieto"}
+    metadata:
+      canonical: true
+  - text: |
+      [loimaa]{"entity": "municipality", "value": "Loimaa"}
+    metadata:
+      canonical: true
+  - text: |
+      löydä vapaasti palveluita
+  - text: |
+      [marttila]{"entity": "municipality", "value": "Marttila"}
+    metadata:
+      canonical: true
+  - text: |
+      [masku]{"entity": "municipality", "value": "Masku"}
+    metadata:
+      canonical: true
+  - text: |
+      mitä [Kustavilla]{"entity": "municipality", "value": "Kustavi"}?
+  - text: |
+      mitä on [Laitilalla]{"entity": "municipality", "value": "Laitila"}
+  - text: |
+      mitä on [kemiönsaarella]{"entity": "municipality", "value": "Kemi\u00f6nsaari"}
+  - text: |
+      mitä palveluita [Laitilalla]{"entity": "municipality", "value": "Laitila"}?
+  - text: |
+      mitä palveluita [koski tlssä]{"entity": "municipality", "value": "Koski Tl"}
+  - text: |
+      mitän on [Turussa]{"entity": "municipality", "value": "Turku"}?
+  - text: |
+      [mynämäki]{"entity": "municipality", "value": "Myn\u00e4m\u00e4ki"}
+  - text: |
+      [naantali]{"entity": "municipality", "value": "Naantali"}
+    metadata:
+      canonical: true
+  - text: |
+      no [Aura](municipality)
+  - text: |
+      no [Koskelta]{"entity": "municipality", "value": "Koski Tl"}
+  - text: |
+      no [Mietoisilta]{"entity": "municipality", "value": "Myn\u00e4m\u00e4ki"}
+  - text: |
+      no [kyröltä]{"entity": "municipality", "value": "P\u00f6yty\u00e4"}
+  - text: |
+      no [taalintehtaalla]{"entity": "municipality", "value": "Kemi\u00f6nsaari"}
+  - text: |
+      no [turku]{"entity": "municipality", "value": "Turku"}
+  - text: |
+      noo [kaarrinasta]{"entity": "municipality", "value": "Kaarina"}
+  - text: |
+      [nousiainen]{"entity": "municipality", "value": "Nousiainen"}
+    metadata:
+      canonical: true
+  - text: |
+      näytä [Kustavilta]{"entity": "municipality", "value": "Kustavi"}
+  - text: |
+      näytä [auran]{"entity": "municipality", "value": "Aura"} palvelut
+  - text: |
+      näytä [kaarinassa]{"entity": "municipality", "value": "Kaarina"} olevat palvelut
+  - text: |
+      näytä [laitilan]{"entity": "municipality", "value": "Laitila"} palvelut
+  - text: |
+      näytä palvelut [Kemiönsaaressa]{"entity": "municipality", "value": "Kemi\u00f6nsaari"}
+  - text: |
+      näytä [turun]{"entity": "municipality", "value": "Turku"} palvelut
+  - text: |
+      olisko mitää [Aurassa]{"entity": "municipality", "value": "Aura"}?
+  - text: |
+      olisko mitää [turussa]{"entity": "municipality", "value": "Turku"}
+  - text: |
+      oliskos [turussa]{"entity": "municipality", "value": "Turku"} mitää?
+  - text: |
+      onko [auralla]{"entity": "municipality", "value": "Aura"} palveluita?
+  - text: |
+      onko [kaarinalla]{"entity": "municipality", "value": "Kaarina"}
+  - text: |
+      [oripää]{"entity": "municipality", "value": "Orip\u00e4\u00e4"}
+  - text: |
+      [paimio]{"entity": "municipality", "value": "Paimio"}
+  - text: |
+      palveluhaku
+  - text: |
+      palveluit [Paimiosta]{"entity": "municipality", "value": "Paimio"}
+  - text: |
+      palveluita [Lemusta]{"entity": "municipality", "value": "Myn\u00e4m\u00e4ki"}
+  - text: |
+      palveluita [kaarinasta]{"entity": "municipality", "value": "Kaarina"}
+  - text: |
+      palveluita [turusta]{"entity": "municipality", "value": "Turku"}
+  - text: |
+      [parainen]{"entity": "municipality", "value": "Parainen"}
+    metadata:
+      canonical: true
+  - text: |
+      [pyhäranta]{"entity": "municipality", "value": "Pyh\u00e4ranta"}
+    metadata:
+      canonical: true
+  - text: |
+      [raisio]{"entity": "municipality", "value": "Raisio"}
+  - text: |
+      [rusko]{"entity": "municipality", "value": "Rusko"}
+    metadata:
+      canonical: true
+  - text: |
+      [salo]{"entity": "municipality", "value": "Salo"}
+    metadata:
+      canonical: true
+  - text: |
+      [sauvo]{"entity": "municipality", "value": "Sauvo"}
+    metadata:
+      canonical: true
+  - text: |
+      [somero]{"entity": "municipality", "value": "Somero"}
+    metadata:
+      canonical: true
+  - text: |
+      [taivassalo]{"entity": "municipality", "value": "Taivassalo"}
+    metadata:
+      canonical: true
+  - text: |
+      [turku]{"entity": "municipality", "value": "Turku"}
+  - text: |
+      [turulla]{"entity": "municipality", "value": "Turku"}
+  - text: |
+      [turun]{"entity": "municipality", "value": "Turku"} palvelut
+  - text: |
+      [turusta]{"entity": "municipality", "value": "Turku"}
+  - text: |
+      [uusikaupunki]{"entity": "municipality", "value": "Uusikaupunki"}
+    metadata:
+      canonical: true
+  - text: |
+      vapaa haku
+  - text: |
+      [vehmaa]{"entity": "municipality", "value": "Vehmaa"}
+    metadata:
+      canonical: true
+  - text: |
+      [yläne]{"entity": "municipality", "value": "P\u00f6yty\u00e4"}
+  - text: |
+      [Åbo]{"entity": "municipality", "value": "Turku"}
+- intent: give_feedback
+  metadata:
+    language: fi
+  examples:
+  - text: |
+      anna palautetta
+    metadata:
+      canonical: true
+  - text: |
+      haluan antaa palautetta
+  - text: |
+      haluan kertoa palautetta
+  - text: |
+      kerro palaute
+  - text: |
+      minulla on palautetta
+  - text: |
+      mistä annan palautteen
+  - text: |
+      miten annan palautetta
+  - text: |
+      palautteen antaminen
+  - text: |
+      palautteen kertominen
+- intent: help
+  metadata:
+    language: fi
+  examples:
+  - text: |
+      apua
+  - text: |
+      haluan apua
+  - text: |
+      kerro missä voit auttaa
+  - text: |
+      kerro mitä osaat
+  - text: |
+      missä voit auttaa?
+  - text: |
+      miten toimit?
+  - text: |
+      miten tätä käytetään?
+  - text: |
+      mitä osaat
+    metadata:
+      canonical: true
+  - text: |
+      tarvitsen apua
+- intent: ke14_death
+  metadata:
+    language: fi
+  examples:
+  - text: |
+      Kalma kosketti
+  - text: |
+      Kuolemantapaus
+  - text: |
+      Lähiomaisen kuolema
+    metadata:
+      canonical: true
+  - text: |
+      Omaiseni menehtyi
+  - text: |
+      Omaiseni on kuollut
+  - text: |
+      kuolema
+  - text: |
+      kuolema kohtasi
+  - text: |
+      läheiseni kuoli
+  - text: |
+      lähiomainen kuoli
+  - text: |
+      mun kaveri kuoli
+  - text: |
+      omaiseni kuoli
+  - text: |
+      vanhempani kuoli
+- intent: ke8_change_job
+  metadata:
+    language: fi
+  examples:
+  - text: |
+      Haluan vaihtaa työpaikkaa
+    metadata:
+      canonical: true
+  - text: |
+      haluan muutosta töihin
+  - text: |
+      haluan muuttaa töitäni
+  - text: |
+      haluan uusia työhaasteita
+  - text: |
+      haluan vaihtaa duunia
+  - text: |
+      haluan vaihtaa työpaikkaa
+  - text: |
+      miten saan muutettua työuraa?
+  - text: |
+      miten vaihdan duunia
+  - text: |
+      tarviin muutosta työuraani
+  - text: |
+      työpaikan vaihtaminen
+  - text: |
+      työppaikojen vaihto
+  - text: |
+      vaihda työpaikkaa
+- intent: ke8_find_jobs
+  metadata:
+    language: fi
+  examples:
+  - text: |
+      Etsin työtä.
+  - text: |
+      Haluan töihin.
+  - text: |
+      Miten haen työpaikkoja
+    metadata:
+      canonical: true
+  - text: |
+      Tarvitsen työpaikan.
+  - text: |
+      Töihin.
+  - text: |
+      duunin etsimiseen
+  - text: |
+      duunin löytämiseen
+  - text: |
+      etsi mulle töitä
+  - text: |
+      haluan hakea töitä
+  - text: |
+      kerro miten saan töitä
+  - text: |
+      mistä etsin duuneja
+  - text: |
+      työhaku
+  - text: |
+      työn hakemiseen
+  - text: |
+      työnhakeminen
+  - text: |
+      työpaikkojen haku
+- intent: ke8_lay_off
+  metadata:
+    language: fi
+  examples:
+  - text: |
+      Apua lomautetulle.
+  - text: |
+      Lomautus
+    metadata:
+      canonical: true
+  - text: |
+      Mitä voin tehdä lomautettuna?
+  - text: |
+      jouduin lomautetuksi
+  - text: |
+      jouduin lomautukseen
+  - text: |
+      jäin lomautetutuksi
+  - text: |
+      lomautukseen
+  - text: |
+      minut lomautettiin
+  - text: |
+      miten pärjään, jos lomautettiin
+  - text: |
+      miten toimin lomautuksessa?
+  - text: |
+      mitä teen lomautettuna?
+  - text: |
+      olen lomautettu
+  - text: |
+      olen lomautettuna
+  - text: |
+      onko tukea lomautetuille
+  - text: |
+      tarvitsen apua lomautus
+- intent: ke8_losing_job
+  metadata:
+    language: fi
+  examples:
+  - text: |
+      Jäin työttömäksi
+    metadata:
+      canonical: true
+  - text: |
+      Olen työtön
+  - text: |
+      Työt loppuivat
+  - text: |
+      apua töihin
+  - text: |
+      ei oo duunia
+  - text: |
+      ei oo töitä
+  - text: |
+      haluan apua työasioihin
+  - text: |
+      mistä voin saada työttömyystukea
+  - text: |
+      miten saan tukea työllistymiseen
+  - text: |
+      mitä teen, kun sain potkut?
+  - text: |
+      mun duunit on loppu
+  - text: |
+      mä oon jäämässä työttämäksi kohta
+  - text: |
+      sain potku duunista
+  - text: |
+      sain potkut
+  - text: |
+      sain potkut töistä
+  - text: |
+      tarviin apua työnhakuun
+  - text: |
+      työasiat
+  - text: |
+      työttömyys
+- intent: ke8_other
+  metadata:
+    language: fi
+  examples:
+  - text: |
+      halua muuta
+    metadata:
+      canonical: true
+  - text: |
+      jotain muuta
+  - text: |
+      kerro muita vaihtoehtoja
+  - text: |
+      muita palveluita
+  - text: |
+      muita palvleluita kiitos
+- intent: ke8_unemployment_benefits
+  metadata:
+    language: fi
+  examples:
+  - text: |
+      Kelan työttömyystuet
+  - text: |
+      Kelan työttömyystuki
+  - text: |
+      Minun pitää hakea työttömyystukea.
+  - text: |
+      Mistä saan työttömyystuen?
+  - text: |
+      Tarvitsen Kelan työttömyystukea.
+  - text: |
+      Työttömyystuki
+    metadata:
+      canonical: true
+  - text: |
+      haluan tukea työttömyyteeni
+  - text: |
+      kerro tuista työttömyyteen
+  - text: |
+      mistä löydän työkkärin tuet
+  - text: |
+      miten saan tukea työttömyyteen
+  - text: |
+      mitä teen, että saan työttömyystukea?
+  - text: |
+      työttömyystukiin
+- intent: ke8_unemployment_registration
+  metadata:
+    language: fi
+  examples:
+  - text: |
+      Minun pitää ilmoittautua työttömäksi.
+  - text: |
+      Työttömäksi ilmoittautuminen
+    metadata:
+      canonical: true
+  - text: |
+      auta mua ilmoittautumaan työttömäksi
+  - text: |
+      haluan ilmoittautuu työttömäksi
+  - text: |
+      miten ilmoon työkkäriin
+  - text: |
+      pitääkö työttömäksi ilmoittautua te-toimisoon?
+- intent: ke9_debt
+  metadata:
+    language: fi
+  examples:
+  - text: |
+      Miten maksan velkani?
+  - text: |
+      Miten saan hoidettua velkani?
+  - text: |
+      Mitä teen, kun olen velkaantunut?
+  - text: |
+      Velkaantuminen
+    metadata:
+      canonical: true
+  - text: |
+      ei oo muuta kuin velkaa
+  - text: |
+      miten hoidan mun velat?
+  - text: |
+      mulla on velkaa
+  - text: |
+      olen pahoissa veloissa
+  - text: |
+      oon veloissa
+  - text: |
+      paljon velkaa
+  - text: |
+      rahat meni velkoihin
+  - text: |
+      tosi paljon velkaa enkä tiiä mitä tehdä
+  - text: |
+      velkaa
+- intent: leisure_services
+  metadata:
+    language: fi
+  examples:
+  - text: |
+      Vapaa-ajan palvelut
+    metadata:
+      canonical: true
+  - text: |
+      haluan vapaa-ajan toimintaa
+  - text: |
+      onko palveluita vapaa ajalle?
+  - text: |
+      palvelut vapaa ajalle
+  - text: |
+      paveluita vapaa-ajalle
+  - text: |
+      vapaa aika
+  - text: |
+      vapaa-aika
+  - text: |
+      vapaa-ajan palvelut
+  - text: |
+      vapaaika
+- intent: no
+  metadata:
+    language: fi
+  examples:
+  - text: |
+      ei
+    metadata:
+      canonical: true
+  - text: |
+      ei kiitos
+  - text: |
+      ei kiitti
+  - text: |
+      ei kuntaa
+  - text: |
+      ei mikään
+  - text: |
+      ei mikään kunta
+  - text: |
+      ei missään nimessä
+  - text: |
+      ei todellakaan
+  - text: |
+      eih
+  - text: |
+      en
+  - text: |
+      en mistään
+  - text: |
+      kiitos ei
+  - text: |
+      kiitti ei
+  - text: |
+      no
+  - text: |
+      nope
+- intent: social_benefits
+  metadata:
+    language: fi
+  examples:
+  - text: |
+      Ei rahaa
+    metadata:
+      canonical: true
+  - text: |
+      Etsin sosiaalipalveluita
+  - text: |
+      Kansaneläkelaitoksen tuki
+  - text: |
+      Kansaneläkelaitos
+  - text: |
+      Kela
+  - text: |
+      Kelan tuet
+  - text: |
+      Kelan tuki
+  - text: |
+      Mistä rahaa?
+  - text: |
+      Rahat loppu
+  - text: |
+      Sosiaalipalvelut
+  - text: |
+      Sosiaalituet
+  - text: |
+      Tuet
+  - text: |
+      auta saamaan tukia
+  - text: |
+      ei oo fyrkkaa
+  - text: |
+      ei oo rahaa
+  - text: |
+      fyrkat loppu
+  - text: |
+      mitä teen kun ei oo rahaa
+  - text: |
+      mulla ei oo yhtään rahaa
+  - text: |
+      mun rahat on vähissä
+  - text: |
+      rahat loppu
+  - text: |
+      rahat on loppu
+- intent: sports_service_search
+  metadata:
+    language: fi
+  examples:
+  - text: |
+      Jääkiekko
+  - text: |
+      Liikuntapalvelut
+    metadata:
+      canonical: true
+  - text: |
+      haluan liikuntapalveluita
+  - text: |
+      haluan uimaan
+  - text: |
+      haluan uimaan [turkuun]{"entity": "municipality", "value": "Turku"}
+    metadata:
+      canonical: true
+  - text: |
+      haluan urheilemaan
+  - text: |
+      liikunta
+  - text: |
+      olisko mitään urheilu palveluita
+  - text: |
+      onko liinkuntapalveluita?
+  - text: |
+      pidän urheilusta
+  - text: |
+      tykkään liikunnasta
+  - text: |
+      urheilu
+  - text: |
+      urheilupalvelut
+- intent: swear_words
+  metadata:
+    language: fi
+  examples:
+  - text: |
+      haista paska
+    metadata:
+      canonical: true
+  - text: |
+      haista vittu
+  - text: |
+      helvetti
+  - text: |
+      mene helvettiin
+  - text: |
+      oot ihan paska
+  - text: |
+      oot paska botti
+  - text: |
+      painu vittuun
+  - text: |
+      perkele
+  - text: |
+      voi helvetti
+- intent: tell_joke
+  metadata:
+    language: fi
+  examples:
+  - text: |
+      haluan kuulla vitsin
+  - text: |
+      haluan vitsin
+  - text: |
+      kerro joku vitsi
+  - text: |
+      kerro vitsi
+    metadata:
+      canonical: true
+  - text: |
+      onko sulla vitsejä?
+  - text: |
+      osaatko vitsejä?
+- intent: thank_you
+  metadata:
+    language: fi
+  examples:
+  - text: |
+      Kiitos!
+  - text: |
+      kiitos
+    metadata:
+      canonical: true
+  - text: |
+      kiitos paljon!
+  - text: |
+      kiitti
+  - text: |
+      paljon kiitoksia!
+- intent: what_time_is_it
+  metadata:
+    language: fi
+  examples:
+  - text: |
+      kerro kellonaika
+  - text: |
+      kuinka paljon kello on?
+  - text: |
+      mikä aika on nyt?
+  - text: |
+      mitä kello näyttää?
+  - text: |
+      näytä kellon aika
+  - text: |
+      paljon kello on?
+  - text: |
+      paljonko kello on?
+    metadata:
+      canonical: true
+- intent: who_are_you
+  metadata:
+    language: fi
+  examples:
+  - text: |
+      haluan tietää, kuka olet?
+  - text: |
+      kerro kuka olet?
+  - text: |
+      kuka olet?
+    metadata:
+      canonical: true
+  - text: |
+      kuka oot?
+  - text: |
+      kuka sä oot?
+  - text: |
+      mikä olet?
+  - text: |
+      oletko botti?
+  - text: |
+      oletko ihminen?
+- intent: yes
+  metadata:
+    language: fi
+  examples:
+  - text: |
+      jep
+    metadata:
+      canonical: true
+  - text: |
+      jes
+  - text: |
+      joo
+  - text: |
+      juu
+  - text: |
+      kyllä
+  - text: |
+      kyllä kiitos
+  - text: |
+      kyllä kiitti
+  - text: |
+      ok
+  - text: |
+      tottahan toki
+  - text: |
+      tottakai
+  - text: |
+      yes
+- synonym: Turku
+  examples: |
+    - Turkuun
+    - turussa
+    - Turussa
+    - turusta
+    - turku
+    - turun
+    - turulla
+    - Åbo
+    - turkuun
+    - turulle
+    - turulta
+    - åbo
+- synonym: Mynämäki
+  examples: |
+    - askaisilta
+    - mynämäki
+    - Mietoisilta
+    - Lemusta
+    - askainen
+    - askaisista
+    - lemu
+    - lemusta
+    - mietoinen
+    - mietoisista
+    - mynämäellä
+    - mynämäeltä
+    - mynämäessä
+    - mynämäestä
+- synonym: Kemiönsaari
+  examples: |
+    - dragsfjärd
+    - kemiöltä
+    - kemiönsaaren
+    - kemiönsaaresta
+    - kemiönsaari
+    - kimito
+    - kemiönsaarella
+    - taalintehtaalla
+    - Kemiönsaaressa
+    - kemiönsaarelta
+    - kemiönsaaressa
+    - kemiöstä
+    - taalintehdas
+    - taalintehtaalta
+    - kimitoön
+- synonym: Kustavi
+  examples: |
+    - kustavista
+    - kustavin
+    - Kustavilla
+    - Kustavilta
+    - kustavi
+    - kustaviin
+    - kustavilla
+    - kustavilta
+    - kustavissa
+    - kustaville
+- synonym: Pöytyä
+  examples: |
+    - kyröstä
+    - kyröltä
+    - yläne
+    - pöytyä
+    - pöytyällä
+    - pöytyältä
+    - pöytyässä
+    - pöytyästä
+    - kyrö
+    - kyrössä
+    - yläneellä
+    - yläneeltä
+    - karinaisista
+    - heikinsuolta
+    - riihikoskelta
+    - auvaisista
+- synonym: Aura
+  examples: |
+    - aurasta
+    - auran
+    - Aurassa
+    - auralla
+    - aura
+    - auralta
+    - aurassa
+    - auraan
+- synonym: Kaarina
+  examples: |
+    - kaarina
+    - kaarinan
+    - kaarrinasta
+    - kaarinassa
+    - kaarinalla
+    - kaarinasta
+    - kaarinaan
+    - kaarinalle
+    - kaarinalta
+- synonym: Laitila
+  examples: |
+    - laitilasta
+    - laitila
+    - Laitilalla
+    - laitilan
+    - laitilalla
+    - laitilalta
+    - laitilassa
+    - laitilalle
+- synonym: Koski Tl
+  examples: |
+    - koskella
+    - koskella tl
+    - koskelta
+    - koski
+    - koski tln
+    - koski tlssä
+    - Koskelta
+    - koski tl
+- synonym: Lieto
+  examples: |
+    - lieto
+    - liedolla
+    - liedolle
+    - liedolta
+    - liedossa
+    - liedosta
+    - lietoon
+- synonym: Loimaa
+  examples: |
+    - loimaa
+    - loimaalla
+    - loimaalle
+    - loimaalta
+    - loimaassa
+    - loimaasta
+- synonym: Marttila
+  examples: |
+    - marttila
+    - marttilalla
+    - marttilalta
+    - marttilassa
+    - marttilasta
+    - marttilaan
+- synonym: Masku
+  examples: |
+    - masku
+    - maskulla
+    - maskulta
+    - maskussa
+    - maskusta
+    - maskuun
+- synonym: Naantali
+  examples: |
+    - naantali
+    - naantalilla
+    - naantalilta
+    - naantalissa
+    - naantalista
+    - merimasku
+    - merimaskulla
+    - merimaskulta
+    - merimaskussa
+    - merimaskusta
+    - rymättylä
+    - rymättylällä
+    - rymättylältä
+    - rymättylässä
+    - rymättylästä
+- synonym: Nousiainen
+  examples: |
+    - nousiainen
+    - nousiaisilla
+    - nousiaisilta
+    - nousiaisissa
+    - nousiaisista
+- synonym: Oripää
+  examples: |
+    - oripää
+    - oripäällä
+    - oripäältä
+    - oripäässä
+    - oripäästä
+    - oripäälle
+- synonym: Paimio
+  examples: |
+    - paimio
+    - Paimiosta
+    - paimiolla
+    - paimiolta
+    - paimioon
+    - paimiossa
+    - paimiosta
+    - paimiolle
+- synonym: Parainen
+  examples: |
+    - parainen
+    - paraisilla
+    - paraisilta
+    - paraisissa
+    - paraisista
+    - pargas
+    - paraisille
+- synonym: Pyhäranta
+  examples: |
+    - pyhäranta
+    - pyhärannalla
+    - pyhärannalta
+    - pyhärannassa
+    - pyhärannasta
+- synonym: Raisio
+  examples: |
+    - raisio
+    - raisiolla
+    - raisiolta
+    - raisiossa
+    - raisiosta
+    - raisioon
+    - raisiolle
+- synonym: Rusko
+  examples: |
+    - rusko
+    - ruskolla
+    - ruskolle
+    - ruskolta
+    - ruskoon
+    - ruskossa
+    - ruskosta
+- synonym: Salo
+  examples: |
+    - salo
+    - salolla
+    - salolta
+    - saloon
+    - salossa
+    - salosta
+    - salolle
+- synonym: Sauvo
+  examples: |
+    - sauvo
+    - sauvolla
+    - sauvolta
+    - sauvossa
+    - sauvosta
+    - sauvoon
+    - sauvolle
+- synonym: Somero
+  examples: |
+    - somero
+    - somerolla
+    - somerolta
+    - somerossa
+    - somerosta
+    - someroon
+    - somerolle
+- synonym: Taivassalo
+  examples: |
+    - taivassalo
+    - taivassalolla
+    - taivassalolta
+    - taivassaloon
+    - taivassalossa
+    - taivassalosta
+    - taivassalolle
+- synonym: Uusikaupunki
+  examples: |
+    - uusikaupunki
+    - uudellakaupungilla
+    - uudellakaupungilta
+    - uudessakaupungissa
+    - uudessakaupungista
+    - uuteenkaupunkiin
+- synonym: Vehmaa
+  examples: |
+    - vehmaa
+    - vehmaalla
+    - vehmaalle
+    - vehmaalta
+    - vehmaassa
+    - vehmaasta
+    - vehmaaseen
+- gazette: municipality
+  examples: |
+    - Aura
+    - Kaarina
+    - Kemiönsaari
+    - Koski Tl
+    - Kustavi
+    - Laitila
+    - Lieto
+    - Loimaa
+    - Marttila
+    - Masku
+    - Mynämäki
+    - Naantali
+    - Nousiainen
+    - Oripää
+    - Paimio
+    - Parainen
+    - Pyhäranta
+    - Pöytyä
+    - Raisio
+    - Rusko
+    - Salo
+    - Sauvo
+    - Somero
+    - Taivassalo
+    - Turku
+    - Uusikaupunki
+    - Vehmaa
+    - askainen
+    - askaisista
+    - auralla
+    - auralta
+    - aurassa
+    - aurasta
+    - dragsfjärd
+    - kaarinalla
+    - kaarinalta
+    - kaarinassa
+    - kaarinasta
+    - kemiönsaarella
+    - kemiönsaarelta
+    - kemiönsaaressa
+    - kemiönsaaresta
+    - kemiöstä
+    - kimito
+    - koskella
+    - koskesta
+    - kustavilla
+    - kustavilta
+    - kustavissa
+    - kustavista
+    - kyrö
+    - kyrössä
+    - kyröstä
+    - laitilalla
+    - laitilalta
+    - laitilassa
+    - laitilasta
+    - lemu
+    - lemusta
+    - liedolla
+    - liedolta
+    - liedossa
+    - liedosta
+    - loimaalla
+    - loimaalta
+    - loimaassa
+    - loimaasta
+    - marttilalla
+    - marttilalta
+    - marttilassa
+    - marttilasta
+    - maskulla
+    - maskulta
+    - maskussa
+    - maskusta
+    - mietoinen
+    - mietoisista
+    - mynämäellä
+    - mynämäeltä
+    - mynämäessä
+    - mynämäestä
+    - naantalilla
+    - naantalilta
+    - naantalissa
+    - naantalista
+    - nousiaisilla
+    - nousiaisilta
+    - nousiaisissa
+    - nousiaisista
+    - oripäällä
+    - oripäältä
+    - oripäässä
+    - oripäästä
+    - paimiolla
+    - paimiolta
+    - paimiossa
+    - paimiosta
+    - paraisilla
+    - paraisilta
+    - paraisissa
+    - paraisista
+    - pyhärannalla
+    - pyhärannalta
+    - pyhärannassa
+    - pyhärannasta
+    - pöytyällä
+    - pöytyältä
+    - pöytyässä
+    - pöytyästä
+    - raisiolla
+    - raisiolta
+    - raisiossa
+    - raisiosta
+    - ruskolla
+    - ruskolta
+    - ruskossa
+    - ruskosta
+    - salolla
+    - salolta
+    - salossa
+    - salosta
+    - sauvolla
+    - sauvolta
+    - sauvossa
+    - sauvosta
+    - somerolla
+    - somerolta
+    - somerossa
+    - somerosta
+    - taalintehdas
+    - taalintehtaalta
+    - taivassalolla
+    - taivassalolta
+    - taivassalossa
+    - taivassalosta
+    - turulla
+    - turulta
+    - turussa
+    - turusta
+    - uudellakaupungilla
+    - uudellakaupungilta
+    - uudessakaupungissa
+    - uudessakaupungista
+    - vehmaalla
+    - vehmaalta
+    - vehmaassa
+    - vehmaasta
+    - yläne
+    - yläneellä
+    - yläneeltä
+    - åbo

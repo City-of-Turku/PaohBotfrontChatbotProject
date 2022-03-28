@@ -1,0 +1,31 @@
+stories:
+  - story: Lainat
+    steps:
+      - intent: P15.3_loan
+        entities: []
+      - action: utter_loan_more
+      - action: utter_loan_general
+      - action: utter_loan_services
+      - action: action_recommend_services_by_class
+      - checkpoint: Lainat__branches
+    metadata:
+      group: P15 Talous
+  - story: Lainat__No success
+    steps:
+      - checkpoint: Lainat__branches
+      - slot_was_set:
+          - recommend_services_success: false
+      - checkpoint: link-to-Paluu alkuun/d91f6161-3ebe-4bee-86b0-d0fa9143bf99
+    metadata:
+      group: P15 Talous
+  - story: Lainat__Success
+    steps:
+      - checkpoint: Lainat__branches
+      - slot_was_set:
+          - recommend_services_success: true
+      - checkpoint: >-
+          link-to-Palvelusuositus
+          palautekysely/8f58a5bb-84e1-4fd7-8135-7c5d2f218a14
+    metadata:
+      group: P15 Talous
+rules: []

@@ -1,0 +1,419 @@
+stories:
+  - story: Erikoissairaanhoito
+    steps:
+      - intent: P5.6_special_care
+        entities: []
+      - action: utter_special_care_additional
+      - action: utter_special_care
+      - action: municipality_form
+      - active_loop: municipality_form
+      - active_loop: null
+      - checkpoint: Erikoissairaanhoito__branches
+    metadata:
+      group: Terveys
+  - story: Erikoissairaanhoito__Municipality
+    steps:
+      - checkpoint: Erikoissairaanhoito__branches
+      - slot_was_set:
+          - recommend_services_whole_area: false
+      - action: utter_special_care_services
+      - action: action_recommend_services_by_class
+      - checkpoint: Erikoissairaanhoito__Municipality__branches
+    metadata:
+      group: Terveys
+  - story: Erikoissairaanhoito__Municipality__No services found
+    steps:
+      - checkpoint: Erikoissairaanhoito__Municipality__branches
+      - slot_was_set:
+          - recommend_services_success: false
+      - checkpoint: link-to-Paluu alkuun/d91f6161-3ebe-4bee-86b0-d0fa9143bf99
+    metadata:
+      group: Terveys
+  - story: Erikoissairaanhoito__Municipality__Services found
+    steps:
+      - checkpoint: Erikoissairaanhoito__Municipality__branches
+      - slot_was_set:
+          - recommend_services_success: true
+      - checkpoint: >-
+          link-to-Palvelusuositus
+          palautekysely/8f58a5bb-84e1-4fd7-8135-7c5d2f218a14
+    metadata:
+      group: Terveys
+  - story: Erikoissairaanhoito__Whole region
+    steps:
+      - checkpoint: Erikoissairaanhoito__branches
+      - slot_was_set:
+          - recommend_services_whole_area: true
+      - action: utter_special_care_services
+      - action: action_recommend_services_by_class
+      - checkpoint: Erikoissairaanhoito__Whole_region__branches
+    metadata:
+      group: Terveys
+  - story: Erikoissairaanhoito__Whole region__No services found
+    steps:
+      - checkpoint: Erikoissairaanhoito__Whole_region__branches
+      - slot_was_set:
+          - recommend_services_success: false
+      - checkpoint: link-to-Paluu alkuun/d91f6161-3ebe-4bee-86b0-d0fa9143bf99
+    metadata:
+      group: Terveys
+  - story: Erikoissairaanhoito__Whole region__Services found
+    steps:
+      - checkpoint: Erikoissairaanhoito__Whole_region__branches
+      - slot_was_set:
+          - recommend_services_success: true
+      - checkpoint: >-
+          link-to-Palvelusuositus
+          palautekysely/8f58a5bb-84e1-4fd7-8135-7c5d2f218a14
+    metadata:
+      group: Terveys
+  - story: Neuvola
+    steps:
+      - intent: P5.2_maternity_clinic
+        entities: []
+      - action: utter_maternity_clinic
+      - action: utter_maternity_clinic_links
+      - action: municipality_form
+      - active_loop: municipality_form
+      - active_loop: null
+      - checkpoint: Neuvola__branches
+    metadata:
+      group: Terveys
+  - story: Neuvola__Municipality
+    steps:
+      - checkpoint: Neuvola__branches
+      - slot_was_set:
+          - recommend_services_whole_area: false
+      - action: utter_maternity_clinic_services
+      - action: action_recommend_services_by_class
+      - checkpoint: Neuvola__Municipality__branches
+    metadata:
+      group: Terveys
+  - story: Neuvola__Municipality__No services found
+    steps:
+      - checkpoint: Neuvola__Municipality__branches
+      - slot_was_set:
+          - recommend_services_success: false
+      - checkpoint: link-to-Paluu alkuun/d91f6161-3ebe-4bee-86b0-d0fa9143bf99
+    metadata:
+      group: Terveys
+  - story: Neuvola__Municipality__Services found
+    steps:
+      - checkpoint: Neuvola__Municipality__branches
+      - slot_was_set:
+          - recommend_services_success: true
+      - checkpoint: >-
+          link-to-Palvelusuositus
+          palautekysely/8f58a5bb-84e1-4fd7-8135-7c5d2f218a14
+    metadata:
+      group: Terveys
+  - story: Neuvola__Whole region
+    steps:
+      - checkpoint: Neuvola__branches
+      - slot_was_set:
+          - recommend_services_whole_area: true
+      - action: utter_maternity_clinic_services
+      - action: action_recommend_services_by_class
+      - checkpoint: Neuvola__Whole_region__branches
+    metadata:
+      group: Terveys
+  - story: Neuvola__Whole region__No services found
+    steps:
+      - checkpoint: Neuvola__Whole_region__branches
+      - slot_was_set:
+          - recommend_services_success: false
+      - checkpoint: link-to-Paluu alkuun/d91f6161-3ebe-4bee-86b0-d0fa9143bf99
+    metadata:
+      group: Terveys
+  - story: Neuvola__Whole region__Services found
+    steps:
+      - checkpoint: Neuvola__Whole_region__branches
+      - slot_was_set:
+          - recommend_services_success: true
+      - checkpoint: >-
+          link-to-Palvelusuositus
+          palautekysely/8f58a5bb-84e1-4fd7-8135-7c5d2f218a14
+    metadata:
+      group: Terveys
+  - story: Päivystys
+    steps:
+      - intent: P5.5_first_aid
+        entities: []
+      - action: utter_first_aid
+      - action: utter_first_aid_links
+      - action: municipality_form
+      - active_loop: municipality_form
+      - active_loop: null
+      - checkpoint: Päivystys__branches
+    metadata:
+      group: Terveys
+  - story: Päivystys__Municipality
+    steps:
+      - checkpoint: Päivystys__branches
+      - slot_was_set:
+          - recommend_services_whole_area: false
+      - action: utter_first_aid_services
+      - action: action_recommend_services_by_class
+      - checkpoint: Päivystys__Municipality__branches
+    metadata:
+      group: Terveys
+  - story: Päivystys__Municipality__No services found
+    steps:
+      - checkpoint: Päivystys__Municipality__branches
+      - slot_was_set:
+          - recommend_services_success: false
+      - checkpoint: link-to-Paluu alkuun/d91f6161-3ebe-4bee-86b0-d0fa9143bf99
+    metadata:
+      group: Terveys
+  - story: Päivystys__Municipality__Services found
+    steps:
+      - checkpoint: Päivystys__Municipality__branches
+      - slot_was_set:
+          - recommend_services_success: true
+      - checkpoint: >-
+          link-to-Palvelusuositus
+          palautekysely/8f58a5bb-84e1-4fd7-8135-7c5d2f218a14
+    metadata:
+      group: Terveys
+  - story: Päivystys__Whole region
+    steps:
+      - checkpoint: Päivystys__branches
+      - slot_was_set:
+          - recommend_services_whole_area: true
+      - action: utter_first_aid_services
+      - action: action_recommend_services_by_class
+      - checkpoint: Päivystys__Whole_region__branches
+    metadata:
+      group: Terveys
+  - story: Päivystys__Whole region__No services found
+    steps:
+      - checkpoint: Päivystys__Whole_region__branches
+      - slot_was_set:
+          - recommend_services_success: false
+      - checkpoint: link-to-Paluu alkuun/d91f6161-3ebe-4bee-86b0-d0fa9143bf99
+    metadata:
+      group: Terveys
+  - story: Päivystys__Whole region__Services found
+    steps:
+      - checkpoint: Päivystys__Whole_region__branches
+      - slot_was_set:
+          - recommend_services_success: true
+      - checkpoint: >-
+          link-to-Palvelusuositus
+          palautekysely/8f58a5bb-84e1-4fd7-8135-7c5d2f218a14
+    metadata:
+      group: Terveys
+  - story: Perusterveydenhuolto
+    steps:
+      - intent: P5.1_basic_healthcare
+        entities: []
+      - action: utter_basic_healthcare
+      - action: utter_basic_healthcare_additional
+      - action: municipality_form
+      - active_loop: municipality_form
+      - active_loop: null
+      - checkpoint: Perusterveydenhuolto__branches
+    metadata:
+      group: Terveys
+  - story: Perusterveydenhuolto__Municipality
+    steps:
+      - checkpoint: Perusterveydenhuolto__branches
+      - slot_was_set:
+          - recommend_services_whole_area: false
+      - action: utter_basic_healthcare_services
+      - action: action_recommend_services_by_class
+      - checkpoint: Perusterveydenhuolto__Municipality__branches
+    metadata:
+      group: Terveys
+  - story: Perusterveydenhuolto__Municipality__No services found
+    steps:
+      - checkpoint: Perusterveydenhuolto__Municipality__branches
+      - slot_was_set:
+          - recommend_services_success: false
+      - checkpoint: link-to-Paluu alkuun/d91f6161-3ebe-4bee-86b0-d0fa9143bf99
+    metadata:
+      group: Terveys
+  - story: Perusterveydenhuolto__Municipality__Services found
+    steps:
+      - checkpoint: Perusterveydenhuolto__Municipality__branches
+      - slot_was_set:
+          - recommend_services_success: true
+      - checkpoint: >-
+          link-to-Palvelusuositus
+          palautekysely/8f58a5bb-84e1-4fd7-8135-7c5d2f218a14
+    metadata:
+      group: Terveys
+  - story: Perusterveydenhuolto__Whole region
+    steps:
+      - checkpoint: Perusterveydenhuolto__branches
+      - slot_was_set:
+          - recommend_services_whole_area: true
+      - action: utter_basic_healthcare_services
+      - action: action_recommend_services_by_class
+      - checkpoint: Perusterveydenhuolto__Whole_region__branches
+    metadata:
+      group: Terveys
+  - story: Perusterveydenhuolto__Whole region__No services found
+    steps:
+      - checkpoint: Perusterveydenhuolto__Whole_region__branches
+      - slot_was_set:
+          - recommend_services_success: false
+      - checkpoint: link-to-Paluu alkuun/d91f6161-3ebe-4bee-86b0-d0fa9143bf99
+    metadata:
+      group: Terveys
+  - story: Perusterveydenhuolto__Whole region__Services found
+    steps:
+      - checkpoint: Perusterveydenhuolto__Whole_region__branches
+      - slot_was_set:
+          - recommend_services_success: true
+      - checkpoint: >-
+          link-to-Palvelusuositus
+          palautekysely/8f58a5bb-84e1-4fd7-8135-7c5d2f218a14
+    metadata:
+      group: Terveys
+  - story: Rokotukset
+    steps:
+      - intent: P5.3_vaccination
+        entities: []
+      - action: utter_vaccination_corona_additional
+      - action: utter_vaccination_corona
+      - action: utter_vaccination_national
+      - action: municipality_form
+      - active_loop: municipality_form
+      - active_loop: null
+      - checkpoint: Rokotukset__branches
+    metadata:
+      group: Terveys
+  - story: Rokotukset__Municipality
+    steps:
+      - checkpoint: Rokotukset__branches
+      - slot_was_set:
+          - recommend_services_whole_area: false
+      - action: utter_vaccination_services
+      - action: action_recommend_services_by_class
+      - checkpoint: Rokotukset__Municipality__branches
+    metadata:
+      group: Terveys
+  - story: Rokotukset__Municipality__No services found
+    steps:
+      - checkpoint: Rokotukset__Municipality__branches
+      - slot_was_set:
+          - recommend_services_success: false
+      - checkpoint: link-to-Paluu alkuun/d91f6161-3ebe-4bee-86b0-d0fa9143bf99
+    metadata:
+      group: Terveys
+  - story: Rokotukset__Municipality__Services found
+    steps:
+      - checkpoint: Rokotukset__Municipality__branches
+      - slot_was_set:
+          - recommend_services_success: true
+      - checkpoint: >-
+          link-to-Palvelusuositus
+          palautekysely/8f58a5bb-84e1-4fd7-8135-7c5d2f218a14
+    metadata:
+      group: Terveys
+  - story: Rokotukset__Whole region
+    steps:
+      - checkpoint: Rokotukset__branches
+      - slot_was_set:
+          - recommend_services_whole_area: true
+      - action: utter_vaccination_services
+      - action: action_recommend_services_by_class
+      - checkpoint: Rokotukset__Whole_region__branches
+    metadata:
+      group: Terveys
+  - story: Rokotukset__Whole region__No services found
+    steps:
+      - checkpoint: Rokotukset__Whole_region__branches
+      - slot_was_set:
+          - recommend_services_success: false
+      - checkpoint: link-to-Paluu alkuun/d91f6161-3ebe-4bee-86b0-d0fa9143bf99
+    metadata:
+      group: Terveys
+  - story: Rokotukset__Whole region__Services found
+    steps:
+      - checkpoint: Rokotukset__Whole_region__branches
+      - slot_was_set:
+          - recommend_services_success: true
+      - checkpoint: >-
+          link-to-Palvelusuositus
+          palautekysely/8f58a5bb-84e1-4fd7-8135-7c5d2f218a14
+    metadata:
+      group: Terveys
+  - story: Suun terveydenhuolto
+    steps:
+      - intent: P5.10_oral_health
+        entities: []
+      - action: utter_oral_health
+      - action: utter_oral_health_additional
+      - action: municipality_form
+      - active_loop: municipality_form
+      - active_loop: null
+      - checkpoint: Suun_terveydenhuolto__branches
+    metadata:
+      group: Terveys
+  - story: Suun terveydenhuolto__Municipality
+    steps:
+      - checkpoint: Suun_terveydenhuolto__branches
+      - slot_was_set:
+          - recommend_services_whole_area: false
+      - action: utter_oral_health_services
+      - action: action_recommend_services_by_class
+      - checkpoint: Suun_terveydenhuolto__Municipality__branches
+    metadata:
+      group: Terveys
+  - story: Suun terveydenhuolto__Municipality__No services found
+    steps:
+      - checkpoint: Suun_terveydenhuolto__Municipality__branches
+      - slot_was_set:
+          - recommend_services_success: false
+      - checkpoint: link-to-Paluu alkuun/d91f6161-3ebe-4bee-86b0-d0fa9143bf99
+    metadata:
+      group: Terveys
+  - story: Suun terveydenhuolto__Municipality__Services found
+    steps:
+      - checkpoint: Suun_terveydenhuolto__Municipality__branches
+      - slot_was_set:
+          - recommend_services_success: true
+      - checkpoint: >-
+          link-to-Palvelusuositus
+          palautekysely/8f58a5bb-84e1-4fd7-8135-7c5d2f218a14
+    metadata:
+      group: Terveys
+  - story: Suun terveydenhuolto__Whole region
+    steps:
+      - checkpoint: Suun_terveydenhuolto__branches
+      - slot_was_set:
+          - recommend_services_whole_area: true
+      - action: utter_oral_health_services
+      - action: action_recommend_services_by_class
+      - checkpoint: Suun_terveydenhuolto__Whole_region__branches
+    metadata:
+      group: Terveys
+  - story: Suun terveydenhuolto__Whole region__No services found
+    steps:
+      - checkpoint: Suun_terveydenhuolto__Whole_region__branches
+      - slot_was_set:
+          - recommend_services_success: false
+      - checkpoint: link-to-Paluu alkuun/d91f6161-3ebe-4bee-86b0-d0fa9143bf99
+    metadata:
+      group: Terveys
+  - story: Suun terveydenhuolto__Whole region__Services found
+    steps:
+      - checkpoint: Suun_terveydenhuolto__Whole_region__branches
+      - slot_was_set:
+          - recommend_services_success: true
+      - checkpoint: >-
+          link-to-Palvelusuositus
+          palautekysely/8f58a5bb-84e1-4fd7-8135-7c5d2f218a14
+    metadata:
+      group: Terveys
+  - story: Terveys
+    steps:
+      - intent: P5_healthcare
+        entities: []
+      - action: utter_healthcare_warning
+      - action: utter_healthcare_buttons
+    metadata:
+      group: Terveys
+rules: []

@@ -1,0 +1,50 @@
+default_for_multilang_nlu_model: true
+pipeline:
+  - name: WhitespaceTokenizer
+  - name: LexicalSyntacticFeaturizer
+    alias: lexical
+  - name: CountVectorsFeaturizer
+    alias: one-hot
+  - name: CountVectorsFeaturizer
+    alias: bov
+    analyzer: char_wb
+    min_ngram: 1
+    max_ngram: 4
+  - name: DIETClassifier
+    featurizers:
+      - lexical
+      - one-hot
+      - bov
+    intent_classification: false
+    entity_recognition: true
+    epochs: 50
+  - name: LanguageModelFeaturizer
+    alias: bert
+    model_name: bert
+    model_weights: rasa/LaBSE
+    cache_dir: /app/models/bert
+  - name: DIETClassifier
+    featurizers:
+      - bert
+    epochs: 100
+    entity_recognition: false
+  - name: rasa_addons.nlu.components.gazette.Gazette
+    mode: ratio
+    min_score: 50
+  - name: EntitySynonymMapper
+  - name: >-
+      fallback_service_search.fallback_service_search.FallbackServiceSearchClassifier
+    threshold: 0.6
+    fallback_intent_name: fallback_service_search
+language: fi
+
+
+policies:
+  - name: TEDPolicy
+    epochs: 10
+    max_history: 5
+  - name: RulePolicy
+    core_fallback_threshold: 0.6
+    core_fallback_action_name: "action_custom_fallback"
+    enable_fallback_prediction: True
+  - name: AugmentedMemoizationPolicy

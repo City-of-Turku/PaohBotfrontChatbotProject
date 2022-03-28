@@ -1,0 +1,30 @@
+stories:
+  - story: Läheisen kuolema intro
+    steps:
+      - intent: ke14_death
+        user: omaiseni kuoli
+        entities: []
+      - action: utter_ke14_intro
+      - action: action_recommend_services_by_intent
+      - checkpoint: Läheisen_kuolema_intro__branches
+    metadata:
+      group: KE14 Läheisen kuolema
+  - story: Läheisen kuolema intro__No services found
+    steps:
+      - checkpoint: Läheisen_kuolema_intro__branches
+      - slot_was_set:
+          - recommend_services_success: false
+      - checkpoint: link-to-Paluu alkuun/d91f6161-3ebe-4bee-86b0-d0fa9143bf99
+    metadata:
+      group: KE14 Läheisen kuolema
+  - story: Läheisen kuolema intro__Services found
+    steps:
+      - checkpoint: Läheisen_kuolema_intro__branches
+      - slot_was_set:
+          - recommend_services_success: true
+      - checkpoint: >-
+          link-to-Palvelusuositus
+          palautekysely/8f58a5bb-84e1-4fd7-8135-7c5d2f218a14
+    metadata:
+      group: KE14 Läheisen kuolema
+rules: []

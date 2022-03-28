@@ -1,0 +1,202 @@
+stories:
+  - story: Core Fallback etsi vapaasti palveluita
+    steps:
+      - intent: core_fallback_service_search
+        entities: []
+      - action: core_fallback_service_search_form
+      - active_loop: core_fallback_service_search_form
+      - active_loop: null
+      - checkpoint: Core_Fallback_etsi_vapaasti_palveluita__branches
+    metadata:
+      group: Palveluiden vapaahaku
+  - story: Core Fallback etsi vapaasti palveluita__Municipality
+    steps:
+      - checkpoint: Core_Fallback_etsi_vapaasti_palveluita__branches
+      - slot_was_set:
+          - recommend_services_whole_area: false
+      - action: utter_fallback_service_search_municipality
+      - action: action_recommend_services
+      - checkpoint: Core_Fallback_etsi_vapaasti_palveluita__Municipality__branches
+    metadata:
+      group: Palveluiden vapaahaku
+  - story: Core Fallback etsi vapaasti palveluita__Municipality__No services found
+    steps:
+      - checkpoint: Core_Fallback_etsi_vapaasti_palveluita__Municipality__branches
+      - slot_was_set:
+          - recommend_services_success: false
+      - checkpoint: link-to-Paluu alkuun/d91f6161-3ebe-4bee-86b0-d0fa9143bf99
+    metadata:
+      group: Palveluiden vapaahaku
+  - story: Core Fallback etsi vapaasti palveluita__Municipality__Services found
+    steps:
+      - checkpoint: Core_Fallback_etsi_vapaasti_palveluita__Municipality__branches
+      - slot_was_set:
+          - recommend_services_success: true
+      - checkpoint: >-
+          link-to-Palvelusuositus
+          palautekysely/8f58a5bb-84e1-4fd7-8135-7c5d2f218a14
+    metadata:
+      group: Palveluiden vapaahaku
+  - story: Core Fallback etsi vapaasti palveluita__Whole area
+    steps:
+      - checkpoint: Core_Fallback_etsi_vapaasti_palveluita__branches
+      - slot_was_set:
+          - recommend_services_whole_area: true
+      - action: utter_fallback_service_search_whole_area
+      - action: action_recommend_services
+      - checkpoint: Core_Fallback_etsi_vapaasti_palveluita__Whole_area__branches
+    metadata:
+      group: Palveluiden vapaahaku
+  - story: Core Fallback etsi vapaasti palveluita__Whole area__No services found
+    steps:
+      - checkpoint: Core_Fallback_etsi_vapaasti_palveluita__Whole_area__branches
+      - slot_was_set:
+          - recommend_services_success: false
+      - checkpoint: link-to-Paluu alkuun/d91f6161-3ebe-4bee-86b0-d0fa9143bf99
+    metadata:
+      group: Palveluiden vapaahaku
+  - story: Core Fallback etsi vapaasti palveluita__Whole area__Services found
+    steps:
+      - checkpoint: Core_Fallback_etsi_vapaasti_palveluita__Whole_area__branches
+      - slot_was_set:
+          - recommend_services_success: true
+      - checkpoint: >-
+          link-to-Palvelusuositus
+          palautekysely/8f58a5bb-84e1-4fd7-8135-7c5d2f218a14
+    metadata:
+      group: Palveluiden vapaahaku
+  - story: Etsi vapaasti palveluita
+    steps:
+      - intent: general_service_search
+        entities: []
+      - action: action_reset_need_text_slots
+      - action: general_service_search_form
+      - active_loop: general_service_search_form
+      - active_loop: null
+      - checkpoint: Etsi_vapaasti_palveluita__branches
+    metadata:
+      group: Palveluiden vapaahaku
+  - story: Etsi vapaasti palveluita__Municipality
+    steps:
+      - checkpoint: Etsi_vapaasti_palveluita__branches
+      - slot_was_set:
+          - recommend_services_whole_area: false
+      - action: utter_search_services_municipality
+      - action: action_recommend_services
+      - checkpoint: Etsi_vapaasti_palveluita__Municipality__branches
+    metadata:
+      group: Palveluiden vapaahaku
+  - story: Etsi vapaasti palveluita__Municipality__No services found
+    steps:
+      - checkpoint: Etsi_vapaasti_palveluita__Municipality__branches
+      - slot_was_set:
+          - recommend_services_success: false
+      - checkpoint: link-to-Paluu alkuun/d91f6161-3ebe-4bee-86b0-d0fa9143bf99
+    metadata:
+      group: Palveluiden vapaahaku
+  - story: Etsi vapaasti palveluita__Municipality__Services found
+    steps:
+      - checkpoint: Etsi_vapaasti_palveluita__Municipality__branches
+      - slot_was_set:
+          - recommend_services_success: true
+      - checkpoint: >-
+          link-to-Palvelusuositus
+          palautekysely/8f58a5bb-84e1-4fd7-8135-7c5d2f218a14
+    metadata:
+      group: Palveluiden vapaahaku
+  - story: Etsi vapaasti palveluita__Whole area
+    steps:
+      - checkpoint: Etsi_vapaasti_palveluita__branches
+      - slot_was_set:
+          - recommend_services_whole_area: true
+      - action: utter_search_services_whole_area
+      - action: action_recommend_services
+      - checkpoint: Etsi_vapaasti_palveluita__Whole_area__branches
+    metadata:
+      group: Palveluiden vapaahaku
+  - story: Etsi vapaasti palveluita__Whole area__No services found
+    steps:
+      - checkpoint: Etsi_vapaasti_palveluita__Whole_area__branches
+      - slot_was_set:
+          - recommend_services_success: false
+      - checkpoint: link-to-Paluu alkuun/d91f6161-3ebe-4bee-86b0-d0fa9143bf99
+    metadata:
+      group: Palveluiden vapaahaku
+  - story: Etsi vapaasti palveluita__Whole area__Services found
+    steps:
+      - checkpoint: Etsi_vapaasti_palveluita__Whole_area__branches
+      - slot_was_set:
+          - recommend_services_success: true
+      - checkpoint: >-
+          link-to-Palvelusuositus
+          palautekysely/8f58a5bb-84e1-4fd7-8135-7c5d2f218a14
+    metadata:
+      group: Palveluiden vapaahaku
+  - story: Fallback etsi vapaasti palveluita
+    steps:
+      - intent: fallback_service_search
+        entities: []
+      - action: action_fallback_set_service_search_text
+      - action: fallback_service_search_form
+      - active_loop: fallback_service_search_form
+      - active_loop: null
+      - checkpoint: Fallback_etsi_vapaasti_palveluita__branches
+    metadata:
+      group: Palveluiden vapaahaku
+  - story: Fallback etsi vapaasti palveluita__Municipality
+    steps:
+      - checkpoint: Fallback_etsi_vapaasti_palveluita__branches
+      - slot_was_set:
+          - recommend_services_whole_area: false
+      - action: utter_fallback_service_search_municipality
+      - action: action_recommend_services
+      - checkpoint: Fallback_etsi_vapaasti_palveluita__Municipality__branches
+    metadata:
+      group: Palveluiden vapaahaku
+  - story: Fallback etsi vapaasti palveluita__Municipality__No services found
+    steps:
+      - checkpoint: Fallback_etsi_vapaasti_palveluita__Municipality__branches
+      - slot_was_set:
+          - recommend_services_success: false
+      - checkpoint: link-to-Paluu alkuun/d91f6161-3ebe-4bee-86b0-d0fa9143bf99
+    metadata:
+      group: Palveluiden vapaahaku
+  - story: Fallback etsi vapaasti palveluita__Municipality__Services found
+    steps:
+      - checkpoint: Fallback_etsi_vapaasti_palveluita__Municipality__branches
+      - slot_was_set:
+          - recommend_services_success: true
+      - checkpoint: >-
+          link-to-Palvelusuositus
+          palautekysely/8f58a5bb-84e1-4fd7-8135-7c5d2f218a14
+    metadata:
+      group: Palveluiden vapaahaku
+  - story: Fallback etsi vapaasti palveluita__Whole area
+    steps:
+      - checkpoint: Fallback_etsi_vapaasti_palveluita__branches
+      - slot_was_set:
+          - recommend_services_whole_area: true
+      - action: utter_fallback_service_search_whole_area
+      - action: action_recommend_services
+      - checkpoint: Fallback_etsi_vapaasti_palveluita__Whole_area__branches
+    metadata:
+      group: Palveluiden vapaahaku
+  - story: Fallback etsi vapaasti palveluita__Whole area__No services found
+    steps:
+      - checkpoint: Fallback_etsi_vapaasti_palveluita__Whole_area__branches
+      - slot_was_set:
+          - recommend_services_success: false
+      - checkpoint: link-to-Paluu alkuun/d91f6161-3ebe-4bee-86b0-d0fa9143bf99
+    metadata:
+      group: Palveluiden vapaahaku
+  - story: Fallback etsi vapaasti palveluita__Whole area__Services found
+    steps:
+      - checkpoint: Fallback_etsi_vapaasti_palveluita__Whole_area__branches
+      - slot_was_set:
+          - recommend_services_success: true
+      - checkpoint: >-
+          link-to-Palvelusuositus
+          palautekysely/8f58a5bb-84e1-4fd7-8135-7c5d2f218a14
+    metadata:
+      group: Palveluiden vapaahaku
+rules: []

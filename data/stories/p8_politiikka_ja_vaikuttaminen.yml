@@ -1,0 +1,106 @@
+stories:
+  - story: Kansalaisaloite
+    steps:
+      - intent: P8.3_citizens_initiative
+        entities: []
+      - action: utter_citizens_initiative_intro
+      - action: utter_citizens_initiative_general
+      - action: municipality_form
+      - active_loop: municipality_form
+      - active_loop: null
+      - checkpoint: Kansalaisaloite__branches
+    metadata:
+      group: P8 Politiikka ja vaikuttaminen
+  - story: Kansalaisaloite__Municipality
+    steps:
+      - checkpoint: Kansalaisaloite__branches
+      - slot_was_set:
+          - recommend_services_whole_area: false
+      - action: utter_citizens_initiative_services
+      - action: action_recommend_services_by_intent_and_options
+      - checkpoint: Kansalaisaloite__Municipality__branches
+    metadata:
+      group: P8 Politiikka ja vaikuttaminen
+  - story: Kansalaisaloite__Municipality__No success
+    steps:
+      - checkpoint: Kansalaisaloite__Municipality__branches
+      - slot_was_set:
+          - recommend_services_success: false
+      - checkpoint: link-to-Paluu alkuun/d91f6161-3ebe-4bee-86b0-d0fa9143bf99
+    metadata:
+      group: P8 Politiikka ja vaikuttaminen
+  - story: Kansalaisaloite__Municipality__Success
+    steps:
+      - checkpoint: Kansalaisaloite__Municipality__branches
+      - slot_was_set:
+          - recommend_services_success: true
+      - checkpoint: >-
+          link-to-Palvelusuositus
+          palautekysely/8f58a5bb-84e1-4fd7-8135-7c5d2f218a14
+    metadata:
+      group: P8 Politiikka ja vaikuttaminen
+  - story: Kansalaisaloite__Whole region
+    steps:
+      - checkpoint: Kansalaisaloite__branches
+      - slot_was_set:
+          - recommend_services_whole_area: true
+      - action: utter_citizens_initiative_services
+      - action: action_recommend_services_by_intent_and_options
+      - checkpoint: Kansalaisaloite__Whole_region__branches
+    metadata:
+      group: P8 Politiikka ja vaikuttaminen
+  - story: Kansalaisaloite__Whole region__No success
+    steps:
+      - checkpoint: Kansalaisaloite__Whole_region__branches
+      - slot_was_set:
+          - recommend_services_success: false
+      - checkpoint: link-to-Paluu alkuun/d91f6161-3ebe-4bee-86b0-d0fa9143bf99
+    metadata:
+      group: P8 Politiikka ja vaikuttaminen
+  - story: Kansalaisaloite__Whole region__Success
+    steps:
+      - checkpoint: Kansalaisaloite__Whole_region__branches
+      - slot_was_set:
+          - recommend_services_success: true
+      - checkpoint: >-
+          link-to-Palvelusuositus
+          palautekysely/8f58a5bb-84e1-4fd7-8135-7c5d2f218a14
+    metadata:
+      group: P8 Politiikka ja vaikuttaminen
+  - story: Vaalit
+    steps:
+      - intent: P8.2_elections
+        entities: []
+      - action: utter_elections_intro
+      - action: utter_elections_general
+      - action: utter_elections_services
+      - action: action_recommend_services_by_class
+      - checkpoint: Vaalit__branches
+    metadata:
+      group: P8 Politiikka ja vaikuttaminen
+  - story: Vaalit__No success
+    steps:
+      - checkpoint: Vaalit__branches
+      - slot_was_set:
+          - recommend_services_success: false
+      - checkpoint: link-to-Paluu alkuun/d91f6161-3ebe-4bee-86b0-d0fa9143bf99
+    metadata:
+      group: P8 Politiikka ja vaikuttaminen
+  - story: Vaalit__Success
+    steps:
+      - checkpoint: Vaalit__branches
+      - slot_was_set:
+          - recommend_services_success: true
+      - checkpoint: >-
+          link-to-Palvelusuositus
+          palautekysely/8f58a5bb-84e1-4fd7-8135-7c5d2f218a14
+    metadata:
+      group: P8 Politiikka ja vaikuttaminen
+  - story: Yleistä vaikuttamisesta
+    steps:
+      - intent: P8_politics
+        entities: []
+      - action: utter_politics
+    metadata:
+      group: P8 Politiikka ja vaikuttaminen
+rules: []

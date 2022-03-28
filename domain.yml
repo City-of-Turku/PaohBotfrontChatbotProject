@@ -1,0 +1,3740 @@
+actions:
+  - action_botfront_disambiguation
+  - action_botfront_disambiguation_followup
+  - action_botfront_fallback
+  - action_botfront_mapping
+  - action_custom_fallback
+  - action_fallback_set_service_search_text
+  - action_recommend_services
+  - action_recommend_services_by_class
+  - action_recommend_services_by_intent
+  - action_recommend_services_by_intent_and_class
+  - action_recommend_services_by_intent_and_options
+  - action_recommend_services_by_intent_and_text
+  - action_reset_municipality_slot_if_region
+  - action_reset_need_text_slots
+  - action_set_feedback_reminder
+  - utter_P1.5_moving_intro
+  - utter_ask_core_fallback_service_search_text
+  - utter_ask_fallback_service_search_text
+  - utter_ask_general_service_search_text
+  - utter_ask_municipality
+  - utter_ask_municipalitysingle
+  - utter_ask_sports_service_search_text
+  - utter_back_to_start
+  - utter_basic_healthcare
+  - utter_basic_healthcare_additional
+  - utter_basic_healthcare_services
+  - utter_basic_school
+  - utter_bye
+  - utter_citizens_initiative_general
+  - utter_citizens_initiative_intro
+  - utter_citizens_initiative_services
+  - utter_daycare
+  - utter_default
+  - utter_distraint_general
+  - utter_distraint_more
+  - utter_distraint_services
+  - utter_divorce
+  - utter_divorce2
+  - utter_divorce_services
+  - utter_education
+  - utter_education_select_level
+  - utter_elections_general
+  - utter_elections_intro
+  - utter_elections_services
+  - utter_fallback
+  - utter_fallback_service_search_municipality
+  - utter_fallback_service_search_whole_area
+  - utter_family
+  - utter_family_choices
+  - utter_feedback
+  - utter_feedback_negative
+  - utter_feedback_positive
+  - utter_first_aid
+  - utter_first_aid_links
+  - utter_first_aid_services
+  - utter_general_show_services_municipality
+  - utter_general_show_services_whole_area
+  - utter_get_started
+  - utter_get_started_buttons
+  - utter_get_started_choose_life_event
+  - utter_give_feedback
+  - utter_give_feedback2
+  - utter_having_child_general
+  - utter_healthcare_buttons
+  - utter_healthcare_warning
+  - utter_housing_allowance
+  - utter_invalid_municipality
+  - utter_invalid_municipalitysingle
+  - utter_ke14_intro
+  - utter_ke8_change_job_intro
+  - utter_ke8_change_job_intro2
+  - utter_ke8_find_jobs_intro
+  - utter_ke8_find_jobs_intro2
+  - utter_ke8_initial_choice
+  - utter_ke8_intro
+  - utter_ke8_lay_off_intro
+  - utter_ke8_lay_off_intro2
+  - utter_ke8_other_intro
+  - utter_ke8_show_more
+  - utter_ke8_unemployment_benefit_intro
+  - utter_ke8_unemployment_registration_intro
+  - utter_ke9_intro
+  - utter_kotitalous_intro
+  - utter_kotitalous_show_services_municipality
+  - utter_kotitalous_show_services_whole_area
+  - utter_lastenhoito_show_services_municipality
+  - utter_lastenhoito_show_services_whole_area
+  - utter_lastenhoitopalvelut_intro
+  - utter_leisure_intro
+  - utter_leisure_intro2
+  - utter_library_intro
+  - utter_library_search_more
+  - utter_library_services_municipality
+  - utter_library_services_whole_area
+  - utter_living_general
+  - utter_loan_general
+  - utter_loan_more
+  - utter_loan_services
+  - utter_marriage
+  - utter_marriage2
+  - utter_marriage_services
+  - utter_maternity_clinic
+  - utter_maternity_clinic_links
+  - utter_maternity_clinic_services
+  - utter_no
+  - utter_oral_health
+  - utter_oral_health_additional
+  - utter_oral_health_services
+  - utter_owner_occupation_general
+  - utter_owner_occupation_more
+  - utter_pension
+  - utter_pension_more_services
+  - utter_pension_show_more_services
+  - utter_politics
+  - utter_preschool
+  - utter_public_transport
+  - utter_public_transport_services
+  - utter_recommendation_error
+  - utter_recommendation_no_services
+  - utter_rent_living_general
+  - utter_rent_living_more
+  - utter_search_services_municipality
+  - utter_search_services_whole_area
+  - utter_search_sports_services_municipality
+  - utter_search_sports_services_whole_area
+  - utter_social_assistance_benefit_intro
+  - utter_social_assistance_benefit_intro2
+  - utter_social_assistance_benefit_search_municipality
+  - utter_social_assistance_benefit_show_services_municipality
+  - utter_social_assistance_benefit_show_services_whole_area
+  - utter_social_benefits_buttons
+  - utter_social_benefits_intro
+  - utter_special_care
+  - utter_special_care_additional
+  - utter_special_care_services
+  - utter_sports_intro
+  - utter_student_financial_aid
+  - utter_student_financial_aid_hint
+  - utter_student_financial_air_services
+  - utter_tell_joke
+  - utter_thank_you
+  - utter_uni_applied_sciences
+  - utter_university
+  - utter_upper_secondary_school
+  - utter_vaccination_corona
+  - utter_vaccination_corona_additional
+  - utter_vaccination_national
+  - utter_vaccination_services
+  - utter_vocational_school
+  - utter_what_time_is_it
+  - utter_who_are_you
+  - utter_yes
+entities: []
+forms:
+  core_fallback_service_search_form:
+    collect_in_botfront: null
+    description: null
+    graph_elements:
+      edges:
+        - condition: null
+          id: e1-core_fallback_service_search_text
+          source: '1'
+          target: core_fallback_service_search_text
+          type: condition
+        - condition: null
+          id: ecore_fallback_service_search_text-municipality
+          source: core_fallback_service_search_text
+          target: municipality
+          type: condition
+        - condition:
+            children1:
+              888a998b-4567-489a-bcde-f17d767f6aa7:
+                properties:
+                  field: municipality
+                  operator: is_exactly
+                  value:
+                    - all
+                  valueSrc:
+                    - value
+                  valueType:
+                    - custom_text
+                type: rule
+            id: a9a8a8ba-0123-4456-b89a-b17d7667933f
+            properties:
+              conjunction: AND
+            type: group
+          id: emunicipality-86042305-3936-4404-9a25-f4185b5d5cb4
+          source: municipality
+          target: 86042305-3936-4404-9a25-f4185b5d5cb4
+          type: condition
+        - condition: null
+          id: emunicipality-364ba522-3b6c-4b76-a220-39f60def2914
+          source: municipality
+          target: 364ba522-3b6c-4b76-a220-39f60def2914
+          type: condition
+      nodes:
+        - id: '1'
+          position:
+            x: 200
+            'y': 200
+          type: start
+        - id: core_fallback_service_search_text
+          position:
+            x: 120
+            'y': 360
+          slotName: core_fallback_service_search_text
+          type: slot
+        - id: municipality
+          position:
+            x: 120
+            'y': 500
+          slotName: municipality
+          type: slot
+        - id: 86042305-3936-4404-9a25-f4185b5d5cb4
+          position:
+            x: 120
+            'y': 650
+          slotName: recommend_services_whole_area
+          slotValue: true
+          type: slotSet
+        - id: 364ba522-3b6c-4b76-a220-39f60def2914
+          position:
+            x: 580
+            'y': 660
+          slotName: recommend_services_whole_area
+          slotValue: false
+          type: slotSet
+    groupName: Palveluiden vapaahaku
+    name: core_fallback_service_search_form
+    slots:
+      - filling:
+          - intent: []
+            not_intent: []
+            type: from_text
+        name: core_fallback_service_search_text
+        utter_on_new_valid_slot: false
+      - filling:
+          - entity:
+              - municipality
+            group: null
+            intent: null
+            not_intent: null
+            role: null
+            type: from_entity
+          - intent:
+              - all_municipalities
+              - 'no'
+            not_intent: []
+            type: from_intent
+            value: all
+        name: municipality
+        utter_on_new_valid_slot: false
+        validation:
+          comparatum:
+            - Turku
+            - Mynämäki
+            - Kemiönsaari
+            - Kustavi
+            - Pöytyä
+            - Aura
+            - Kaarina
+            - Laitila
+            - Koski Tl
+            - Lieto
+            - Loimaa
+            - Marttila
+            - Masku
+            - Naantali
+            - Nousiainen
+            - Oripää
+            - Paimio
+            - Parainen
+            - Pyhäranta
+            - Raisio
+            - Rusko
+            - Salo
+            - Sauvo
+            - Somero
+            - Taivassalo
+            - Uusikaupunki
+            - Vehmaa
+            - all
+          operator: is_in
+    updatedAt: 1648452939590
+  fallback_service_search_form:
+    collect_in_botfront: null
+    description: null
+    graph_elements:
+      edges:
+        - condition: null
+          id: e1-fallback_service_search_text
+          source: '1'
+          target: fallback_service_search_text
+          type: condition
+        - condition: null
+          id: efallback_service_search_text-municipality
+          source: fallback_service_search_text
+          target: municipality
+          type: condition
+        - condition:
+            children1:
+              bbab999a-0123-4456-b89a-b17d76812a33:
+                properties:
+                  field: municipality
+                  operator: is_exactly
+                  value:
+                    - all
+                  valueSrc:
+                    - value
+                  valueType:
+                    - custom_text
+                type: rule
+            id: a9a8a8ba-0123-4456-b89a-b17d7667933f
+            properties:
+              conjunction: AND
+            type: group
+          id: emunicipality-efe86787-fb62-434b-a52f-bcd0e6cd5717
+          source: municipality
+          target: efe86787-fb62-434b-a52f-bcd0e6cd5717
+          type: condition
+        - condition: null
+          id: emunicipality-382c4fbc-2433-4710-b380-b1e9ff24fc3f
+          source: municipality
+          target: 382c4fbc-2433-4710-b380-b1e9ff24fc3f
+          type: condition
+      nodes:
+        - id: '1'
+          position:
+            x: 200
+            'y': 200
+          type: start
+        - id: fallback_service_search_text
+          position:
+            x: 120
+            'y': 350
+          slotName: fallback_service_search_text
+          type: slot
+        - id: municipality
+          position:
+            x: 120
+            'y': 500
+          slotName: municipality
+          type: slot
+        - id: efe86787-fb62-434b-a52f-bcd0e6cd5717
+          position:
+            x: 120
+            'y': 800
+          slotName: recommend_services_whole_area
+          slotValue: true
+          type: slotSet
+        - id: 382c4fbc-2433-4710-b380-b1e9ff24fc3f
+          position:
+            x: 580
+            'y': 660
+          slotName: recommend_services_whole_area
+          slotValue: false
+          type: slotSet
+    groupName: Palveluiden vapaahaku
+    name: fallback_service_search_form
+    slots:
+      - filling:
+          - intent: []
+            not_intent: []
+            type: from_text
+        name: fallback_service_search_text
+        utter_on_new_valid_slot: false
+      - filling:
+          - entity:
+              - municipality
+            group: null
+            intent: null
+            not_intent: null
+            role: null
+            type: from_entity
+          - intent:
+              - all_municipalities
+              - 'no'
+            not_intent: []
+            type: from_intent
+            value: all
+        name: municipality
+        utter_on_new_valid_slot: false
+        validation:
+          comparatum:
+            - Turku
+            - Mynämäki
+            - Kemiönsaari
+            - Kustavi
+            - Pöytyä
+            - Aura
+            - Kaarina
+            - Laitila
+            - Koski Tl
+            - Lieto
+            - Loimaa
+            - Marttila
+            - Masku
+            - Naantali
+            - Nousiainen
+            - Oripää
+            - Paimio
+            - Parainen
+            - Pyhäranta
+            - Raisio
+            - Rusko
+            - Salo
+            - Sauvo
+            - Somero
+            - Taivassalo
+            - Uusikaupunki
+            - Vehmaa
+            - all
+          operator: is_in
+    updatedAt: 1648452939579
+  general_service_search_form:
+    collect_in_botfront: null
+    description: ''
+    graph_elements:
+      edges:
+        - condition: null
+          id: e1-general_service_search_text
+          source: '1'
+          target: general_service_search_text
+          type: condition
+        - condition: null
+          id: egeneral_service_search_text-municipality
+          source: general_service_search_text
+          target: municipality
+          type: condition
+        - condition:
+            children1:
+              aa99b9b8-89ab-4cde-b012-317d766b4c1f:
+                properties:
+                  field: municipality
+                  operator: is_exactly
+                  value:
+                    - all
+                  valueSrc:
+                    - value
+                  valueType:
+                    - custom_text
+                type: rule
+            id: a9a8a8ba-0123-4456-b89a-b17d7667933f
+            properties:
+              conjunction: AND
+            type: group
+          id: emunicipality-10c113e2-2951-468c-a080-fa9a22883498
+          source: municipality
+          target: 10c113e2-2951-468c-a080-fa9a22883498
+          type: condition
+        - condition: null
+          id: emunicipality-58877266-4be3-4021-92bf-ce5070628550
+          source: municipality
+          target: 58877266-4be3-4021-92bf-ce5070628550
+          type: condition
+      nodes:
+        - id: '1'
+          position:
+            x: 80
+            'y': 100
+          type: start
+        - id: general_service_search_text
+          position:
+            x: 0
+            'y': 220
+          slotName: general_service_search_text
+          type: slot
+        - id: municipality
+          position:
+            x: 0
+            'y': 340
+          slotName: municipality
+          type: slot
+        - id: 10c113e2-2951-468c-a080-fa9a22883498
+          position:
+            x: 0
+            'y': 530
+          slotName: recommend_services_whole_area
+          slotValue: true
+          type: slotSet
+        - id: 58877266-4be3-4021-92bf-ce5070628550
+          position:
+            x: 460
+            'y': 520
+          slotName: recommend_services_whole_area
+          slotValue: false
+          type: slotSet
+    groupName: Palveluiden vapaahaku
+    name: general_service_search_form
+    slots:
+      - filling:
+          - intent: []
+            not_intent: []
+            type: from_text
+        name: general_service_search_text
+        utter_on_new_valid_slot: false
+      - filling:
+          - entity:
+              - municipality
+            group: null
+            intent: null
+            not_intent: null
+            role: null
+            type: from_entity
+          - intent:
+              - all_municipalities
+              - 'no'
+            not_intent: null
+            type: from_intent
+            value: all
+        name: municipality
+        utter_on_new_valid_slot: false
+        validation:
+          comparatum:
+            - Turku
+            - Mynämäki
+            - Kemiönsaari
+            - Kustavi
+            - Pöytyä
+            - Aura
+            - Kaarina
+            - Laitila
+            - Koski Tl
+            - Lieto
+            - Loimaa
+            - Marttila
+            - Masku
+            - Naantali
+            - Nousiainen
+            - Oripää
+            - Paimio
+            - Parainen
+            - Pyhäranta
+            - Raisio
+            - Rusko
+            - Salo
+            - Sauvo
+            - Somero
+            - Taivassalo
+            - Uusikaupunki
+            - Vehmaa
+            - all
+          operator: is_in
+    updatedAt: 1648452939598
+  municipality_form:
+    collect_in_botfront: false
+    description: ''
+    graph_elements:
+      edges:
+        - condition: null
+          id: e1-municipality
+          source: '1'
+          target: municipality
+          type: condition
+        - condition:
+            children1:
+              b8a99a8a-89ab-4cde-b012-317d7a4637e2:
+                properties:
+                  field: municipality
+                  operator: is_exactly
+                  value:
+                    - all
+                  valueSrc:
+                    - value
+                  valueType:
+                    - custom_text
+                type: rule
+            id: 9b8a88ba-0123-4456-b89a-b17d79ff3e7f
+            properties:
+              conjunction: AND
+            type: group
+          id: emunicipality-a6668f85-0842-4efb-af26-f78afd6129e2
+          source: municipality
+          target: a6668f85-0842-4efb-af26-f78afd6129e2
+          type: condition
+        - condition: null
+          id: emunicipality-17c90d97-072c-4d37-a1db-5b9b2f5f9e2e
+          source: municipality
+          target: 17c90d97-072c-4d37-a1db-5b9b2f5f9e2e
+          type: condition
+      nodes:
+        - id: '1'
+          position:
+            x: 200
+            'y': 180
+          type: start
+        - id: municipality
+          position:
+            x: 120
+            'y': 360
+          slotName: municipality
+          type: slot
+        - id: a6668f85-0842-4efb-af26-f78afd6129e2
+          position:
+            x: 120
+            'y': 510
+          slotName: recommend_services_whole_area
+          slotValue: true
+          type: slotSet
+        - id: 17c90d97-072c-4d37-a1db-5b9b2f5f9e2e
+          position:
+            x: 620
+            'y': 520
+          slotName: recommend_services_whole_area
+          slotValue: false
+          type: slotSet
+    groupName: Palveluiden vapaahaku
+    name: municipality_form
+    slots:
+      - filling:
+          - entity:
+              - municipality
+            group: null
+            intent: null
+            not_intent: null
+            role: null
+            type: from_entity
+          - intent:
+              - all_municipalities
+              - 'no'
+            not_intent: []
+            type: from_intent
+            value: all
+        name: municipality
+        utter_on_new_valid_slot: false
+        validation:
+          comparatum:
+            - Turku
+            - Mynämäki
+            - Kemiönsaari
+            - Kustavi
+            - Pöytyä
+            - Aura
+            - Kaarina
+            - Laitila
+            - Koski Tl
+            - Lieto
+            - Loimaa
+            - Marttila
+            - Masku
+            - Naantali
+            - Nousiainen
+            - Oripää
+            - Paimio
+            - Parainen
+            - Pyhäranta
+            - Raisio
+            - Rusko
+            - Salo
+            - Sauvo
+            - Somero
+            - Taivassalo
+            - Uusikaupunki
+            - Vehmaa
+            - all
+          operator: is_in
+    updatedAt: 1648452939585
+  sports_service_search_form:
+    collect_in_botfront: null
+    description: null
+    graph_elements:
+      edges:
+        - condition: null
+          id: e1-sports_service_search_text
+          source: '1'
+          target: sports_service_search_text
+          type: condition
+        - condition: null
+          id: esports_service_search_text-municipality
+          source: sports_service_search_text
+          target: municipality
+          type: condition
+        - condition:
+            children1:
+              b8b88988-cdef-4012-b456-717d7a45eb29:
+                properties:
+                  field: municipality
+                  operator: is_exactly
+                  value:
+                    - all
+                  valueSrc:
+                    - value
+                  valueType:
+                    - custom_text
+                type: rule
+            id: 9b8a88ba-0123-4456-b89a-b17d79ff3e7f
+            properties:
+              conjunction: AND
+            type: group
+          id: emunicipality-f13a5264-d18b-41c8-a23a-45f79af742a0
+          source: municipality
+          target: f13a5264-d18b-41c8-a23a-45f79af742a0
+          type: condition
+        - condition: null
+          id: emunicipality-e2b0893a-d851-479a-8567-d4afc5bc8533
+          source: municipality
+          target: e2b0893a-d851-479a-8567-d4afc5bc8533
+          type: condition
+      nodes:
+        - id: '1'
+          position:
+            x: 200
+            'y': 200
+          type: start
+        - id: sports_service_search_text
+          position:
+            x: 120
+            'y': 340
+          slotName: sports_service_search_text
+          type: slot
+        - id: municipality
+          position:
+            x: 120
+            'y': 500
+          slotName: municipality
+          type: slot
+        - id: f13a5264-d18b-41c8-a23a-45f79af742a0
+          position:
+            x: 120
+            'y': 650
+          slotName: recommend_services_whole_area
+          slotValue: true
+          type: slotSet
+        - id: e2b0893a-d851-479a-8567-d4afc5bc8533
+          position:
+            x: 580
+            'y': 640
+          slotName: recommend_services_whole_area
+          slotValue: false
+          type: slotSet
+    groupName: Palveluiden vapaahaku
+    name: sports_service_search_form
+    slots:
+      - filling:
+          - intent: []
+            not_intent: []
+            type: from_text
+        name: sports_service_search_text
+        utter_on_new_valid_slot: false
+      - filling:
+          - entity:
+              - municipality
+            group: null
+            intent: null
+            not_intent: null
+            role: null
+            type: from_entity
+          - intent:
+              - all_municipalities
+              - 'no'
+            not_intent: []
+            type: from_intent
+            value: all
+        name: municipality
+        utter_on_new_valid_slot: false
+        validation:
+          comparatum:
+            - Turku
+            - Mynämäki
+            - Kemiönsaari
+            - Kustavi
+            - Pöytyä
+            - Aura
+            - Kaarina
+            - Laitila
+            - Koski Tl
+            - Lieto
+            - Loimaa
+            - Marttila
+            - Masku
+            - Naantali
+            - Nousiainen
+            - Oripää
+            - Paimio
+            - Parainen
+            - Pyhäranta
+            - Raisio
+            - Rusko
+            - Salo
+            - Sauvo
+            - Somero
+            - Taivassalo
+            - Uusikaupunki
+            - Vehmaa
+            - all
+          operator: is_in
+    updatedAt: 1648452939630
+intents:
+  - EXTERNAL_feedback_reminder
+  - KE10_pension
+  - P1.1_rent_living
+  - P1.2_owner_occupation
+  - P1.5_moving
+  - P15.3_loan
+  - P15.5_distraint
+  - P16.5_public_transport
+  - P1_living
+  - P25.1_library
+  - P3.1_divorce
+  - P3.1_marriage
+  - P3.2_having_child
+  - P3.4_lastenhoitopalvelut
+  - P3_family
+  - P4.10_social_assistance_benefit
+  - P4.1_housing_allowance
+  - P4.3_kotitalouspalvelut
+  - P5.10_oral_health
+  - P5.1_basic_healthcare
+  - P5.2_maternity_clinic
+  - P5.3_vaccination
+  - P5.5_first_aid
+  - P5.6_special_care
+  - P5_healthcare
+  - P6.1_daycare
+  - P6.1_preschool
+  - P6.2_basic_school
+  - P6.6_vocational_school
+  - P6.8_upper_secondary_school
+  - P6.9_university
+  - P6.9_university_of_applied_sciences
+  - P6_education
+  - P6_financial_aid_for_students
+  - P8.2_elections
+  - P8.3_citizens_initiative
+  - P8_politics
+  - chitchat.bye
+  - core_fallback_service_search
+  - fallback_service_search
+  - feedback_negative
+  - feedback_positive
+  - general_service_search
+  - give_feedback
+  - ke14_death
+  - ke8_change_job
+  - ke8_find_jobs
+  - ke8_lay_off
+  - ke8_losing_job
+  - ke8_other
+  - ke8_unemployment_benefits
+  - ke8_unemployment_registration
+  - ke9_debt
+  - leisure_services
+  - 'no'
+  - social_benefits
+  - sports_service_search
+  - swear_words
+  - tell_joke
+  - thank_you
+  - what_time_is_it
+  - 'yes'
+responses:
+  utter_P1.5_moving_intro:
+    - buttons:
+        - title: Gör en flyttanmälan
+          type: web_url
+          url: 'https://www.posti.fi/sv/privat/flyttanmalan'
+      language: sv
+      text: >-
+        Gör alltid en flyttanmälan då du flyttar från en lägenhet till en annan
+        permanent eller ifall du bor på en annan adress längre än tre månader.
+        Med flyttanmälan kan du på en gång meddela din nya adress till det
+        nationella befolkningsdatasystemet och till Posten.
+    - buttons:
+        - title: Tee muuttoilmoitus
+          type: web_url
+          url: 'https://www.posti.fi/fi/henkiloille/muuttoilmoitus'
+      language: fi
+      text: >-
+        Tee muuttoilmoitus aina, kun muutat asunnosta toiseen pysyvästi tai kun
+        asut toisessa osoitteessa pidempään kuin kolme kuukautta.
+        Muuttoilmoituksella voit ilmoittaa uuden osoitteesi yhdellä kertaa sekä
+        valtakunnalliseen väestötietojärjestelmään että Postille.
+    - buttons:
+        - title: Submit notification of move
+          type: web_url
+          url: 'https://www.posti.fi/en/private/change-address'
+      language: en
+      text: >-
+        According to Finnish legislation, you must always submit a notification
+        of move if you move permanently into a new home or if your temporary
+        stay at another address is longer than three months. By submitting a
+        notification of move you can notify your new address simultaneously to
+        the national Population Information System as well as to the register of
+        Posti.
+  utter_ask_core_fallback_service_search_text:
+    - language: sv
+      text: Beskriv till en början ditt servicebehov
+    - language: fi
+      text: Kuvailetko ensiksi palvelutarvettasi lyhyesti?
+    - language: en
+      text: 'First, could you describe your service need?'
+  utter_ask_fallback_service_search_text:
+    - language: sv
+      text: Beskriv till en början ditt servicebehov
+    - language: fi
+      text: Kuvailetko ensiksi palvelutarvettasi lyhyesti?
+    - language: en
+      text: 'First, could you describe your service need?'
+  utter_ask_general_service_search_text:
+    - language: sv
+      text: Beskriv till en början ditt servicebehov
+    - language: fi
+      text: Kuvailetko ensiksi palvelutarvettasi lyhyesti?
+    - language: en
+      text: 'First, could you describe your service need?'
+  utter_ask_municipality:
+    - language: sv
+      quick_replies:
+        - payload: /all_municipalities
+          title: Hela regionen
+          type: postback
+      text: >-
+        Berätta från vilken kommun du vill ha tjänster i Egentliga Finlands
+        område? Du kan också välja hela regionen.
+    - language: fi
+      quick_replies:
+        - payload: /all_municipalities
+          title: Koko maakunta
+          type: postback
+      text: >-
+        Kerrotko, mistä Varsinais-Suomen alueen kunnasta haluat palveluita? Voit
+        myös valita koko maakunnan
+    - language: en
+      quick_replies:
+        - payload: /all_municipalities
+          title: Entire region
+          type: postback
+      text: >-
+        Which municipality in the region of Southwest Finland you want services
+        for? You can also select the entire region.
+  utter_ask_municipalitysingle:
+    - language: fi
+      text: >-
+        Kerrotko, mistä Varsinais-Suomen alueen kunnasta haluat palveluita? Voit
+        myös valita koko maakunnan
+  utter_ask_sports_service_search_text:
+    - language: sv
+      text: Vilken typ av motionstjänster är du intresserad av?
+    - language: fi
+      text: Millaisista liikuntapalveluista olet kiinnostunut?
+    - language: en
+      text: What kind of sports services are you interested in?
+  utter_back_to_start:
+    - buttons:
+        - payload: /ke8_losing_job
+          title: Arbetsliv
+          type: postback
+        - payload: /P3_family
+          title: Familj
+          type: postback
+        - payload: /P6_education
+          title: Studerar
+          type: postback
+        - payload: /leisure_services
+          title: Fritid
+          type: postback
+        - payload: /P5_healthcare
+          title: Sjukvård
+          type: postback
+        - payload: /general_service_search
+          title: Leta fritt bland våra tjänster
+          type: postback
+      language: sv
+      text: >-
+        Vill du ännu ha hjälp gällande en annan situation eller leta fritt bland
+        våra tjänster?
+    - buttons:
+        - payload: /ke8_losing_job
+          title: Työasiat
+          type: postback
+        - payload: /P3_family
+          title: Perhe-elämä
+          type: postback
+        - payload: /P6_education
+          title: Opiskelu
+          type: postback
+        - payload: /leisure_services
+          title: Vapaa-aika
+          type: postback
+        - payload: /P5_healthcare
+          title: Terveyspalvelut
+          type: postback
+        - payload: /general_service_search
+          title: Etsi vapaasti palveluita
+          type: postback
+      language: fi
+      text: >-
+        Haluatko vielä apua johonkin toiseen aiheeseen liittyen tai etsiä
+        vapaasti palveluita?
+    - buttons:
+        - payload: /ke8_losing_job
+          title: Worklife
+          type: postback
+        - payload: /P3_family
+          title: Family
+          type: postback
+        - payload: /P6_education
+          title: Studying
+          type: postback
+        - payload: /leisure_services
+          title: Leisure
+          type: postback
+        - payload: /P5_healthcare
+          title: Healthcare
+          type: postback
+        - payload: /general_service_search
+          title: Search services freely
+          type: postback
+      language: en
+      text: Do you want help with another situation or search for services freely?
+  utter_basic_healthcare:
+    - buttons:
+        - title: TYKS
+          type: web_url
+          url: >-
+            https://www.vsshp.fi/fi/ammattilaisille/perusterveydenhuolto/Sivut/default.aspx
+        - title: Yleistä
+          type: web_url
+          url: 'https://stm.fi/terveyspalvelut'
+      language: fi
+      text: >-
+        Perusterveydenhuollon järjestävät kunnat sekä esim TYKS:n
+        perusterveydenhuollon yksikkö. Perusterveydenhuollolla tarkoitetaan
+        kunnan järjestämää väestön terveydentilan seurantaa, terveyden
+        edistämistä ja erilaisia palveluita. Perusterveydenhuollon palvelut
+        tuotetaan kunnan terveyskeskuksessa.
+    - buttons:
+        - title: TYKS
+          type: web_url
+          url: >-
+            https://www.vsshp.fi/en/ammattilaisille/perusterveydenhuolto/Pages/default.aspx
+        - title: General
+          type: web_url
+          url: 'https://stm.fi/en/health-services'
+      language: en
+      text: >-
+        Basic healthcare is organized by municipalities and the basic healthcare
+        unit of TYKS. Basic healthcare refers to the monitoring of the health
+        status of the population, health promotion and various services
+        organized by the municipality. Basic healthcare services are provided at
+        the municipal health center.
+    - buttons:
+        - title: TYKS
+          type: web_url
+          url: >-
+            https://www.vsshp.fi/sv/ammattilaisille/perusterveydenhuolto/Sidor/default.aspx
+        - title: Generisk
+          type: web_url
+          url: 'https://stm.fi/sv/halsotjanster'
+      language: sv
+      text: >-
+        Den grundläggande hälso- och sjukvården organiseras av kommuner och TYKS
+        grundsjukvårdsenhet. Med bassjukvård avses uppföljning av befolkningens
+        hälsotillstånd, hälsofrämjande och olika tjänster som kommunen anordnar.
+        Grundläggande hälso- och sjukvårdstjänster ges på den kommunala
+        vårdcentralen.
+  utter_basic_healthcare_additional:
+    - language: fi
+      text: Lisää tietoa perusterveydenhuollosta voit löytää esim. kuntasi sivulta.
+    - language: en
+      text: >-
+        You can find more information about basic healthcare on the website of
+        your municipality.
+    - language: sv
+      text: >-
+        Mer information om grundläggande hälso- och sjukvård hittar du på din
+        kommuns hemsida.
+  utter_basic_healthcare_services:
+    - language: fi
+      text: >-
+        Palvelusuosituskorteilta voit löytää perusterveydenhuoltoon liittyviä
+        palveluita.
+    - language: en
+      text: >-
+        You can also find services related to basic healthcare on the service
+        recommendation cards
+    - language: sv
+      text: >-
+        Du hittar tjänster relaterade till grundläggande hälso- och sjukvård på
+        servicerekommendationskorten
+  utter_basic_school:
+    - language: fi
+      text: "Haluat siis peruskouluun liittyviä palveluita \U0001F60A"
+    - language: en
+      text: "So you want basic school services \U0001F60A"
+    - language: sv
+      text: "Så du vill ha tjänster relaterade till grundskolan \U0001F60A"
+  utter_bye:
+    - language: sv
+      text: Hejsan!
+    - language: sv
+      text: Vi ses!
+    - language: fi
+      text: Heippa!
+    - language: fi
+      text: Nähdään!
+    - language: en
+      text: Bye!
+  utter_citizens_initiative_general:
+    - buttons:
+        - title: Kansalaisaloite
+          type: web_url
+          url: 'https://www.kansalaisaloite.fi/fi'
+        - title: Kuntalaisaloite
+          type: web_url
+          url: 'https://www.kuntalaisaloite.fi/fi'
+        - title: EU-kansalaisaloite
+          type: web_url
+          url: >-
+            https://ec.europa.eu/info/about-european-commission/get-involved/european-citizens-initiative_fi
+      language: fi
+      text: >-
+        Kansalaisaloite on kehotus säätää jokin tietty laki tai päättää johonkin
+        toimenpiteisiin ryhtymisestä. Vastaavia aloitteita ovat myös
+        kuntalaisaloite ja EU-kansalaisaloite.
+    - buttons:
+        - title: Citizens Initiative
+          type: web_url
+          url: 'https://www.kansalaisaloite.fi/fi'
+        - title: Municipal citizens initiative
+          type: web_url
+          url: 'https://www.kuntalaisaloite.fi/fi'
+        - title: European Citizens Initiative
+          type: web_url
+          url: >-
+            https://ec.europa.eu/info/about-european-commission/get-involved/european-citizens-initiative_en
+      language: en
+      text: >-
+        A Citizens' Initiative is a call to enact a specific law or decide to
+        take action. Similar initiatives include the Municipal Citizens'
+        Initiative and the European Citizens' Initiative.
+    - buttons:
+        - title: Medborgarinitiativ
+          type: web_url
+          url: 'https://www.kansalaisaloite.fi/sv'
+        - title: Invånarinitiativ
+          type: web_url
+          url: 'https://www.kuntalaisaloite.fi/sv'
+        - title: 'EU:s medborgarinitiativ'
+          type: web_url
+          url: >-
+            https://ec.europa.eu/info/about-european-commission/get-involved/european-citizens-initiative_sv
+      language: sv
+      text: >-
+        Ett medborgarinitiativ är en uppmaning att stifta en specifik lag eller
+        besluta att vidta åtgärder. Liknande initiativ inkluderar
+        Invånarinitiativet och europeiska medborgarinitiativet.
+  utter_citizens_initiative_intro:
+    - language: fi
+      text: >-
+        Kansalaisaloite ja sen kannattaminen on äänestämistä suorempi
+        vaikuttamisen muoto.
+    - language: en
+      text: >-
+        The citizens' initiative and its support is a more direct form of
+        influence than voting.
+    - language: sv
+      text: >-
+        Medborgarinitiativet och dess stöd är en mer direkt form av påverkan än
+        röstning.
+  utter_citizens_initiative_services:
+    - language: fi
+      text: Palvelusuosituskorteilta voit löytää aloitteisiin liittyviä palveluita.
+    - language: en
+      text: >-
+        You can also find services related to initiatives on the service
+        recommendation cards
+    - language: sv
+      text: >-
+        Du hittar tjänster relaterade till olika initiativ på
+        servicerekommendationskorten
+  utter_daycare:
+    - language: fi
+      text: "Haluat siis päivähoitoon liittyviä palveluita \U0001F60A"
+    - language: en
+      text: "So you want daycare services \U0001F60A"
+    - language: sv
+      text: "Så du vill ha tjänster relaterade till dagvård \U0001F60A"
+  utter_default:
+    - language: sv
+      text: "Tyvärr, nu förstod jag inte. Kan du vänligen formulera din fråga på ett annat sätt? \U0001F60A"
+    - language: en
+      text: "Unfortunately, I didn't understand that, could you rephrase your message differently? \U0001F60A"
+    - language: fi
+      text: "Valitettavasti nyt en ymmärtänyt, voisitko muotoilla viestisi toisin? \U0001F60A"
+  utter_distraint_general:
+    - language: fi
+      text: >-
+        Ulosotto on viranomaisen tekemä laiminlyödyn velvoitteen
+        pakkotäytäntöönpano. Tämä on tavallisimmin rahasaatavan perintää.
+    - language: en
+      text: >-
+        Distraint is the enforcement of a defaulted obligation by an authority.
+        This is most commonly a debt collection. 
+    - language: sv
+      text: >-
+        Utmätning är en myndighets verkställande av en utebliven skyldighet.
+        Detta är oftast ett inkasso. 
+  utter_distraint_more:
+    - buttons:
+        - title: Kuluttajaliitto
+          type: web_url
+          url: 'https://www.kuluttajaliitto.fi/materiaalit/ulosotto/'
+      language: fi
+      text: Voit lukea lisää Kuluttajaliiton sivuilta
+    - buttons:
+        - title: Consumers Union
+          type: web_url
+          url: 'https://www.kuluttajaliitto.fi/en/'
+      language: en
+      text: 'You can read more from Consumers Union page:'
+    - buttons:
+        - title: Konsumentförbundet
+          type: web_url
+          url: 'https://www.kuluttajaliitto.fi/se/'
+      language: sv
+      text: 'Du kan läsa mer på Konsumentförbundets sida:'
+  utter_distraint_services:
+    - language: fi
+      text: >-
+        Voit myös saada apua ulosottoon liittyvistä palveluista
+        palvelusuosituskorteilta
+    - language: en
+      text: >-
+        You can also get help from services related to distraint from service
+        recommendation cards
+    - language: sv
+      text: >-
+        Du kan också få hjälp av tjänster utmätning till ekonomiskt stöd för
+        studenter från servicerekommendationskort
+  utter_divorce:
+    - language: sv
+      text: >-
+        Ett äk­ten­skap kan dö­mas att upp­hö­ra ge­nom ett be­slut av
+        dom­sto­len (skils­mäs­sa/​äk­ten­skaps­skill­nad). Det är möj­ligt att
+        få skils­mäs­sa ef­ter en be­tän­ke­tid på sex må­na­der el­ler utan
+        be­tän­ke­tid, om ma­kar­na utan av­brott har bott åt­skils de två
+        se­nas­te åren. Dom­sto­len ut­re­der inte or­sa­ker­na till an­sö­kan
+        om skils­mäs­sa i sam­band med hand­lägg­ning­en av ären­det.
+    - language: fi
+      text: >-
+        Avioliitto voidaan purkaa tuomioistuimen päätöksellä eli avioerolla.
+        Avioeron voi saada kuuden kuukauden harkinta-ajan jälkeen tai sen
+        jälkeen, kun puolisot ovat asuneet erillään keskeytyksettä viimeiset
+        kaksi vuotta. Avioeroa käsitellessään tuomioistuin ei tutki
+        avioerohakemuksen syitä.
+    - language: en
+      text: >-
+        A marriage can be dissolved by a court divorce decision. Divorce can be
+        confirmed after a six-month reflection period or after the spouses have
+        lived apart without interruption for the last two years. When dealing
+        with a divorce, the court does not examine the reasons for the divorce
+        application. 
+  utter_divorce2:
+    - buttons:
+        - title: Domstolsväsendet
+          type: web_url
+          url: >-
+            https://oikeus.fi/tuomioistuimet/sv/index/malocharenden/familjerattsligamalocharenden/skilsmassa.html
+      language: sv
+      text: Du kan läsa mer om skilsmässa på sidan för Domstolsväsendet
+    - buttons:
+        - title: Tuomioistuinlaitos
+          type: web_url
+          url: >-
+            https://oikeus.fi/tuomioistuimet/fi/index/asiat/perheasiat/avioero.html
+      language: fi
+      text: Voit lukea lisää avioerosta Tuomioistuinlaitoksen sivuilta
+    - buttons:
+        - title: Finnish Courts
+          type: web_url
+          url: >-
+            https://oikeus.fi/tuomioistuimet/en/index/asiat/perheasiat/avioero.html
+      language: en
+      text: You can read more about divorce from Finnish Courts page
+  utter_divorce_services:
+    - language: sv
+      text: >-
+        Du kan också hitta tjänster relaterade till skilsmässa på
+        servicerekommendationskorten.
+    - language: fi
+      text: >-
+        Palvelusuosituskorteilta voit löytää myös avioeroon liittyviä
+        palveluita.
+    - language: en
+      text: >-
+        You can also find services related to divorce on the service
+        recommendation cards.
+  utter_education:
+    - language: fi
+      text: "Osaan auttaa myös koulutukseen liittyvien palveluiden löytämisessä \U0001F60A"
+    - language: en
+      text: "I can also help you find services related to education \U0001F60A"
+    - language: sv
+      text: "Jag kan även hjälpa dig att hitta tjänster relaterade till utbildning \U0001F60A"
+  utter_education_select_level:
+    - buttons:
+        - payload: /P6.1_preschool
+          title: Esiopetus
+          type: postback
+        - payload: /P6.2_basic_school
+          title: Peruskoulu
+          type: postback
+        - payload: /P6.8_upper_secondary_school
+          title: Lukio
+          type: postback
+        - payload: /P6.6_vocational_school
+          title: Ammatillinen koulutus
+          type: postback
+        - payload: /P6.9_university_of_applied_sciences
+          title: Ammattikorkeakoulu
+          type: postback
+        - payload: /P6.9_university
+          title: Yliopistot
+          type: postback
+      language: fi
+      metadata: null
+      text: Minkä tason koulutuksesta olet kiinnostunut?
+    - buttons:
+        - payload: /P6.1_preschool
+          title: Preschool
+          type: postback
+        - payload: /P6.2_basic_school
+          title: Basic School
+          type: postback
+        - payload: /P6.8_upper_secondary_school
+          title: Upper Secondary School
+          type: postback
+        - payload: /P6.6_vocational_school
+          title: Vocational School
+          type: postback
+        - payload: /P6.9_university_of_applied_sciences
+          title: University of Applied Sciences
+          type: postback
+        - payload: /P6.9_university
+          title: University
+          type: postback
+      language: en
+      metadata: null
+      text: Which level of education are you looking for?
+    - buttons:
+        - payload: /P6.1_preschool
+          title: Förskola
+          type: postback
+        - payload: /P6.2_basic_school
+          title: Grundskola
+          type: postback
+        - payload: /P6.8_upper_secondary_school
+          title: Gymnasium
+          type: postback
+        - payload: /P6.6_vocational_school
+          title: Yrkeskola
+          type: postback
+        - payload: /P6.9_university_of_applied_sciences
+          title: Yrskeshögskola
+          type: postback
+        - payload: /P6.9_university
+          title: University
+          type: postback
+      language: sv
+      metadata: null
+      text: Vilken utbildningsnivå söker du efter?
+  utter_elections_general:
+    - buttons:
+        - title: Vaalit
+          type: web_url
+          url: 'https://vaalit.fi/vaalit'
+        - title: Puolueet
+          type: web_url
+          url: 'https://vaalit.fi/rekisteroidyt-puolueet'
+      language: fi
+      text: 'Linkeistä löydät tietoa Suomen vaaleista ja puolueista:'
+    - buttons:
+        - title: Elections
+          type: web_url
+          url: 'https://vaalit.fi/en/on-elections'
+        - title: Parties
+          type: web_url
+          url: 'https://vaalit.fi/en/list-of-registered-parties'
+      language: en
+      text: 'These links provide information about elections and parties:'
+    - buttons:
+        - title: Val
+          type: web_url
+          url: 'https://vaalit.fi/sv/om-val'
+        - title: Partier
+          type: web_url
+          url: 'https://vaalit.fi/sv/registrerade-partier'
+      language: sv
+      text: 'Dessa länkar ger information om val och partier:'
+  utter_elections_intro:
+    - language: fi
+      text: Yksinkertaisin kansalaisvaikuttamisen tapa on äänestää vaaleissa.
+    - language: en
+      text: The simplest way to involve citizens is to vote in an election.
+    - language: sv
+      text: Det enklaste sättet att involvera medborgarna är att rösta i ett val.
+  utter_elections_services:
+    - language: fi
+      text: >-
+        Palvelusuosituskorteilta voit löytää lisää vaaleihin liittyviä
+        palveluita.
+    - language: en
+      text: >-
+        You can also find services related to elections on the service
+        recommendation cards
+    - language: sv
+      text: Du hittar tjänster relaterade till val på servicerekommendationskorten
+  utter_fallback:
+    - language: sv
+      text: "Ops, nu förstod jag inte. Kan du vänligen formulera din fråga på ett annat sätt? \U0001F60A"
+    - language: en
+      text: "Oops, I didn't understand that, could you rephrase your message differently? \U0001F60A"
+    - language: fi
+      text: "Ups, nyt en ymmärtänyt, voisitko muotoilla viestisi toisin? \U0001F60A"
+    - language: fi
+      text: ''
+  utter_fallback_service_search_municipality:
+    - language: sv
+      text: >-
+        Skulle de relaterade tjänsterna som finns på
+        servicerekommendationskorten vara till hjälp från {municipality}?
+    - language: fi
+      text: >-
+        Olisiko palvelusuosituskorteilta löytyvistä aiheeseen liittyvistä
+        palveluista apua kunnasta {municipality}?
+    - language: en
+      text: >-
+        Would the related services found on the service recommendation cards be
+        helpful from {municipality}?
+  utter_fallback_service_search_whole_area:
+    - language: sv
+      text: >-
+        Skulle de relaterade tjänsterna som finns på
+        servicerekommendationskorten vara till hjälp från Egentliga Finland?
+    - language: fi
+      text: >-
+        Olisiko palvelusuosituskorteilta löytyvistä aiheeseen liittyvistä
+        palveluista apua Varsinais-Suomen alueelta?
+    - language: en
+      text: >-
+        Would the related services found on the service recommendation cards be
+        helpful from Southwest Finland?
+  utter_family:
+    - language: fi
+      text: "Haluat siis etsiä perheille suunnattuja palveluita \U0001F60A"
+    - language: en
+      text: "So you want to look for services for families \U0001F60A"
+    - language: sv
+      text: "Så du vill söka tjänster för familjer \U0001F60A"
+  utter_family_choices:
+    - buttons:
+        - payload: /P3.2_having_child
+          title: Lapsen saaminen
+          type: postback
+        - payload: /P3.4_lastenhoitopalvelut
+          title: Lastenhoito
+          type: postback
+        - payload: /P6.1_daycare
+          title: Päivähoito
+          type: postback
+        - payload: /P5.2_maternity_clinic
+          title: Neuvolat
+          type: postback
+        - payload: /P3.1_marriage
+          title: Avioliitto
+          type: postback
+        - payload: /P3.1_divorce
+          title: Avioero
+          type: postback
+      language: fi
+      text: Millaisista perhepalveluista olet kiinnostunut?
+    - buttons:
+        - payload: /P3.2_having_child
+          title: Having a child
+          type: postback
+        - payload: /P3.4_lastenhoitopalvelut
+          title: Childcare
+          type: postback
+        - payload: /P6.1_daycare
+          title: Daycare
+          type: postback
+        - payload: /P5.2_maternity_clinic
+          title: Maternity clinic
+          type: postback
+        - payload: /P3.1_marriage
+          title: Marriage
+          type: postback
+        - payload: /P3.1_divorce
+          title: Divorce
+          type: postback
+      language: en
+      text: What kind of family services are you interested in?
+    - buttons:
+        - payload: /P3.2_having_child
+          title: Att ha ett barn
+          type: postback
+        - payload: /P3.4_lastenhoitopalvelut
+          title: Barnomsorg
+          type: postback
+        - payload: /P6.1_daycare
+          title: Dagvård
+          type: postback
+        - payload: /P5.2_maternity_clinic
+          title: Förlossningsklinik
+          type: postback
+        - payload: /P3.1_marriage
+          title: Äktenskap
+          type: postback
+        - payload: /P3.1_divorce
+          title: Äktenskapsskillnad
+          type: postback
+      language: sv
+      text: Vilken typ av familjetjänster är du intresserad av?
+  utter_feedback:
+    - buttons:
+        - payload: /feedback_positive
+          title: "\U0001F44D"
+          type: postback
+        - payload: /feedback_negative
+          title: "\U0001F44E"
+          type: postback
+        - title: Fri feedback
+          type: web_url
+          url: 'https://opaskartta.turku.fi/eFeedback/'
+      language: sv
+      text: >-
+        Hur bra stämde rekommendationerna gentemot ditt behov? Du kan även ge
+        fristående feedback via länken här nedan
+    - buttons:
+        - payload: /feedback_positive
+          title: "\U0001F44D"
+          type: postback
+        - payload: /feedback_negative
+          title: "\U0001F44E"
+          type: postback
+        - title: Vapaa palaute
+          type: web_url
+          url: 'https://opaskartta.turku.fi/eFeedback/'
+      language: fi
+      text: >-
+        Kuinka hyvin suositukset vastasivat tarvettasi? Voit myös antaa vapaata
+        palautetta alla olevasta linkistä
+    - buttons:
+        - payload: /feedback_positive
+          title: "\U0001F44D"
+          type: postback
+        - payload: /feedback_negative
+          title: "\U0001F44E"
+          type: postback
+        - title: Open feedback
+          type: web_url
+          url: 'https://opaskartta.turku.fi/eFeedback/en'
+      language: en
+      text: >-
+        How well did those recommendations fit for your needs? You can also give
+        open feedback from the link below
+  utter_feedback_negative:
+    - language: sv
+      text: "Äsch då! Hoppas jag kan bättre i fortsättningen \U0001F605"
+    - language: fi
+      text: "No voi harmi! Toivottavasti osaan jatkossa paremmin \U0001F605"
+    - language: en
+      text: "Oh no! Hopefully I know better in the future \U0001F605"
+  utter_feedback_positive:
+    - language: sv
+      text: "Trevligt att höra! \U0001F60A"
+    - language: fi
+      text: "Kiva kuulla! \U0001F60A"
+    - language: en
+      text: "Thanks, that's nice to hear! \U0001F60A"
+  utter_first_aid:
+    - language: fi
+      text: >-
+        Päivystys on tarkoitettu kiireellisen avun tarpeeseen. Päivystyshoidolla
+        tarkoitetaan hoitoa, jota ei voida siirtää seuraavaan päivään.
+    - language: en
+      text: >-
+        The emergency service is intended for urgent needs. Emergency care
+        refers to treatment that cannot be carried over to the next day. In the
+        event of an emergency.
+    - language: sv
+      text: >-
+        Jouren är avsedd för akuta behov. Akutvård avser behandling som inte kan
+        föras över till nästa dag. I händelse av en nödsituation.
+  utter_first_aid_links:
+    - buttons:
+        - title: TYKS
+          type: web_url
+          url: 'https://www.vsshp.fi/fi/paivystys/Sivut/default.aspx'
+      language: fi
+      text: Voit lukea lisää seuraavasta linkistä
+    - buttons:
+        - title: TYKS
+          type: web_url
+          url: 'https://www.vsshp.fi/en/paivystys/Pages/default.aspx'
+      language: en
+      text: You can read more at the following link
+    - buttons:
+        - title: TYKS
+          type: web_url
+          url: 'https://www.vsshp.fi/sv/paivystys/Sidor/default.aspx'
+      language: sv
+      text: Du kan läsa mer på följande länk
+  utter_first_aid_services:
+    - language: fi
+      text: >-
+        Palvelusuosituskorteilta voit löytää muita päivystykseen liittyviä
+        palveluita.
+    - language: en
+      text: >-
+        You can find other emergency services on the service recommendation
+        cards
+    - language: sv
+      text: Du kan hitta andra akuttjänster på servicerekommendationskorten
+  utter_general_show_services_municipality:
+    - language: fi
+      text: >-
+        Palvelusuosituskorteilta voit löytää aiheeseen liittyviä palveluita
+        kunnasta {municipality}
+    - language: en
+      text: >-
+        You can find related services in the municipality of {municipality} on
+        the service recommendation cards 
+    - language: sv
+      text: >-
+        Du hittar relaterade tjänster i {municipality} kommun på
+        servicerekommendationskorten
+  utter_general_show_services_whole_area:
+    - language: fi
+      text: >-
+        Palvelusuosituskorteilta voit löytää aiheeseen liittyviä palveluita
+        Varsinais-Suomen alueelta
+    - language: en
+      text: >-
+        You can find related services in the region of Southwest Finland on the
+        service recommendation cards.
+    - language: sv
+      text: >-
+        Du kan hitta relaterade tjänster i regionen Egentliga Finland på
+        servicerekommendationskorten.
+  utter_get_started:
+    - language: sv
+      metadata: null
+      text: >-
+        Hej! Jag hjälper dig att hitta tjänster till dina olika livssituationer
+        i Egentliga Finland. Jag känner till nästan allt gällande offentliga
+        tjänster, så jag koncentrerar mig på att ge råd åt dig om hur du
+        använder dem.
+
+
+        Jag förstår bäst tämligen korta meddelanden. Bäst resultat får du då du
+        frågar mig en fråga åt gången.
+    - language: sv
+      metadata: null
+      text: >-
+        Moi! Autan sinua löytämään palveluita eri elämäntilanteisiisi liittyen
+        Varsinais-Suomen alueelta. Tiedän julkisista palveluista lähes kaiken,
+        joten keskityn neuvomaan niiden käytössä.
+
+
+        Ymmärrän parhaiten melko lyhyitä viestejä. Parhaan tuloksen saat, kun
+        kysyt vain yhden kysymyksen kerrallaan.
+    - language: fi
+      metadata: null
+      text: >-
+        Moi! Autan sinua löytämään palveluita eri elämäntilanteisiisi liittyen
+        Varsinais-Suomen alueelta. Tiedän julkisista palveluista lähes kaiken,
+        joten keskityn neuvomaan niiden käytössä.
+
+
+        Ymmärrän parhaiten melko lyhyitä viestejä. Parhaan tuloksen saat, kun
+        kysyt vain yhden kysymyksen kerrallaan.
+    - language: fi
+      metadata: null
+      text: >-
+        Moi! Autan sinua löytämään palveluita eri elämäntilanteisiisi liittyen
+        Varsinais-Suomen alueelta. Tiedän julkisista palveluista lähes kaiken,
+        joten keskityn neuvomaan niiden käytössä.
+
+
+        Ymmärrän parhaiten melko lyhyitä viestejä. Parhaan tuloksen saat, kun
+        kysyt vain yhden kysymyksen kerrallaan.
+    - language: en
+      metadata: null
+      text: >-
+        Hi! I will help you find services related to your different life
+        situations in the region of Southwest Finland. I know almost everything
+        about public services, so I focus on advising on their use.
+
+
+        I understand fairly short messages best. For best results, ask only one
+        question at a time.
+    - language: en
+      metadata: null
+      text: >-
+        Moi! Autan sinua löytämään palveluita eri elämäntilanteisiisi liittyen
+        Varsinais-Suomen alueelta. Tiedän julkisista palveluista lähes kaiken,
+        joten keskityn neuvomaan niiden käytössä.
+
+
+        Ymmärrän parhaiten melko lyhyitä viestejä. Parhaan tuloksen saat, kun
+        kysyt vain yhden kysymyksen kerrallaan.
+  utter_get_started_buttons:
+    - buttons:
+        - payload: /ke8_losing_job
+          title: Työasiat
+          type: postback
+        - payload: /P3_family
+          title: Perhe-elämä
+          type: postback
+        - payload: /P6_education
+          title: Opiskelu
+          type: postback
+        - payload: /leisure_services
+          title: Vapaa-aika
+          type: postback
+        - payload: /P5_healthcare
+          title: Terveyspalvelut
+          type: postback
+        - payload: /general_service_search
+          title: Etsi vapaasti palveluita
+          type: postback
+      language: fi
+      text: "Kuvaile ensiksi alhaalla olevaan tekstikenttään, että mihin tarvitset apua, voit myös käyttää tässä olevia nappeja. \U0001F60A"
+    - buttons:
+        - payload: /ke8_losing_job
+          title: Arbetsliv
+          type: postback
+        - payload: /P3_family
+          title: Familj
+          type: postback
+        - payload: /P6_education
+          title: Studerar
+          type: postback
+        - payload: /leisure_services
+          title: Fritid
+          type: postback
+        - payload: /P5_healthcare
+          title: Sjukvård
+          type: postback
+        - payload: /general_service_search
+          title: Leta fritt bland våra tjänster
+          type: postback
+      language: sv
+      text: "Beskriv till en början i textrutan nedan till vad du behöver hjälp. Du kan också använda knapparna här. \U0001F60A"
+    - buttons:
+        - payload: /ke8_losing_job
+          title: Worklife
+          type: postback
+        - payload: /P3_family
+          title: Family
+          type: postback
+        - payload: /P6_education
+          title: Studying
+          type: postback
+        - payload: /leisure_services
+          title: Leisure
+          type: postback
+        - payload: /P5_healthcare
+          title: Healthcare
+          type: postback
+        - payload: /general_service_search
+          title: Search services freely
+          type: postback
+      language: en
+      text: "First, describe what you need help with to the textbox below. You can also use these buttons. \U0001F60A"
+  utter_get_started_choose_life_event:
+    - buttons:
+        - payload: /ke8_losing_job
+          title: Arbetsliv
+          type: postback
+        - payload: /P3_family
+          title: Familj
+          type: postback
+        - payload: /P6_education
+          title: Studerar
+          type: postback
+        - payload: /leisure_services
+          title: Fritid
+          type: postback
+        - payload: /P5_healthcare
+          title: Sjukvård
+          type: postback
+        - payload: /general_service_search
+          title: Leta fritt bland våra tjänster
+          type: postback
+      language: sv
+      text: "Beskriv till en början till vad du behöver hjälp eller använd knapparna här nedan. \U0001F60A"
+    - buttons:
+        - payload: /ke8_losing_job
+          title: Työasiat
+          type: postback
+        - payload: /P3_family
+          title: Perhe-elämä
+          type: postback
+        - payload: /P6_education
+          title: Opiskelu
+          type: postback
+        - payload: /leisure_services
+          title: Vapaa-aika
+          type: postback
+        - payload: /P5_healthcare
+          title: Terveyspalvelut
+          type: postback
+        - payload: /general_service_search
+          title: Etsi vapaasti palveluita
+          type: postback
+      language: fi
+      text: "Kuvaile siis ensiksi, mihin tarvitset apua, tai käytä alla olevia painikkeita \U0001F60A"
+    - buttons:
+        - payload: /ke8_losing_job
+          title: Worklife
+          type: postback
+        - payload: /P3_family
+          title: Family
+          type: postback
+        - payload: /P6_education
+          title: Studying
+          type: postback
+        - payload: /leisure_services
+          title: Leisure
+          type: postback
+        - payload: /P5_healthcare
+          title: Healthcare
+          type: postback
+        - payload: /general_service_search
+          title: Search services freely
+          type: postback
+      language: en
+      text: "First, describe what you need help with, or use the buttons below \U0001F60A"
+  utter_give_feedback:
+    - language: sv
+      text: "Jag är i aktiv utveckling, så all respons är väldigt viktigt! \U0001F60A"
+    - language: fi
+      text: "Olen aktiivisessa kehityksessä, joten kaikki palaute on tosi tärkeää! \U0001F60A"
+    - language: en
+      text: "I am in active development, so any feedback is really important! \U0001F60A"
+  utter_give_feedback2:
+    - language: sv
+      quick_replies:
+        - payload: /feedback_positive
+          title: "\U0001F44D"
+          type: postback
+        - payload: /feedback_negative
+          title: "\U0001F44E"
+          type: postback
+        - title: Fri feedback
+          type: web_url
+          url: 'https://opaskartta.turku.fi/eFeedback/'
+      text: >-
+        Hur bra har jag i allmänhet fungerat? Du kan även ge fristående feedback
+        via länken här nedan
+    - language: fi
+      quick_replies:
+        - payload: /feedback_positive
+          title: "\U0001F44D"
+          type: postback
+        - payload: /feedback_negative
+          title: "\U0001F44E"
+          type: postback
+        - title: Vapaa palaute
+          type: web_url
+          url: 'https://opaskartta.turku.fi/eFeedback/'
+      text: >-
+        Miten hyvin olen yleisesti toiminut? Voit myös antaa vapaata palautetta
+        alla olevasta linkistä
+    - language: en
+      quick_replies:
+        - payload: /feedback_positive
+          title: "\U0001F44D"
+          type: postback
+        - payload: /feedback_negative
+          title: "\U0001F44E"
+          type: postback
+        - title: Open feedback
+          type: web_url
+          url: 'https://opaskartta.turku.fi/eFeedback/en'
+      text: >-
+        How well have I generally worked? You can also give open feedback from
+        the link below
+  utter_having_child_general:
+    - language: fi
+      text: "Jos olet saamassa lapsen, niin palvelusuosituskorttien palveluista voisi olla apua \U0001F60A"
+    - language: en
+      text: "If you are having a child, the services on the service recommendation cards could be helpful \U0001F60A"
+    - language: sv
+      text: "Om du väntar barn kan tjänsterna på servicerekommendationskorten vara till hjälp \U0001F60A"
+  utter_healthcare_buttons:
+    - language: en
+      quick_replies:
+        - payload: /P5.1_basic_healthcare
+          title: Basic healthcare
+          type: postback
+        - payload: /P5.6_special_care
+          title: Special care
+          type: postback
+        - payload: /P5.5_first_aid
+          title: Emergency services
+          type: postback
+        - payload: /P5.10_oral_health
+          title: Oral health
+          type: postback
+        - payload: /P5.2_maternity_clinic
+          title: Maternity clinic
+          type: postback
+        - payload: /P5.3_vaccination
+          title: Vaccination
+          type: postback
+      text: What kind of healthcare are you interested of?
+    - buttons:
+        - payload: /P5.1_basic_healthcare
+          title: Perusterveydenhuolto
+          type: postback
+        - payload: /P5.6_special_care
+          title: Erikoissairaanhoito
+          type: postback
+        - payload: /P5.5_first_aid
+          title: Päivystys
+          type: postback
+        - payload: /P5.10_oral_health
+          title: Suun terveydenhuolto
+          type: postback
+        - payload: /P5.2_maternity_clinic
+          title: Neuvola
+          type: postback
+        - payload: /P5.3_vaccination
+          title: Rokotukset
+          type: postback
+      language: fi
+      text: Millaisesta terveydenhuollosta olet kiinnostunut?
+    - buttons:
+        - payload: /P5.1_basic_healthcare
+          title: Grundläggande sjukvård
+          type: postback
+        - payload: /P5.6_special_care
+          title: Specialsjukvård
+          type: postback
+        - payload: /P5.5_first_aid
+          title: Akuttjänster
+          type: postback
+        - payload: /P5.10_oral_health
+          title: Munhälsa
+          type: postback
+        - payload: /P5.2_maternity_clinic
+          title: Mödravårdscentral
+          type: postback
+        - payload: /P5.3_vaccination
+          title: Vaccination
+          type: postback
+      language: sv
+      text: Vilken typ av sjukvård är du intresserad av?
+  utter_healthcare_warning:
+    - language: fi
+      text: >-
+        Huomaathan, että terveydenhoidon palvelut ovat Palveluohjaimessa tällä
+        hetkellä vielä hyvin vajavaisesti mukana.
+    - language: en
+      text: Please note that health care services are still scarcely included.
+    - language: sv
+      text: Observera att hälso- och sjukvårdstjänster fortfarande knappt ingår.
+  utter_housing_allowance:
+    - language: sv
+      text: >-
+        Allmänt bostadsbidrag kan betalas ut till personer med låg inkomst för
+        att lindra boendekostnaderna. FPA betalar bostadsbidrag för
+        bidragsberättigade boendekostnader, såsom hyra.
+    - language: fi
+      text: >-
+        Yleistä asumistukea voidaan maksaa pienituloiselle ruokakunnalle
+        asumismenojen helpottamiseksi. Kela maksaa asumistukea hyväksyttävistä
+        asumismenoista, esimerkiksi vuokrasta.
+    - language: en
+      text: >-
+        General housing allowance can be paid to a low-income persons to ease
+        housing costs. Kela pays housing allowance for eligible housing expenses
+        such as rent.
+  utter_invalid_municipality:
+    - language: sv
+      text: >-
+        Tyvärr jag identifierade inte Egentliga Finlands kommun i ditt
+        meddelande.
+    - language: fi
+      text: >-
+        Valitettavasti en tunnistanut Varsinais-Suomeen alueen kuntaa
+        viestistäsi.
+    - language: en
+      text: >-
+        Unfortunately, I didn't identify the municipality of Southwest Finland
+        in your message.
+  utter_invalid_municipalitysingle:
+    - language: fi
+      text: >-
+        Valitettavasti en tunnistanut Varsinais-Suomeen alueen kuntaa
+        viestistäsi.
+  utter_ke14_intro:
+    - language: sv
+      text: "Oj nej \U0001F61F Ifall du behöver stöd i din situation kunde servicerekommendationskorttjänsterna hjälpa dig."
+    - language: fi
+      text: "Voi ei \U0001F61F Jos tarvitset tukea tilanteeseesi, palvelusuosituskorttien palvelut voisivat auttaa."
+    - language: en
+      text: "Oh no \U0001F61F If you need support for your situation, services on the service recommendation cards could help."
+  utter_ke8_change_job_intro:
+    - language: sv
+      text: Alltså mot nya utmaningar!
+    - language: fi
+      text: Kohti uusia haasteita siis!
+    - language: en
+      text: Towards new challenges then!
+  utter_ke8_change_job_intro2:
+    - buttons:
+        - title: Jobbmarknad
+          type: web_url
+          url: 'https://tyomarkkinatori.fi/sv/Etusivu'
+        - title: TE-service
+          type: web_url
+          url: >-
+            https://www.te-palvelut.fi/arbetssokande/yrkesval-och-utbildning/val-av-yrke-utbildning/andring-i-karriaren
+      language: sv
+      text: >-
+        Du kan ansöka om nya arbetsplatser på Jobbmarknad som förnyar
+        arbetsförmedlingens gamla mol.fi -tjänst. Från TE-tjänsten hittar du
+        även tips och funktioner till att utveckla din arbetskarriär.
+    - buttons:
+        - title: Työmarkkinatori
+          type: web_url
+          url: 'https://tyomarkkinatori.fi'
+        - title: TE-palvelut
+          type: web_url
+          url: >-
+            https://www.te-palvelut.fi/tyonhakijalle/ammatinvalinta-koulutus/ammattia-koulutusta-valitsemassa/muutosta-tyouraan
+      language: fi
+      text: >-
+        Voit etsiä uusia työpaikkoja Työmarkkinatorista, joka uudistaa vanhan
+        työnvälityksen mol.fi -palvelun. TE-palveluilta löydät myös vinkkejä ja
+        tehtäviä työuran muutokseen.
+    - buttons:
+        - title: Jobmarket
+          type: web_url
+          url: 'https://tyomarkkinatori.fi/en/Etusivu'
+        - title: TE Office
+          type: web_url
+          url: >-
+            https://www.te-palvelut.fi/jobseekers/career-education-training/choosing-occupation-educational/change-career
+      language: en
+      text: >-
+        You can find jobs in the new Jobmarket service, which will renew the old
+        employment mol.fi service. At TE Office, you will also find tips and
+        tasks for career change situation.
+  utter_ke8_find_jobs_intro:
+    - language: sv
+      text: >-
+        Allra först ska du komma ihåg att anmäla dig som arbetslös arbetssökande
+        till TE-byrån. Du kan klicka dig till TE-byråns tjänster och andra
+        tjänster som befrämjar ditt arbetsansökande via
+        servicerekommendationskorten.
+    - language: fi
+      text: "Ihan ensimmäisenä muista ilmoittautua työttömäksi työnhakijaksi TE-toimistoon. Palvelusuosituskorteista voit klikata itsesi TE-toimiston palveluun ja muihin työnhakua edistäviin palveluihin \U0001F60A"
+    - language: en
+      text: "At first, remember to register as an unemployed jobseeker at the TE Office. From the service recommendation cards, you can click yourself to the TE Office service and to other job search services \U0001F60A"
+  utter_ke8_find_jobs_intro2:
+    - buttons:
+        - title: Jobbmarknad
+          type: web_url
+          url: 'https://tyomarkkinatori.fi/sv/Etusivu'
+        - title: TE-tjänster
+          type: web_url
+          url: 'https://www.te-palvelut.fi/'
+        - title: Åbo Ohjaamo
+          type: web_url
+          url: 'https://ohjaamot.fi/sv/web/ohjaamo-turku/etusivu'
+        - title: Salo Ohjaamo
+          type: web_url
+          url: 'https://ohjaamot.fi/sv/web/ohjaamo-salo/etusivu'
+      language: sv
+      text: >-
+        Du kan även prova på nya Jobbmarknad, som förnyar den gamla TE-tjänstens
+        mol.fi-sajt. När du är under 30 år kan du också få hjälp av Åbo och Salo
+        Ohjaamo.
+    - buttons:
+        - title: Työmarkkinatori
+          type: web_url
+          url: 'https://tyomarkkinatori.fi'
+        - title: TE-palvelut
+          type: web_url
+          url: 'https://www.te-palvelut.fi/'
+        - title: Turun Ohjaamo
+          type: web_url
+          url: 'https://www.turku.fi/ohjaamo'
+        - title: Salon Ohjaamo
+          type: web_url
+          url: >-
+            https://salo.fi/tyo-ja-yrittajyys/palvelut-tyonhakijalle/ohjaamo-nuorille/
+        - title: Työpiste
+          type: web_url
+          url: 'https://www.turku.fi/tyopiste'
+      language: fi
+      text: >-
+        Voit myös kokeilla uutta Työmarkkinatoria, joka uudistaa vanhan
+        TE-palveluiden mol.fi -sivuston.  Alle 30-vuotiaana saat lisäksi apua
+        Turun ja Salon Ohjaamoista.  
+
+        Turussa sinua palvelee lisäksi Työpiste.
+    - buttons:
+        - title: Jobmarket
+          type: web_url
+          url: 'https://tyomarkkinatori.fi/en/Etusivu'
+        - title: TE-services
+          type: web_url
+          url: 'https://www.te-palvelut.fi/'
+        - title: Turku Ohjaamo
+          type: web_url
+          url: 'https://ohjaamot.fi/en/web/ohjaamo-turku/'
+        - title: Salo Ohjaamo
+          type: web_url
+          url: 'https://ohjaamot.fi/en/web/ohjaamo-salo/'
+      language: en
+      text: >-
+        You can also try the new Jobmarket service, which will renew the old TE
+        service's mol.fi -site. When you are under 30, you can also get help
+        from Turku and Salo Ohjaamos.
+  utter_ke8_initial_choice:
+    - buttons:
+        - payload: /ke8_find_jobs
+          title: Att ansöka om jobb
+          type: postback
+        - payload: /ke8_unemployment_benefits
+          title: Till arbetslöshetsstöden
+          type: postback
+        - payload: /ke8_unemployment_registration
+          title: Att anmäla sig som arbetslös
+          type: postback
+        - payload: /ke8_lay_off
+          title: Till permittering
+          type: postback
+        - payload: /ke8_other
+          title: Någonting annat
+          type: postback
+      language: sv
+      text: Berätta till vilken situation du behöver hjälp med?
+    - buttons:
+        - payload: /ke8_find_jobs
+          title: Työn hakemiseen
+          type: postback
+        - payload: /ke8_unemployment_benefits
+          title: Työttömyystukiin
+          type: postback
+        - payload: /ke8_unemployment_registration
+          title: Työttömäksi ilmoittautumiseen
+          type: postback
+        - payload: /ke8_lay_off
+          title: Lomautukseen
+          type: postback
+        - payload: /ke8_other
+          title: Jotain muuta
+          type: postback
+      language: fi
+      text: 'Kerrotko, mihin tilanteeseen tarvitset apua?'
+    - buttons:
+        - payload: /ke8_find_jobs
+          title: Job seeking
+          type: postback
+        - payload: /ke8_unemployment_benefits
+          title: Unemployment benefits
+          type: postback
+        - payload: /ke8_unemployment_registration
+          title: Unemployed jobseeker registration
+          type: postback
+        - payload: /ke8_lay_off
+          title: Layoffs
+          type: postback
+        - payload: /ke8_other
+          title: Something else
+          type: postback
+      language: en
+      text: Can you tell me what situation you need help with?
+  utter_ke8_intro:
+    - language: sv
+      text: 'Ingen fara, jag kan hjälpa dig med dina arbetsfrågor!'
+    - language: fi
+      text: 'Ei hätää, osaan auttaa sinua työasioissa!'
+    - language: en
+      text: 'No worries, I can help you with your work matters!'
+  utter_ke8_lay_off_intro:
+    - language: sv
+      text: >-
+        Permittering betyder att arbetet och löneutbetalningen avbryts
+        tillfälligt, men arbetsförhållandet hålls i kraft. 
+
+
+        Anmäl dig som arbetslös arbetssökande till TE-byrån senast från den
+        första permitteringsdagen så att du kan ansöka om arbetslöshetsförmån
+        från arbetslöshetskassan eller FPA.
+    - language: fi
+      text: >-
+        Lomauttaminen tarkoittaa, että työnteko ja palkanmaksu keskeytyvät
+        väliaikaisesti, mutta työsuhde pysyy muutoin voimassa. 
+
+
+        Ilmoittaudu työttömäksi työnhakijaksi TE-toimistoon viimeistään
+        ensimmäisenä lomautuspäivänä, jotta voit hakea työttömyysetuutta
+        työttömyyskassasta tai Kelasta
+    - language: en
+      text: >-
+        A lay-off is a temporary interruption of the performance of duties and
+        payment of wages associated with an employment relationship, but with
+        the relationship otherwise remaining in force.
+
+
+        If you are laid-off, register as an unemployed jobseeker at the TE
+        Office no later than the first day of the lay-off period so you could
+        apply for unemployment benefits.
+  utter_ke8_lay_off_intro2:
+    - buttons:
+        - title: TE-tjänster
+          type: web_url
+          url: >-
+            https://www.te-palvelut.fi/arbetssokande/om-blir-arbetslos/om-du-blir-permitterad
+      language: sv
+      text: >-
+        Du kan läsa mer om permittering och anmäla dig som arbetslös
+        arbetssökande på TE-byråns permitteringssidor.
+    - buttons:
+        - title: TE-palvelut
+          type: web_url
+          url: >-
+            https://www.te-palvelut.fi/tyonhakijalle/jos-jaat-tyottomaksi/jos-sinut-lomautetaan
+      language: fi
+      text: >-
+        Voit lukea lisätietoa lomautuksesta ja ilmoittautua työttömäksi
+        työnhakijaksi TE-palveluiden lomautus-sivuilta
+    - buttons:
+        - title: TE Office
+          type: web_url
+          url: 'https://www.te-palvelut.fi/jobseekers/if-unemployed/laid-off'
+      language: en
+      text: >-
+        You can read more about layoffs and register as an unemployed jobseeker
+        on the TE Office layoff pages.
+  utter_ke8_other_intro:
+    - language: sv
+      text: >-
+        Med servicerekommendationskorten kan du hitta övriga tjänster gällande
+        arbetslöshet.
+    - language: fi
+      text: >-
+        Palvelusuosituskorteilta voit löytää muita työttömyyteen liittyviä
+        palveluita.
+    - language: en
+      text: >-
+        From the service recommendation cards, you can find other
+        unemployment-related services.
+  utter_ke8_show_more:
+    - buttons:
+        - payload: /yes
+          title: Ja
+          type: postback
+        - payload: /no
+          title: Nej tack
+          type: postback
+      language: sv
+      text: Vill du hitta mer tjänster gällande sysselsättning?
+    - buttons:
+        - payload: /yes
+          title: Kyllä
+          type: postback
+        - payload: /no
+          title: Ei kiitos
+          type: postback
+      language: fi
+      text: Haluaisitko löytää vielä lisää palveluita työllisyyteen liittyen?
+    - buttons:
+        - payload: /yes
+          title: 'Yes'
+          type: postback
+        - payload: /no
+          title: No thanks
+          type: postback
+      language: en
+      text: Would you like to find even more services related to employment?
+  utter_ke8_unemployment_benefit_intro:
+    - language: sv
+      text: >-
+        Till allra först ska du komma ihåg att anmäla dig som arbetslös
+        arbetssökande till TE-byrån. Detta skall göras senast den första dagen
+        då permitteringen eller arbetslösheten börjar. Från
+        servicerekommendationskorten klickar du dig vidare till TE-byråns
+        tjänster.
+
+
+        Ifall du hör till arbetslöshetskassan så vänd dig först till dem. Du kan
+        få inkomstrelaterad dagpenning från kassan om du har tillräckligt med
+        arbetshistoria och medlemsdagar i kassan innan du blev arbetslös.
+
+
+        Ifall de inkomstrelaterade kriterierna inte uppfylls kan du ansöka om
+        FPA:s arbetslöshetsersättning. Även FPA:s villkor är att du skall ha
+        tillräckligt lång arbetshistoria.
+
+
+        Du kan också ansöka om arbetsmarknadsstöd från FPA.  Du är berättigad
+        till stödet också då din inkomstrelaterade dagpenning eller då perioden
+        för arbetslöshetsdagpenning hos FPA tar slut. 
+    - language: fi
+      text: >-
+        Ihan ensimmäisenä muista ilmoittautua työttömäksi työnhakijaksi
+        TE-toimistoon. Tämä pitää tehdä viimeistään ensimmäisenä päivänä kun
+        työttömyys tai lomautus alkaa! Palvelusuosituskorteista voit klikata
+        itsesi TE-toimiston palveluun.
+
+
+        Jos olet työttömyyskassan jäsen, käänny ensin kassan puoleen. Voit saada
+        ansiosidonnaista päivärahaa kassasta, jos sinulla on riittävästi
+        työhistoriaa ja kassan jäsenyyspäiviä ennen työttömyyttä.
+
+
+        Jos ansiosidonnaisen päivärahan ehdot eivät täyty, voit hakea Kelan
+        työttömyysetuuksia. Myös Kelan työttömyyspäivärahan ehtona on, että
+        sinulla on riittävän pitkä työhistoria.
+
+
+        Voit myös hakea Kelasta työmarkkinatukea. Olet oikeutettu
+        työmarkkinatukeen myös silloin, kun ansiosidonnainen päiväraha- tai
+        Kelan työttömyyspäivärahakautesi päättyy.
+    - language: en
+      text: >-
+        At first, remember to register as an unemployed jobseeker at the TE
+        Office. From the service recommendation cards, you can click yourself to
+        the TE Office service.
+
+
+        If you are a member of an unemployment fund, contact the fund first. You
+        can receive earnings-related daily allowance from the fund if you have
+        enough work history and fund’s membership days before unemployment.
+
+
+        If the conditions for earnings-related daily allowance are not met, you
+        can apply for Kela's unemployment benefits. It is also a condition of
+        Kela's unemployment benefit that you have a sufficiently long work
+        history.
+
+
+        You can also apply for Kela's labour market subsidy if other benefits
+        are out of your reach.
+  utter_ke8_unemployment_registration_intro:
+    - language: sv
+      text: >-
+        Helt allra först ska du komma ihåg att anmäla dig som arbetslös
+        arbetssökande till TE-byrån. Du kan klicka dig till TE-byråns tjänster
+        via servicerekommendationskorten.
+    - language: fi
+      text: >-
+        Ihan ensimmäisenä muista ilmoittautua työttömäksi työnhakijaksi
+        TE-toimistoon. Palvelusuosituskorteista voit klikata itsesi TE-toimiston
+        palveluun.
+    - language: en
+      text: >-
+        At first, remember to register as an unemployed jobseeker at the TE
+        Office. From the service recommendation cards, you can click yourself to
+        the TE Office service.
+  utter_ke9_intro:
+    - language: sv
+      text: >-
+        Ifall du blir skuldsatt lönar det sig genast att vara i kontakt med
+        fordringsägarna och försöka förhandla fram ett betalningsarrangemang.
+
+
+        Du kan också få hjälp från tjänster du hittar via
+        servicerekommendationskorten.
+    - language: fi
+      text: >-
+        Velkaantuessa kannattaa olla heti yhteydessä velkojiisi ja yrittää
+        neuvotella maksujärjestelyistä.
+
+
+        Voit myös saada apua palvelusuosituskorttien palveluista.
+    - language: en
+      text: >-
+        When you become indebted, you should contact your creditors immediately
+        and try to negotiate payment arrangements.
+
+
+        You can also get help from services on the service recommendation cards.
+  utter_kotitalous_intro:
+    - language: sv
+      text: "Hemtjänst finns i flera kommuner i Egentliga Finland \U0001F60A"
+    - language: fi
+      text: "Kotitalouspalveluita löytyykin useasta kunnasta Varsinais-Suomessa \U0001F60A"
+    - language: en
+      text: "Home services can be found in several municipalities in Southwest Finland \U0001F60A"
+  utter_kotitalous_show_services_municipality:
+    - language: sv
+      text: >-
+        På servicerekommendationskorten hittar du hemvårdstjänster i
+        {municipality} kommun
+    - language: fi
+      text: >-
+        Palvelusuosituskorteilta voit löytää kotipalveluita kunnasta
+        {municipality}
+    - language: en
+      text: >-
+        On the service recommendation cards, you can find home services in the
+        municipality of {municipality}
+  utter_kotitalous_show_services_whole_area:
+    - language: sv
+      text: >-
+        Du hittar hemvårdstjänster i Egentliga Finlands region på
+        servicerekommendationskorten
+    - language: fi
+      text: >-
+        Palvelusuosituskorteilta voit löytää kotipalveluita Varsinais-Suomen
+        alueelta
+    - language: en
+      text: >-
+        You can find home services in the region of Southwest Finland on the
+        service recommendation cards
+  utter_lastenhoito_show_services_municipality:
+    - language: sv
+      text: >-
+        På servicerekommendationskorten hittar du barnomsorgstjänster i
+        {municipality} kommun
+    - language: fi
+      text: >-
+        Palvelusuosituskorteilta voit löytää lastenhoitopalveluita kunnasta
+        {municipality}
+    - language: en
+      text: >-
+        On the service recommendation cards, you can find childcare services in
+        the municipality of {municipality}
+  utter_lastenhoito_show_services_whole_area:
+    - language: sv
+      text: >-
+        Du hittar barnomsorgstjänster i Egentliga Finlands region på
+        servicerekommendationskorten
+    - language: fi
+      text: >-
+        Palvelusuosituskorteilta voit löytää lastenhoitopalveluita
+        Varsinais-Suomen alueelta
+    - language: en
+      text: >-
+        You can find childcare services in the region of Southwest Finland on
+        the service recommendation cards
+  utter_lastenhoitopalvelut_intro:
+    - language: sv
+      text: "Barndagvård finns i flera kommuner i Egentliga Finland \U0001F60A"
+    - language: fi
+      text: "Lastenhoitopalveluita löytyykin useasta kunnasta Varsinais-Suomessa \U0001F60A"
+    - language: en
+      text: "Childcare services can be found in several municipalities in Southwest Finland \U0001F60A"
+  utter_leisure_intro:
+    - buttons:
+        - title: Varaamo
+          type: web_url
+          url: 'https://varaamo.turku.fi/'
+      language: sv
+      text: >-
+        Till exempel från Varaamo kan du kan boka fritidstjänster i Åbo stad men
+        jag kan hitta ännu flera fritidstjänster åt dig i Egentliga Finland.
+    - buttons:
+        - title: Varaamo
+          type: web_url
+          url: 'https://varaamo.turku.fi/'
+      language: fi
+      text: >-
+        Turun kaupungin vapaa-ajan palveluita voit varata esimerkiksi
+        Varaamosta, mutta osaan löytää sinulle paljon muitakin vapaa-ajan
+        palveluita Varsinais-Suomesta
+    - buttons:
+        - title: Varaamo
+          type: web_url
+          url: 'https://varaamo.turku.fi/'
+      language: en
+      text: >-
+        Did you know that you can book the leisure services of the city of
+        Turku, for example, from Varaamo, but I can find many other leisure
+        services for you in Southwest Finland.
+  utter_leisure_intro2:
+    - buttons:
+        - payload: /P25.1_library
+          title: Bibliotek
+          type: postback
+        - payload: /sports_service_search
+          title: Sport
+          type: postback
+      language: sv
+      text: Hurudana fritidstjänster är du intresserad av?
+    - buttons:
+        - payload: /P25.1_library
+          title: Kirjastot
+          type: postback
+        - payload: /sports_service_search
+          title: Liikunta
+          type: postback
+      language: fi
+      text: Millaisista vapaa-ajan palveluista olet siis kiinnostunut?
+    - buttons:
+        - payload: /P25.1_library
+          title: Libraries
+          type: postback
+        - payload: /sports_service_search
+          title: Sports
+          type: postback
+      language: en
+      text: 'So, what kind of leisure services are you interested in?'
+  utter_library_intro:
+    - buttons:
+        - title: Biblioteket Vaski
+          type: web_url
+          url: 'https://vaski.finna.fi/?lng=sv'
+      language: sv
+      text: >-
+        I Egentliga Finland finns det flertal bibliotek med bra tjänster! Du får
+        mer information om dem från Vaski bibliotekens hemsida.
+    - buttons:
+        - title: Vaski-kirjastot
+          type: web_url
+          url: 'https://vaski.finna.fi/'
+      language: fi
+      text: >-
+        Varsinais-Suomesta löytyykin lukuisia kirjastoja hyvillä palveluilla!
+        Saat lisätietoa niistä Vaski-kirjastojen sivuilta.
+    - buttons:
+        - title: Vaski-libraries
+          type: web_url
+          url: 'https://vaski.finna.fi/?lng=en-gb'
+      language: en
+      text: >-
+        There are numerous libraries in Southwest Finland with good services!
+        You can find more information about them on the Vaski libraries'
+        website.
+  utter_library_search_more:
+    - buttons:
+        - payload: /yes
+          title: Ja
+          type: postback
+        - payload: /no
+          title: Nej
+          type: postback
+      language: sv
+      text: Vill du leta efter ännu fler bibliotekstjänster i din kommun?
+    - buttons:
+        - payload: /yes
+          title: Kyllä
+          type: postback
+        - payload: /no
+          title: En
+          type: postback
+      language: fi
+      text: Haluatko etsiä vielä lisää kirjastopalveluita kunnastasi?
+    - buttons:
+        - payload: /yes
+          title: 'Yes'
+          type: postback
+        - payload: /no
+          title: No thanks
+          type: postback
+      language: en
+      text: Do you want to look for even more library services in your municipality?
+  utter_library_services_municipality:
+    - language: sv
+      text: >-
+        På servicerekommendationskorten hittar du biblioteksrelaterade tjänster
+        i {municipality} kommun
+    - language: fi
+      text: >-
+        Palvelusuosituskorteilta voit löytää kirjastoihin liittyviä palveluita
+        kunnasta {municipality}
+    - language: en
+      text: >-
+        On the service recommendation cards, you can find library-related
+        services in the municipality of {municipality}
+  utter_library_services_whole_area:
+    - language: sv
+      text: >-
+        På servicerekommendationskorten hittar du biblioteksrelaterade tjänster
+        i Egentliga Finlands region
+    - language: fi
+      text: >-
+        Palvelusuosituskorteilta voit löytää kirjastoihin liittyviä palveluita
+        Varsinais-Suomen alueelta
+    - language: en
+      text: >-
+        On the service recommendation cards, you can find library-related
+        services in the region of Southwest Finland
+  utter_living_general:
+    - buttons:
+        - payload: /P1.1_rent_living
+          title: Vuokra-asuminen
+          type: postback
+        - payload: /P1.2_owner_occupation
+          title: Omistusasuminen
+          type: postback
+        - payload: /P1.5_moving
+          title: Muuttaminen
+          type: postback
+        - payload: /P4.1_housing_allowance
+          title: Asumistuki
+          type: postback
+      language: fi
+      text: >-
+        Etsit tietoa asumiseen liittyen. Millaisista asumispalveluista olet
+        kiinnostunut?
+    - buttons:
+        - payload: /P1.1_rent_living
+          title: Rent Living
+          type: postback
+        - payload: /P1.2_owner_occupation
+          title: Owner-occupation
+          type: postback
+        - payload: /P1.5_moving
+          title: Moving
+          type: postback
+        - payload: /P4.1_housing_allowance
+          title: Housing Allowance
+          type: postback
+      language: en
+      text: >-
+        You are looking for information related to living and apartments. What
+        kind of services are you interested in?
+    - buttons:
+        - payload: /P1.5_rent_living
+          title: Hyresbostäder
+          type: postback
+        - payload: /P1.2_owner_occupation
+          title: Ägarsysselsättning
+          type: postback
+        - payload: /P1.5_moving
+          title: Flyttning
+          type: postback
+        - payload: /P4.1_housing_allowance
+          title: Bostadsbidrag
+          type: postback
+      language: sv
+      text: >-
+        Du söker information relaterad till boende och lägenheter. Vilken typ av
+        tjänster är du intresserad av?
+  utter_loan_general:
+    - buttons:
+        - title: Lainat
+          type: web_url
+          url: 'https://www.kuluttajaliitto.fi/materiaalit/lainat-ja-luotot/'
+        - title: Kuluttajaluotot ja pikalainat
+          type: web_url
+          url: 'https://www.kuluttajaliitto.fi/materiaalit/kuluttajaluotot/'
+        - title: Sosiaalinen luotto
+          type: web_url
+          url: 'https://www.kuluttajaliitto.fi/materiaalit/muut-lainat/'
+      language: fi
+      text: 'Lue erilaisista lainatyypeistä esim Kuluttajaliiton sivuita:'
+    - buttons:
+        - title: Loans
+          type: web_url
+          url: 'https://www.kuluttajaliitto.fi/materiaalit/lainat-ja-luotot/'
+        - title: 'Consumer Credit and Quick Loans '
+          type: web_url
+          url: 'https://www.kuluttajaliitto.fi/materiaalit/kuluttajaluotot/'
+        - title: 'Social credit '
+          type: web_url
+          url: 'https://www.kuluttajaliitto.fi/materiaalit/muut-lainat/'
+      language: en
+      text: >-
+        Read about the different types of loans, for example on the Consumer
+        Association's website (in Finnish):
+    - buttons:
+        - title: Lån
+          type: web_url
+          url: 'https://www.kuluttajaliitto.fi/materiaalit/lainat-ja-luotot/'
+        - title: 'Konsumentkrediter och snabblån '
+          type: web_url
+          url: 'https://www.kuluttajaliitto.fi/materiaalit/kuluttajaluotot/'
+        - title: Social kredit
+          type: web_url
+          url: 'https://www.kuluttajaliitto.fi/materiaalit/muut-lainat/'
+      language: sv
+      text: >-
+        Läs om de olika typerna av lån, till exempel på Konsumentföreningens
+        hemsida (på finska):
+  utter_loan_more:
+    - language: fi
+      text: >-
+        Jos tarvitset lainaa, niin riippuen tilanteestasi voit hakea
+        erityyppisiä lainoja tavallisesta pankkilainasta esim. sosiaaliseen
+        luottoon.
+    - language: en
+      text: >-
+        If you need a loan you can apply for different types of loans from a
+        regular bank loan to social credit for example depending on your
+        situation.
+    - language: sv
+      text: >-
+        Om du behöver ett lån kan du ansöka om olika typer av lån från ett
+        vanligt banklån till sociala krediter till exempel beroende på din
+        situation. 
+  utter_loan_services:
+    - language: fi
+      text: >-
+        Palvelusuosituskorteilta voit löytää lisää lainoihin liittyviä
+        palveluita.
+    - language: sv
+      text: Du hittar tjänster relaterade till lån på servicerekommendationskorten
+    - language: en
+      text: >-
+        You can also find services related to loans on the service
+        recommendation cards
+  utter_marriage:
+    - language: sv
+      text: >-
+        Ett äktenskap är en form av ett nära ömsesidigt liv som regleras av
+        samhället. I finsk äktenskapslag definieras det som ett förhållande
+        mellan två personer som bekräftas genom äktenskap.
+    - language: fi
+      text: >-
+        Avioliitto on yhteiskunnan lailla sääntelemä kahden ihmisen välisen
+        tiiviin yhteiselämän muoto. Suomen avioliittolaissa avioliitto
+        määritellään kahden henkilön väliseksi liitoksi, joka vahvistetaan
+        vihkimällä.
+    - language: en
+      text: >-
+        A marriage is a form of a close mutual life regulated by society. In
+        Finnish marriage law it is defined as a relationship between two people
+        which is confirmed through marriage.
+  utter_marriage2:
+    - buttons:
+        - title: Domstolsväsendet
+          type: web_url
+          url: >-
+            https://oikeus.fi/tuomioistuimet/sv/index/malocharenden/familjerattsligamalocharenden/aktenskap.html
+        - title: Suomi.fi
+          type: web_url
+          url: >-
+            https://www.suomi.fi/medborgare/parforhallande-och-familj/parforhallanden/guide/ingaende-av-aktenskap
+      language: sv
+      text: Du kan läsa mer om äktenskap på Domstolsväsendet och på Suomi.fi-sidorna
+    - buttons:
+        - title: Tuomioistuinlaitos
+          type: web_url
+          url: >-
+            https://oikeus.fi/tuomioistuimet/fi/index/asiat/perheasiat/avioliitto.html
+        - title: Suomi.fi
+          type: web_url
+          url: >-
+            https://www.suomi.fi/kansalaiselle/parisuhde-ja-perhe/parisuhde/opas/avioliiton-solmiminen
+      language: fi
+      text: Voit lukea lisää avioliitosta Tuomioistuinlaitoksen ja Suomi.fi sivuilta
+    - buttons:
+        - title: Finnish Courts
+          type: web_url
+          url: >-
+            https://oikeus.fi/tuomioistuimet/en/index/asiat/perheasiat/avioliitto.html
+        - title: Suomi.fi
+          type: web_url
+          url: >-
+            https://www.suomi.fi/citizen/living-together-and-having-a-family/living-together/guide/conclusion-of-marriage
+      language: en
+      text: You can read more about marriage from Finnish Courts and Suomi.fi -pages
+  utter_marriage_services:
+    - language: sv
+      text: >-
+        Du kan också hitta tjänster relaterade till äktenskap på
+        servicerekommendationskorten.
+    - language: fi
+      text: >-
+        Palvelusuosituskorteilta voit löytää myös avioliittoon liittyviä
+        palveluita.
+    - language: en
+      text: >-
+        You can also find services related to marriage on the service
+        recommendation cards.
+  utter_maternity_clinic:
+    - language: fi
+      text: >-
+        Sosiaali- ja terveysministeriö ohjaa ja valvoo äitiys- ja
+        lastenneuvolatoimintaa. Neuvolapalveluita saavat raskaana olevat naiset,
+        lasta odottavat perheet ja alle kouluikäiset lapset sekä heidän
+        perheensä. Kunnat järjestävät alueensa neuvolapalvelut.
+    - language: en
+      text: >-
+        The Ministry of Social Affairs and Health directs and supervises
+        maternity and child health counselling activities. Counselling services
+        are available to pregnant women, expectant families and children under
+        school age, as well as their families. Municipalities provide
+        counselling services in their area.
+    - language: sv
+      text: >-
+        Social- och hälsovårdsministeriet leder och övervakar mödra- och
+        barnhälsorådgivningen. Rådgivningstjänster är tillgängliga för gravida
+        kvinnor, blivande familjer och barn under skolåldern samt deras
+        familjer. Kommuner tillhandahåller rådgivning inom sitt område.
+  utter_maternity_clinic_links:
+    - buttons:
+        - title: STM
+          type: web_url
+          url: 'https://stm.fi/neuvolat'
+      language: fi
+      text: 'Voit lukea lisää STM:n sivulta ja kuntasi nettisivuilta'
+    - buttons:
+        - title: Ministry of Social Affairs
+          type: web_url
+          url: 'https://stm.fi/en/maternity-and-child-health-clinics'
+      language: en
+      text: >-
+        You can read more on the Ministry's website and on your municipality's
+        website
+    - buttons:
+        - title: Socialdepartementet
+          type: web_url
+          url: 'https://stm.fi/sv/radgivningsbyraer'
+      language: sv
+      text: Du kan läsa mer på ministeriet hemsida och på din kommuns hemsida
+  utter_maternity_clinic_services:
+    - language: fi
+      text: Palvelusuosituskorteilta voit löytää neuvoloihin liittyviä palveluita.
+    - language: en
+      text: >-
+        You can also find services related to maternity counselling on the
+        service recommendation cards
+    - language: sv
+      text: >-
+        Du hittar tjänster relaterade till mödrarådgivning på
+        servicerekommendationskorten
+  utter_no:
+    - language: sv
+      text: Inte då!
+    - language: fi
+      text: Ei sitten!
+    - language: en
+      text: 'No, it is!'
+  utter_oral_health:
+    - buttons:
+        - title: Yleistä tietoa
+          type: web_url
+          url: 'https://stm.fi/suun-terveydenhuolto'
+      language: fi
+      text: >-
+        Kunnan on järjestettävä asukkailleen suun terveydenhuollon palvelut.
+        Kunnan järjestämässä suun terveydenhuollossa tehdään yhteistyötä
+        erikoissairaanhoidon, muun terveydenhuollon ja kunnan sosiaalihuollon
+        kanssa. Kunnat voivat järjestää suun terveydenhuollon palvelut itse
+        kunnan terveyskeskuksessa, kuulua kuntayhtymään tai ostaa palvelut
+        muilta palveluntuottajilta.
+    - buttons:
+        - title: General
+          type: web_url
+          url: 'https://stm.fi/suun-terveydenhuolto'
+      language: en
+      text: >-
+        The municipality must provide oral health care services to its
+        residents. Health care organized by the municipality co-operates with
+        special medical care, other health care and municipal social care.
+        Municipalities can arrange oral health care services at the
+        municipality's own health center, belong to a consortium of
+        municipalities or purchase services from other service providers.
+    - buttons:
+        - title: Generisk
+          type: web_url
+          url: 'https://stm.fi/sv/mun-och-tandhalsa'
+      language: sv
+      text: >-
+        Kommunen ska tillhandahålla munhälsovård till sina invånare. Den av
+        kommunen anordnade hälso- och sjukvården samverkar med specialsjukvård,
+        övrig hälso- och sjukvård och kommunal socialvård. Kommuner kan ordna
+        munhälsovård på kommunens egen vårdcentral, tillhöra ett
+        kommunkonsortium eller köpa tjänster från andra tjänsteleverantörer.
+  utter_oral_health_additional:
+    - language: fi
+      text: Lisää tietoa suun terveydenhuollosta voit löytää esim. kuntasi sivulta.
+    - language: en
+      text: >-
+        You can find more information about oral health care on the website of
+        your municipality for example.
+    - language: sv
+      text: >-
+        Du kan hitta mer information om munhälsovård på till exempel din kommuns
+        hemsida.
+  utter_oral_health_services:
+    - language: fi
+      text: >-
+        Palvelusuosituskorteilta voit löytää suun terveydenhuoltoon liittyviä
+        palveluita.
+    - language: en
+      text: >-
+        You can also find services related to oral health on the service
+        recommendation cards
+    - language: sv
+      text: >-
+        Du hittar tjänster relaterade till munhälsovård på
+        servicerekommendationskorten
+  utter_owner_occupation_general:
+    - buttons:
+        - title: Kuluttajaliitto
+          type: web_url
+          url: 'https://www.kuluttajaliitto.fi/materiaalit/omistusasunto/'
+      language: fi
+      text: Voit lukea lyhyesti infoa omistusasumisesta Kuluttajaliiton sivuilta
+    - buttons:
+        - title: Consumers’ Union
+          type: web_url
+          url: 'https://www.kuluttajaliitto.fi/materiaalit/omistusasunto/'
+      language: en
+      text: >-
+        You can read brief information about owner-occupied housing on the
+        Consumer' Union's website (In Finnish):
+    - buttons:
+        - title: Konsumentförbundet
+          type: web_url
+          url: 'https://www.kuluttajaliitto.fi/materiaalit/omistusasunto/'
+      language: sv
+      text: >-
+        Du kan läsa kort information om ägarbostäder på Konsumentförbundets
+        hemsida (på finska): 
+  utter_owner_occupation_more:
+    - language: fi
+      text: >-
+        Palvelusuosituskorteilta voit löytää myös omistusasumiseen liittyviä
+        palveluita.
+    - language: en
+      text: 'The following owner-occupied housing services could also be helpful:'
+    - language: sv
+      text: 'Följande ägarverksamhetstjänster kan också vara till hjälp:'
+  utter_pension:
+    - buttons:
+        - title: Kelan pikaopas
+          type: web_url
+          url: 'https://www.kela.fi/elakelaiset-pikaopas'
+      language: fi
+      text: >-
+        Jos olet jäämässä eläkkeelle, niin Kelan pikaoppaasta voi olla hyötyä
+        juuri oman tilanteesi hahmottamiseen:
+    - buttons:
+        - title: Kela Quick Guide
+          type: web_url
+          url: 'https://www.kela.fi/web/en/pension-quick-guide'
+      language: en
+      text: >-
+        If you are retiring then Kela Quick Guide of pension may help to see
+        your own situation:
+    - buttons:
+        - title: FPA Snabbguide
+          type: web_url
+          url: 'https://www.kela.fi/web/sv/pensionar-snabbguide'
+      language: sv
+      text: >-
+        Om du går i pension kan FPA Snabbguide för pension hjälpa dig i din egna
+        situation:
+  utter_pension_more_services:
+    - language: fi
+      quick_replies:
+        - payload: /KE10_pension
+          title: Kyllä
+          type: postback
+        - payload: /no
+          title: En
+          type: postback
+      text: >-
+        Haluatko vielä etsiä lisää eläkkeisiin ja eläkkeelle jäämiseen liittyviä
+        palveluita?
+    - language: en
+      quick_replies:
+        - payload: /KE10_pension
+          title: 'Yes'
+          type: postback
+        - payload: /no
+          title: 'No'
+          type: postback
+      text: Do you want to search for more services related to retirement?
+    - language: sv
+      quick_replies:
+        - payload: /KE10_pension
+          title: Ja
+          type: postback
+        - payload: /no
+          title: Nej
+          type: postback
+      text: Vill du söka efter fler tjänster relaterade till pension?
+  utter_pension_show_more_services:
+    - language: fi
+      text: Palvelusuosituskorteilta voit löytää eläkkeeseen liittyviä palveluita.
+    - language: en
+      text: 'Ok, would the following services related to retirement be helpful?'
+    - language: sv
+      text: >-
+        Ok, skulle följande tjänster relaterade till pensionering vara till
+        hjälp?
+  utter_politics:
+    - buttons:
+        - payload: /P8.2_elections
+          title: Vaalit
+          type: postback
+        - payload: /P8.3_citizens_initiative
+          title: Kansalaisaloite
+          type: postback
+      language: fi
+      text: 'Haluat ehkä tietää kansalaisen vaikuttamismahdollisuuksista:'
+    - buttons:
+        - payload: /P8.2_elections
+          title: Elections
+          type: postback
+        - payload: /P8.3_citizens_initiative
+          title: Citizens' initiative
+          type: postback
+      language: en
+      text: 'You may want to know about citizens'' possibilities to affect:'
+    - buttons:
+        - payload: /P8.2_elections
+          title: Val
+          type: postback
+        - payload: /P8.3_citizens_initiative
+          title: Medborgarinitiativ
+          type: postback
+      language: sv
+      text: 'Du kanske vill veta om medborgarnas möjligheter att påverka:'
+  utter_preschool:
+    - language: fi
+      text: "Haluat siis esiopetukseen liittyviä palveluita \U0001F60A"
+    - language: en
+      text: "So you want preschool services \U0001F60A"
+    - language: sv
+      text: "Så du vill ha tjänster relaterade till förskolan \U0001F60A"
+  utter_public_transport:
+    - buttons:
+        - title: Föli
+          type: web_url
+          url: 'https://www.foli.fi/sv'
+        - title: Matkahuolto
+          type: web_url
+          url: 'https://www.matkahuolto.fi/sv'
+        - title: TLO
+          type: web_url
+          url: 'https://tlo.fi/'
+        - title: VR
+          type: web_url
+          url: 'https://www.vr.fi/sv'
+      language: sv
+      text: >-
+        Du hittar hjälp till kollektivtrafik på hemsidorna till Föli,
+        Matkahuolto, TLO och VR.
+    - buttons:
+        - title: Föli
+          type: web_url
+          url: 'https://www.foli.fi/fi'
+        - title: Matkahuolto
+          type: web_url
+          url: 'https://www.matkahuolto.fi/'
+        - title: TLO
+          type: web_url
+          url: 'https://tlo.fi/'
+        - title: VR
+          type: web_url
+          url: 'https://www.vr.fi/'
+      language: fi
+      text: >-
+        Julkiseen liikenteeseen apua löydät Föliltä, Matkahuollolta, TLO:lta ja
+        VR:ltä
+    - buttons:
+        - title: Föli
+          type: web_url
+          url: 'https://www.foli.fi/en'
+        - title: Matkahuolto
+          type: web_url
+          url: 'https://www.matkahuolto.fi/en'
+        - title: TLO
+          type: web_url
+          url: 'https://tlo.fi/'
+        - title: VR
+          type: web_url
+          url: 'https://www.vr.fi/en'
+      language: en
+      text: >-
+        You can find help for public transport from Föli, Matkahuolto, TLO and
+        VR.
+  utter_public_transport_services:
+    - language: fi
+      text: >-
+        Palvelusuosituskorteilta voit löytää lisää joukkoliikenteseen liittyviä
+        palveluita
+    - language: en
+      text: >-
+        You can also find services related to public transport on the service
+        recommendation cards
+    - language: sv
+      text: >-
+        Du hittar tjänster relaterade till kollektivtrafik på
+        servicerekommendationskorten
+  utter_recommendation_error:
+    - language: fi
+      text: "Valitettavasti palvelusuosittelussa tapahtui virhe \U0001F641"
+    - language: en
+      text: "Unfortunately, there was an error in the service recommendation \U0001F641"
+    - language: sv
+      text: "Tyvärr blev det ett fel i servicerekommendationen \U0001F641"
+  utter_recommendation_no_services:
+    - language: fi
+      text: "Valitettavasti en löytänyt yhtään sopivaa palvelua \U0001F641"
+    - language: en
+      text: "Unfortunately, I could not find any suitable services \U0001F641"
+    - language: sv
+      text: "Tyvärr kunde jag inte hitta några lämpliga tjänster \U0001F641"
+  utter_rent_living_general:
+    - buttons:
+        - title: Kuluttajaliitto
+          type: web_url
+          url: 'https://www.kuluttajaliitto.fi/materiaalit/vuokra-asunto/'
+      language: fi
+      text: Voit lukea lyhyesti infoa vuokra-asumisesta Kuluttajaliiton sivuilta
+    - buttons:
+        - title: Consumers’ Union
+          type: web_url
+          url: 'https://www.kuluttajaliitto.fi/en/materials/rentalguide/'
+      language: en
+      text: >-
+        You can read brief information about rental apartments on the Consumer'
+        Union's website:
+    - buttons:
+        - title: Konsumentförbundet
+          type: web_url
+          url: 'https://www.kuluttajaliitto.fi/se/material/hyresguide/'
+      language: sv
+      text: >-
+        Du kan läsa kort information om hyresbostäder på Konsumentförbundets
+        hemsida: 
+  utter_rent_living_more:
+    - language: fi
+      text: >-
+        Palvelusuosituskorteilta voit löytää vuokra-asumiseen liittyviä
+        palveluita.
+    - language: en
+      text: 'The following rental housing services could also be helpful:'
+    - language: sv
+      text: 'Följande hyresbostadtjänster kan också vara till hjälp:'
+  utter_search_services_municipality:
+    - language: sv
+      text: >-
+        Skulle de relaterade tjänsterna som finns på
+        servicerekommendationskorten vara till hjälp från {municipality}?
+    - language: fi
+      text: >-
+        Olisiko palvelusuosituskorteilta löytyvistä aiheeseen liittyvistä
+        palveluista apua kunnasta {municipality}?
+    - language: en
+      text: >-
+        Would the related services found on the service recommendation cards be
+        helpful from {municipality}?
+  utter_search_services_whole_area:
+    - language: sv
+      text: >-
+        Skulle de relaterade tjänsterna som finns på
+        servicerekommendationskorten vara till hjälp från Egentliga Finland?
+    - language: fi
+      text: >-
+        Olisiko palvelusuosituskorteilta löytyvistä aiheeseen liittyvistä
+        palveluista apua Varsinais-Suomen alueelta?
+    - language: en
+      text: >-
+        Would the related services found on the service recommendation cards be
+        helpful from Southwest Finland?
+  utter_search_sports_services_municipality:
+    - language: sv
+      text: >-
+        På servicerekommendationskorten kan du hitta lämpliga idrottstjänster i
+        {municipality} kommun
+    - language: fi
+      text: >-
+        Palvelusuosituskorteilta voit löytää sopivia liikuntapalveluita kunnasta
+        {municipality}
+    - language: en
+      text: >-
+        On the service recommendation cards, you can find suitable sports
+        services in the municipality of {municipality}
+  utter_search_sports_services_whole_area:
+    - language: sv
+      text: >-
+        På servicerekommendationskorten kan du hitta lämpliga sporttjänster i
+        Egentliga Finlands region
+    - language: fi
+      text: >-
+        Palvelusuosituskorteilta voit löytää sopivia liikuntapalveluita
+        Varsinais-Suomen alueelta
+    - language: en
+      text: >-
+        On the service recommendation cards, you can find suitable sports
+        services in the region of Southwest Finland
+  utter_social_assistance_benefit_intro:
+    - buttons:
+        - title: Snabbguide
+          type: web_url
+          url: 'https://www.kela.fi/web/sv/utkomststod-snabbguide'
+      language: sv
+      text: >-
+        En person eller familj vars inkomster inte räcker till dagliga
+        nödvändiga utgifter kan få FPA:s grundutkomststöd. FPA:s snabbguide ger
+        dig råd hur du ska ansöka om stödet.
+    - buttons:
+        - title: Pikaopas
+          type: web_url
+          url: 'https://www.kela.fi/toimeentulotuki-pikaopas'
+      language: fi
+      text: >-
+        Kelan perustoimeentulotukea voi saada henkilö tai perhe, jonka tulot ja
+        varat eivät riitä välttämättömiin jokapäiväisiin menoihin. Kelan
+        pikaopas neuvoo sinua tuen hakemisessa.
+    - buttons:
+        - title: Kela quick guide
+          type: web_url
+          url: 'https://www.kela.fi/web/en/social-assistance-quick-guide'
+      language: en
+      text: >-
+        Kela's basic social assistance may be available to individuals and
+        families whose income and assets do not cover their essential daily
+        expenses. Kela's quick guide tells you how to apply for social
+        assistance.
+  utter_social_assistance_benefit_intro2:
+    - language: sv
+      text: >-
+        Utöver grundutkomststödet kan din kommuns socialbyrå, enligt egen
+        bedömning bevilja kompletterande och förebyggande utkomststöd.
+    - language: fi
+      text: >-
+        Perustoimeentulon lisäksi kuntasi sosiaalitoimisto voi harkintansa
+        mukaan myöntää täydentävää ja ehkäisevää toimeentulotukea.
+    - language: en
+      text: >-
+        If you have specific expenses which basic social assistance does not
+        cover, your municipal social services office may at its discretion
+        provide you with supplementary or preventive social assistance.
+  utter_social_assistance_benefit_search_municipality:
+    - language: sv
+      quick_replies:
+        - payload: /P4.10_social_assistance_benefit_municipality
+          title: Ja
+          type: postback
+        - payload: /no
+          title: Nej
+          type: postback
+      text: Vill du ännu leta efter tjänster gällande grundutkomststöd i din kommun?
+    - language: fi
+      quick_replies:
+        - payload: /P4.10_social_assistance_benefit_municipality
+          title: Kyllä
+          type: postback
+        - payload: /no
+          title: En
+          type: postback
+      text: Haluatko vielä etsiä perustoimeentulon palveluita kunnastasi?
+    - language: en
+      quick_replies:
+        - payload: /P4.10_social_assistance_benefit_municipality
+          title: Joo
+          type: postback
+        - payload: /no
+          title: En
+          type: postback
+      text: Do you want to look for social assistance services in your municipality?
+  utter_social_assistance_benefit_show_services_municipality:
+    - language: sv
+      text: >-
+        På servicerekommendationskorten hittar du tjänster gällande
+        grundutkomststöd i {municipality} kommun
+    - language: fi
+      text: >-
+        Palvelusuosituskorteilta voit löytää perustoimeentulon palveluita
+        kunnasta {municipality}
+    - language: en
+      text: >-
+        On the service recommendation cards, you can find social assistance
+        services in the municipality of {municipality}
+  utter_social_assistance_benefit_show_services_whole_area:
+    - language: sv
+      text: >-
+        Du hittar tjänster gällande grundutkomststöd i Egentliga Finlands region
+        på servicerekommendationskorten
+    - language: fi
+      text: >-
+        Palvelusuosituskorteilta voit löytää perustoimeentulon palveluita
+        Varsinais-Suomen alueelta
+    - language: en
+      text: >-
+        You can find social assistance services in the region of Southwest
+        Finland on the service recommendation cards
+  utter_social_benefits_buttons:
+    - buttons:
+        - payload: /ke8_unemployment_benefits
+          title: Arbetslöshetsersättning
+          type: postback
+        - payload: /P4.1_housing_allowance
+          title: Bostadsbidrag
+          type: postback
+        - payload: /P4.10_social_assistance_benefit
+          title: Socialbidragsförmån
+          type: postback
+        - payload: /P6_financial_aid_for_students
+          title: Studiestöd
+          type: postback
+      language: sv
+      text: Skulle något av följande hjälpa?
+    - buttons:
+        - payload: /ke8_unemployment_benefits
+          title: Unemployment Benefits
+          type: postback
+        - payload: /P4.1_housing_allowance
+          title: Housing Allowance
+          type: postback
+        - payload: /P4.10_social_assistance_benefit
+          title: Social Assitance Benefit
+          type: postback
+        - payload: /P6_financial_aid_for_students
+          title: Financial Aid for Students
+          type: postback
+      language: en
+      text: Would any of the following help?
+    - buttons:
+        - payload: /ke8_unemployment_benefits
+          title: Työttömyystuet
+          type: postback
+        - payload: /P4.1_housing_allowance
+          title: Asumistuki
+          type: postback
+        - payload: /P4.10_social_assistance_benefit
+          title: Toimeentulotuki
+          type: postback
+        - payload: /P6_financial_aid_for_students
+          title: Opintotuki
+          type: postback
+      language: fi
+      text: Olisiko seuraavista apua?
+  utter_social_benefits_intro:
+    - language: fi
+      text: >-
+        Kelasta voi hakea erilaisia tukia riippuen taloudellisesta sekä
+        elämäntilanteestasi.
+    - language: en
+      text: >-
+        You can apply for various subsidies from Kela depending on your
+        financial and life situation.
+    - language: sv
+      text: >-
+        Du kan ansöka om olika bidrag från FPA beroende på din ekonomiska
+        situation och livssituation.
+  utter_special_care:
+    - buttons:
+        - title: Sairaanhoitopiiri
+          type: web_url
+          url: 'https://www.vsshp.fi/fi/sairaanhoitopiiri/Sivut/default.aspx'
+      language: fi
+      text: >-
+        Varsinais-Suomi kuuluu Varsinais-Suomen sairaanhoitopiiriin ja
+        keskussairaalana on Turun yiopistollinen keskussairaala:
+    - buttons:
+        - title: Hospital District
+          type: web_url
+          url: 'https://www.vsshp.fi/en/sairaanhoitopiiri/Pages/default.aspx'
+      language: en
+      text: >-
+        Southwest Finland belongs to the Hospital District of Southwest Finland
+        and the central hospital is Turku University Central Hospital:
+    - buttons:
+        - title: Sjukvårdsdistrikt
+          type: web_url
+          url: 'https://www.vsshp.fi/sv/sairaanhoitopiiri/Sidor/default.aspx'
+      language: sv
+      text: >-
+        Egentliga Finland tillhör Egentliga Finlands sjukvårdsdistrikt och
+        centralsjukhuset är Åbo universitetscentralsjukhus:
+  utter_special_care_additional:
+    - language: fi
+      text: >-
+        Erikoissairaanhoitoa varten maa on jaettu kahteenkymmeneen
+        sairaanhoitopiiriin. Jokainen kunta kuuluu johonkin sairaanhoitopiiriin.
+        Jokaisessa sairaanhoitopiirissä on keskussairaala ja muita sairaaloita.
+        Sairaanhoitopiiri vastaa sairaalapalveluiden tuottamisesta.
+    - language: en
+      text: >-
+        For special medical care, the country is divided into twenty hospital
+        districts. Each municipality belongs to a hospital district. There is a
+        central hospital and other hospitals in each hospital district. The
+        hospital district is responsible for providing hospital services.
+    - language: sv
+      text: >-
+        För specialsjukvård är landet indelat i tjugo sjukvårdsdistrikt. Varje
+        kommun tillhör ett sjukvårdsdistrikt. Det finns ett centralsjukhus och
+        andra sjukhus i varje sjukvårdsdistrikt. Sjukhusdistriktet ansvarar för
+        att tillhandahålla sjukhustjänster.
+  utter_special_care_services:
+    - language: fi
+      text: >-
+        Palvelusuosituskorteilta voit löytää erikoissairaanhoitoon liittyviä
+        palveluita.
+    - language: en
+      text: >-
+        You can find services related to special care on the service
+        recommendation cards
+    - language: sv
+      text: >-
+        Du hittar tjänster relaterade till specialsjukvård på
+        servicerekommendationskorten.
+  utter_sports_intro:
+    - language: sv
+      text: >-
+        Jag känner till otaliga motionstjänster, allt från simstränder och
+        beachvolley till bobollsplaner och konditionssalar.
+    - language: fi
+      text: >-
+        Tiedänkin lukuisia liikuntapalveluita uimarannoista ja
+        rantalentopallosta pesiskenttiin ja kuntosaleihin.
+    - language: en
+      text: >-
+        I know numerous sports services from swimming to beach volleyball and
+        from baseball to gyms.
+  utter_student_financial_aid:
+    - buttons:
+        - title: Opintotuki
+          type: web_url
+          url: 'https://www.kela.fi/opintotuki'
+      language: fi
+      text: Voit lukea opintotuesta lisää Kelan oppaasta
+    - buttons:
+        - title: Financial Aid for Students
+          type: web_url
+          url: 'https://www.kela.fi/web/en/financial-aid-for-students'
+      language: en
+      text: You can read more about financial aid for students from Kela
+    - buttons:
+        - title: Studiestöd
+          type: web_url
+          url: 'https://www.kela.fi/web/sv/studiestod'
+      language: sv
+      text: Du kan läsa mer om ekonomiskt stöd för studenter från FPA
+  utter_student_financial_aid_hint:
+    - buttons:
+        - payload: /P6_financial_aid_for_students
+          title: Opintotuki
+          type: postback
+      language: fi
+      text: 'Saatat olla myös kiinnostunut opintotuesta:'
+    - buttons:
+        - payload: /P6_financial_aid_for_students
+          title: Financial Aid for Students
+          type: postback
+      language: en
+      text: 'You might also be interested of financial aid for students:'
+    - buttons:
+        - payload: /P6_financial_aid_for_students
+          title: Studiestöd
+          type: postback
+      language: sv
+      text: 'Du kanske också är intresserad av ekonomiskt stöd för studenter:'
+  utter_student_financial_air_services:
+    - language: fi
+      text: >-
+        Voit myös saada apua opintotukeen liittyvistä palveluista
+        palvelusuosituskorteilta
+    - language: en
+      text: >-
+        You can also get help from services related to financial aid for
+        students from service recommendation cards
+    - language: sv
+      text: >-
+        Du kan också få hjälp av tjänster relaterade till ekonomiskt stöd för
+        studenter från servicerekommendationskort
+  utter_tell_joke:
+    - language: sv
+      text: Jag tänkte dra ett skämt om Titanic men ville inte sjunka så lågt.
+    - language: fi
+      text: |-
+        Turkulainen meni autokauppaan ja myyjä esitteli Nissania:  
+          
+        – Tää on Sunny.  
+          
+        – Jaa onk tää mun ny, ihmetteli turkulainen.
+    - language: en
+      text: |-
+        What do you call a crocodile with GPS?  
+          
+        A Navi-gator.
+  utter_thank_you:
+    - language: fi
+      text: Ole hyvä!
+    - language: en
+      text: You are welcome!
+    - language: sv
+      text: Varsågod!
+  utter_uni_applied_sciences:
+    - buttons:
+        - title: Turun ammattikorkeakoulu
+          type: web_url
+          url: 'https://www.turkuamk.fi/fi/'
+        - title: Ammattikorkeakoulu Novia
+          type: web_url
+          url: 'https://www.novia.fi/'
+        - title: Diakonia-ammattikorkeakoulu
+          type: web_url
+          url: 'https://www.diak.fi/'
+        - title: Humanistinen ammattikorkeakoulu
+          type: web_url
+          url: 'https://www.humak.fi/'
+      language: fi
+      text: 'Varsinais-Suomessa toimii useampi ammattikorkeakoulu:'
+    - buttons:
+        - title: Turku University of Applied Sciences
+          type: web_url
+          url: 'https://www.tuas.fi/en/'
+        - title: Novia University of Applied Sciences
+          type: web_url
+          url: 'https://www.novia.fi/novia-uas/'
+        - title: Diakonia University of Applied Sciences
+          type: web_url
+          url: 'https://www.diak.fi/en/'
+        - title: Humak University of Applied Sciences
+          type: web_url
+          url: 'https://www.humak.fi/en/'
+      language: en
+      text: 'Southwest Finland has several universities of applied sciences:'
+    - buttons:
+        - title: Turku Yrkeshögskola
+          type: web_url
+          url: 'https://www.tuas.fi/en/'
+        - title: Yrkeshögskolan Novia
+          type: web_url
+          url: 'https://www.novia.fi/'
+        - title: Diakonia Yrkeshögskolan
+          type: web_url
+          url: 'https://www.diak.fi/en/'
+        - title: Humak
+          type: web_url
+          url: 'https://www.humak.fi/en/'
+      language: sv
+      text: 'Egentliga Finland har flera yrkeshögskolor: '
+  utter_university:
+    - buttons:
+        - title: Turun yliopisto
+          type: web_url
+          url: 'https://www.utu.fi/fi'
+        - title: Åbo Akademi
+          type: web_url
+          url: 'https://www.abo.fi/fi/'
+      language: fi
+      text: 'Varsinais-Suomessa toimii kaksi yliopistoa:'
+    - buttons:
+        - title: University of Turku
+          type: web_url
+          url: 'https://www.utu.fi/en'
+        - title: Åbo Akademi
+          type: web_url
+          url: 'https://www.abo.fi/en/'
+      language: en
+      text: 'Southwest Finland has two universities:'
+    - buttons:
+        - title: Turku Universitet
+          type: web_url
+          url: 'https://www.utu.fi/en'
+        - title: Åbo Akademi
+          type: web_url
+          url: 'https://www.abo.fi/'
+      language: sv
+      text: 'Egentliga Finland har två universitet:'
+  utter_upper_secondary_school:
+    - language: fi
+      text: "Haluat siis lukioihin liittyviä palveluita \U0001F60A"
+    - language: en
+      text: "So you want upper secondary school services \U0001F60A"
+    - language: sv
+      text: "Så du vill ha tjänster relaterade till gymnasiet \U0001F60A"
+  utter_vaccination_corona:
+    - buttons:
+        - title: Koronarokotukset
+          type: web_url
+          url: 'https://stm.fi/koronavirusrokotteet'
+      language: fi
+      text: 'Yleistä infoa koronarokotuksista:'
+    - buttons:
+        - title: Covid-19
+          type: web_url
+          url: 'https://stm.fi/en/coronavirus-vaccines'
+      language: en
+      text: 'General information about coronavirus vaccinations:'
+    - buttons:
+        - title: Covid-19
+          type: web_url
+          url: 'https://stm.fi/sv/vaccin-mot-coronaviruset'
+      language: sv
+      text: 'Allmän information om vaccinationer mot coronavirus:'
+  utter_vaccination_corona_additional:
+    - language: fi
+      text: >-
+        Tietoa koronarokotuksista, aikatauluista sekä ajanvarauksista voit
+        löytää esim. kuntasi sivulta. 
+    - language: en
+      text: >-
+        You can find more information about coronavirus vaccinations on the
+        website of your municipality for example.
+    - language: sv
+      text: >-
+        Du hittar mer information om vaccinationer mot coronavirus till exempel
+        på din kommuns hemsida.
+  utter_vaccination_national:
+    - buttons:
+        - title: Kansallinen rokotusohjelma
+          type: web_url
+          url: 'https://stm.fi/rokotukset'
+      language: fi
+      text: >-
+        Kansallisessa rokotusohjelmassa mukana olevat rokotteet hankitaan
+        valtion kustannuksella kuntien käyttöön. Vastuu kansalliseen
+        rokotusohjelmaan kuuluvien rokotusten käytännön järjestämisestä kuuluu
+        kunnille.
+    - buttons:
+        - title: National Vaccination Programme
+          type: web_url
+          url: 'https://stm.fi/en/vaccinations'
+      language: en
+      text: >-
+        Vaccines included in the national vaccination program are procured at
+        the expense of the state for the use of municipalities. The
+        responsibility for the organization of vaccinations under the national
+        vaccination program lies with the municipalities.
+    - buttons:
+        - title: 'Nationellt vaccinationsprogram '
+          type: web_url
+          url: 'https://stm.fi/sv/vaccinationer'
+      language: sv
+      text: >-
+        Vacciner som ingår i det nationella vaccinationsprogrammet anskaffas på
+        statens bekostnad för kommunernas bruk. Ansvaret för anordnandet av
+        vaccinationer inom det nationella vaccinationsprogrammet ligger på
+        kommunerna.
+  utter_vaccination_services:
+    - language: fi
+      text: Palvelusuosituskorteilta voit löytää rokotuksiin liittyviä palveluita.
+    - language: en
+      text: >-
+        You can also find services related to vaccination on the service
+        recommendation cards
+    - language: sv
+      text: >-
+        Du hittar tjänster relaterade till vaccinationer på
+        servicerekommendationskorten
+  utter_vocational_school:
+    - language: fi
+      text: "Haluat siis ammatilliseen koulutukseen liittyviä palveluita \U0001F60A"
+    - language: en
+      text: "So you want vocational school services \U0001F60A"
+    - language: sv
+      text: "Så du vill ha tjänster relaterade till yrkeskolan \U0001F60A"
+    - language: sv
+      text: ''
+  utter_what_time_is_it:
+    - language: sv
+      text: "Klockan är 17:00 någonstans i världen \U0001F554"
+    - language: fi
+      text: "Kello on 17 jossain päin maailmaa \U0001F554"
+    - language: en
+      text: "It's 5pm somewhere \U0001F554"
+  utter_who_are_you:
+    - language: sv
+      text: >-
+        Jag är en serviceinstruktörsbot och jag hjälper dig att hitta tjänster
+        relaterade till dina olika livssituationer i regionen Egentliga Finland.
+
+
+        Du kan klicka på knapparna för olika situationer eller skriv gärna och
+        beskriv dina servicebehov så att jag direkt kan rekommendera rätt
+        tjänster för dig.
+
+
+        Jag kan söka efter olika tjänster, framför allt offentliga tjänster, och
+        informationen om de tjänster jag visar bör vara mycket uppdaterad!
+
+
+        Jag finner tjänster väl relaterade till vanliga situationer som
+        anställning och skuldsättning. Däremot kan jag mycket om
+        fritidsrelaterade tjänster som idrottsplatser och bibliotek. Så fråga
+        gärna vad som helst!
+    - language: fi
+      text: >-
+        Olen palveluohjainbotti ja autan sinua löytämään palveluita eri
+        elämäntilanteisiisi liittyen Varsinais-Suomen alueelta.
+
+
+        Voit klikkailla valmiita nappeja eri tilanteisiin liittyen tai myös
+        vapaasti kirjoittaa ja kuvailla palvelutarpeitasi, jotta voin heti
+        suositella sinulle sopivia palveluita.
+
+
+        Osaan hakea eri tietolähteistä erityisesti julkisia palveluita ja
+        näyttämieni palveluiden tiedot pitäisivätkin olla hyvin ajan tasalla!
+
+
+        Löydän hyvin palveluita yleisiin tilanteisiin liittyen, kuten
+        työllisyyteen ja velkaantumiseen. Toisaalta tiedän paljon esimerkiksi
+        vapaa-aikaan liittyviä palveluita, kuten liikuntapaikkoja ja kirjastoja.
+        Kysy siis rohkeasti mitä vaan!
+    - language: en
+      text: >-
+        I am a service instructor bot and I will help you find services related
+        to your different life situations in the region of Southwest Finland.
+
+
+        You can click on the buttons for different situations or feel free to
+        write and describe your service needs so that I can immediately
+        recommend the right services for you.
+
+
+        I can search for various services, especially public services, and the
+        information about the services I display should be very up-to-date!
+
+
+        I find services well related to common situations such as employment and
+        indebtedness. On the other hand, I know a lot about leisure-related
+        services, such as sports venues and libraries. So, feel free to ask
+        anything!
+  utter_yes:
+    - language: sv
+      text: Ja ja!
+    - language: fi
+      text: Kyllä kyllä!
+    - language: en
+      text: Sure!
+session_config: {}
+slots:
+  core_fallback_service_search_text:
+    type: unfeaturized
+  disambiguation_message:
+    type: unfeaturized
+  fallback_language:
+    initial_value: fi
+    type: unfeaturized
+  fallback_service_search_text:
+    type: unfeaturized
+  general_service_search_text:
+    type: unfeaturized
+  municipality:
+    type: unfeaturized
+  recommend_services_success:
+    type: bool
+  recommend_services_whole_area:
+    type: bool
+  show_recommendations:
+    type: unfeaturized
+  sports_service_search_text:
+    type: unfeaturized

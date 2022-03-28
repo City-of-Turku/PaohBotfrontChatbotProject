@@ -1,0 +1,19 @@
+slots:
+  disambiguation_message:
+    type: unfeaturized
+actions:
+  - action_botfront_disambiguation
+  - action_botfront_disambiguation_followup
+  - action_botfront_fallback
+  - action_botfront_mapping
+  - action_custom_fallback
+  - action_fallback_set_service_search_text
+  - action_recommend_services
+  - action_recommend_services_by_class
+  - action_recommend_services_by_intent
+  - action_reset_need_text_slots
+  - action_recommend_services_by_intent_and_text
+  - action_set_feedback_reminder
+  - action_recommend_services_by_intent_and_class
+  - action_recommend_services_by_intent_and_options
+  - action_reset_municipality_slot_if_region

@@ -1,0 +1,286 @@
+stories:
+  - story: Asumisen tuki
+    steps:
+      - intent: P4.1_housing_allowance
+        entities: []
+      - action: utter_housing_allowance
+      - action: action_recommend_services_by_intent_and_options
+      - checkpoint: Asumisen_tuki__branches
+    metadata:
+      group: Sosiaalipalvelut
+  - story: Asumisen tuki__No services found
+    steps:
+      - checkpoint: Asumisen_tuki__branches
+      - slot_was_set:
+          - recommend_services_success: false
+      - checkpoint: link-to-Paluu alkuun/d91f6161-3ebe-4bee-86b0-d0fa9143bf99
+    metadata:
+      group: Sosiaalipalvelut
+  - story: Asumisen tuki__Services found
+    steps:
+      - checkpoint: Asumisen_tuki__branches
+      - slot_was_set:
+          - recommend_services_success: true
+      - checkpoint: >-
+          link-to-Palvelusuositus
+          palautekysely/8f58a5bb-84e1-4fd7-8135-7c5d2f218a14
+    metadata:
+      group: Sosiaalipalvelut
+  - story: Kotitalouspalvelut
+    steps:
+      - intent: P4.3_kotitalouspalvelut
+        entities: []
+      - action: utter_kotitalous_intro
+      - action: municipality_form
+      - active_loop: municipality_form
+      - active_loop: null
+      - checkpoint: Kotitalouspalvelut__branches
+    metadata:
+      group: Sosiaalipalvelut
+  - story: Kotitalouspalvelut__Municipality
+    steps:
+      - checkpoint: Kotitalouspalvelut__branches
+      - slot_was_set:
+          - recommend_services_whole_area: false
+      - action: utter_kotitalous_show_services_municipality
+      - action: action_recommend_services_by_class
+      - checkpoint: Kotitalouspalvelut__Municipality__branches
+    metadata:
+      group: Sosiaalipalvelut
+  - story: Kotitalouspalvelut__Municipality__No services found
+    steps:
+      - checkpoint: Kotitalouspalvelut__Municipality__branches
+      - slot_was_set:
+          - recommend_services_success: false
+      - checkpoint: link-to-Paluu alkuun/d91f6161-3ebe-4bee-86b0-d0fa9143bf99
+    metadata:
+      group: Sosiaalipalvelut
+  - story: Kotitalouspalvelut__Municipality__Services found
+    steps:
+      - checkpoint: Kotitalouspalvelut__Municipality__branches
+      - slot_was_set:
+          - recommend_services_success: true
+      - checkpoint: >-
+          link-to-Palvelusuositus
+          palautekysely/8f58a5bb-84e1-4fd7-8135-7c5d2f218a14
+    metadata:
+      group: Sosiaalipalvelut
+  - story: Kotitalouspalvelut__Whole area
+    steps:
+      - checkpoint: Kotitalouspalvelut__branches
+      - slot_was_set:
+          - recommend_services_whole_area: true
+      - action: utter_kotitalous_show_services_whole_area
+      - action: action_recommend_services_by_class
+      - checkpoint: Kotitalouspalvelut__Whole_area__branches
+    metadata:
+      group: Sosiaalipalvelut
+  - story: Kotitalouspalvelut__Whole area__No services found
+    steps:
+      - checkpoint: Kotitalouspalvelut__Whole_area__branches
+      - slot_was_set:
+          - recommend_services_success: false
+      - checkpoint: link-to-Paluu alkuun/d91f6161-3ebe-4bee-86b0-d0fa9143bf99
+    metadata:
+      group: Sosiaalipalvelut
+  - story: Kotitalouspalvelut__Whole area__Services found
+    steps:
+      - checkpoint: Kotitalouspalvelut__Whole_area__branches
+      - slot_was_set:
+          - recommend_services_success: true
+      - checkpoint: >-
+          link-to-Palvelusuositus
+          palautekysely/8f58a5bb-84e1-4fd7-8135-7c5d2f218a14
+    metadata:
+      group: Sosiaalipalvelut
+  - story: Lastenhoitopalvelut
+    steps:
+      - intent: P3.4_lastenhoitopalvelut
+        user: Lastenhoitopalvelut
+        entities: []
+      - action: utter_lastenhoitopalvelut_intro
+      - action: municipality_form
+      - active_loop: municipality_form
+      - active_loop: null
+      - checkpoint: Lastenhoitopalvelut__branches
+    metadata:
+      group: Sosiaalipalvelut
+  - story: Lastenhoitopalvelut__Municipality
+    steps:
+      - checkpoint: Lastenhoitopalvelut__branches
+      - slot_was_set:
+          - recommend_services_whole_area: false
+      - action: utter_lastenhoito_show_services_municipality
+      - action: action_recommend_services_by_class
+      - checkpoint: Lastenhoitopalvelut__Municipality__branches
+    metadata:
+      group: Sosiaalipalvelut
+  - story: Lastenhoitopalvelut__Municipality__No services found
+    steps:
+      - checkpoint: Lastenhoitopalvelut__Municipality__branches
+      - slot_was_set:
+          - recommend_services_success: false
+      - checkpoint: link-to-Paluu alkuun/d91f6161-3ebe-4bee-86b0-d0fa9143bf99
+    metadata:
+      group: Sosiaalipalvelut
+  - story: Lastenhoitopalvelut__Municipality__Services found
+    steps:
+      - checkpoint: Lastenhoitopalvelut__Municipality__branches
+      - slot_was_set:
+          - recommend_services_success: true
+      - checkpoint: >-
+          link-to-Palvelusuositus
+          palautekysely/8f58a5bb-84e1-4fd7-8135-7c5d2f218a14
+    metadata:
+      group: Sosiaalipalvelut
+  - story: Lastenhoitopalvelut__Whole area
+    steps:
+      - checkpoint: Lastenhoitopalvelut__branches
+      - slot_was_set:
+          - recommend_services_whole_area: true
+      - action: utter_lastenhoito_show_services_whole_area
+      - action: action_recommend_services_by_class
+      - checkpoint: Lastenhoitopalvelut__Whole_area__branches
+    metadata:
+      group: Sosiaalipalvelut
+  - story: Lastenhoitopalvelut__Whole area__No services found
+    steps:
+      - checkpoint: Lastenhoitopalvelut__Whole_area__branches
+      - slot_was_set:
+          - recommend_services_success: false
+    metadata:
+      group: Sosiaalipalvelut
+  - story: Lastenhoitopalvelut__Whole area__Services found
+    steps:
+      - checkpoint: Lastenhoitopalvelut__Whole_area__branches
+      - slot_was_set:
+          - recommend_services_success: true
+    metadata:
+      group: Sosiaalipalvelut
+  - story: Opintotuki
+    steps:
+      - intent: P6_financial_aid_for_students
+        entities: []
+      - action: utter_student_financial_aid
+      - action: utter_student_financial_air_services
+      - action: action_recommend_services_by_intent
+      - checkpoint: Opintotuki__branches
+    metadata:
+      group: Sosiaalipalvelut
+  - story: Opintotuki__No success
+    steps:
+      - checkpoint: Opintotuki__branches
+      - slot_was_set:
+          - recommend_services_success: false
+      - checkpoint: link-to-Paluu alkuun/d91f6161-3ebe-4bee-86b0-d0fa9143bf99
+    metadata:
+      group: Sosiaalipalvelut
+  - story: Opintotuki__Success
+    steps:
+      - checkpoint: Opintotuki__branches
+      - slot_was_set:
+          - recommend_services_success: true
+      - checkpoint: >-
+          link-to-Palvelusuositus
+          palautekysely/8f58a5bb-84e1-4fd7-8135-7c5d2f218a14
+    metadata:
+      group: Sosiaalipalvelut
+  - story: Sosiaalituet aloitussivu
+    steps:
+      - intent: social_benefits
+        entities: []
+      - action: utter_social_benefits_intro
+      - action: utter_social_benefits_buttons
+    metadata:
+      group: Sosiaalipalvelut
+  - story: Toimeentulotuki
+    steps:
+      - intent: P4.10_social_assistance_benefit
+        user: Mistä saan toimeentulotukea
+        entities: []
+      - action: utter_social_assistance_benefit_intro
+      - action: utter_social_assistance_benefit_intro2
+      - action: utter_social_assistance_benefit_search_municipality
+      - checkpoint: Toimeentulotuki__branches
+    metadata:
+      group: Sosiaalipalvelut
+  - story: Toimeentulotuki__No more
+    steps:
+      - checkpoint: Toimeentulotuki__branches
+      - intent: 'no'
+        entities: []
+      - checkpoint: link-to-Paluu alkuun/d91f6161-3ebe-4bee-86b0-d0fa9143bf99
+    metadata:
+      group: Sosiaalipalvelut
+  - story: Toimeentulotuki__Search more
+    steps:
+      - checkpoint: Toimeentulotuki__branches
+      - or:
+          - intent: P4.10_social_assistance_benefit_municipality
+            entities: []
+          - intent: 'yes'
+            entities: []
+      - action: action_reset_municipality_slot_if_region
+      - action: municipality_form
+      - active_loop: municipality_form
+      - active_loop: null
+      - checkpoint: Toimeentulotuki__Search_more__branches
+    metadata:
+      group: Sosiaalipalvelut
+  - story: Toimeentulotuki__Search more__Municipality
+    steps:
+      - checkpoint: Toimeentulotuki__Search_more__branches
+      - slot_was_set:
+          - recommend_services_whole_area: false
+      - action: utter_social_assistance_benefit_show_services_municipality
+      - action: action_recommend_services_by_class
+      - checkpoint: Toimeentulotuki__Search_more__Municipality__branches
+    metadata:
+      group: Sosiaalipalvelut
+  - story: Toimeentulotuki__Search more__Municipality__No services found
+    steps:
+      - checkpoint: Toimeentulotuki__Search_more__Municipality__branches
+      - slot_was_set:
+          - recommend_services_success: false
+      - checkpoint: link-to-Paluu alkuun/d91f6161-3ebe-4bee-86b0-d0fa9143bf99
+    metadata:
+      group: Sosiaalipalvelut
+  - story: Toimeentulotuki__Search more__Municipality__Services found
+    steps:
+      - checkpoint: Toimeentulotuki__Search_more__Municipality__branches
+      - slot_was_set:
+          - recommend_services_success: true
+      - checkpoint: >-
+          link-to-Palvelusuositus
+          palautekysely/8f58a5bb-84e1-4fd7-8135-7c5d2f218a14
+    metadata:
+      group: Sosiaalipalvelut
+  - story: Toimeentulotuki__Search more__Whole area
+    steps:
+      - checkpoint: Toimeentulotuki__Search_more__branches
+      - slot_was_set:
+          - recommend_services_whole_area: true
+      - action: utter_social_assistance_benefit_show_services_whole_area
+      - action: action_recommend_services_by_class
+      - checkpoint: Toimeentulotuki__Search_more__Whole_area__branches
+    metadata:
+      group: Sosiaalipalvelut
+  - story: Toimeentulotuki__Search more__Whole area__No services found
+    steps:
+      - checkpoint: Toimeentulotuki__Search_more__Whole_area__branches
+      - slot_was_set:
+          - recommend_services_success: false
+      - checkpoint: link-to-Paluu alkuun/d91f6161-3ebe-4bee-86b0-d0fa9143bf99
+    metadata:
+      group: Sosiaalipalvelut
+  - story: Toimeentulotuki__Search more__Whole area__Services found
+    steps:
+      - checkpoint: Toimeentulotuki__Search_more__Whole_area__branches
+      - slot_was_set:
+          - recommend_services_success: true
+      - checkpoint: >-
+          link-to-Palvelusuositus
+          palautekysely/8f58a5bb-84e1-4fd7-8135-7c5d2f218a14
+    metadata:
+      group: Sosiaalipalvelut
+rules: []

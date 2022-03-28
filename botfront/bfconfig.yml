@@ -1,0 +1,11 @@
+name: palveluohjainbotti
+namespace: bf-palveluohjainbotti
+defaultLanguage: fi
+nluThreshold: 0.75
+timezoneOffset: 2
+allowContextualQuestions: false
+instance:
+  name: Default Instance
+  host: 'http://rasa-dev.default.svc.cluster.local:5005'
+  projectId: adgucwSrxaCaNgaLL
+  token: d126aa1a-226f-4826-810c-67e28f99d9fe

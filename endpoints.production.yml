@@ -1,0 +1,8 @@
+nlg:
+  type: auto_lang_detect.graphql.GraphQLNaturalLanguageGenerator
+  url: 'http://botfront.default.svc.cluster.local:3000/graphql'
+action_endpoint:
+  url: 'http://actions.default.svc.cluster.local:5055/webhook'
+tracker_store:
+  store_type: anonymized_tracker_store.botfront_anonymized_tracker_store.BotfrontAnonymizedTrackerStore
+  url: 'http://botfront.default.svc.cluster.local:3000/graphql'

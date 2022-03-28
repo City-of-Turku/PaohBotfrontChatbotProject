@@ -1,0 +1,10 @@
+version: "2.0"
+nlu:
+- intent: social_benefits
+  metadata:
+    language: sv
+  examples:
+  - text: |
+      FPA
+    metadata:
+      canonical: true

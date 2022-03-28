@@ -1,0 +1,285 @@
+stories:
+  - story: Lomautus
+    steps:
+      - intent: ke8_lay_off
+        user: minut lomautettiin
+        entities: []
+      - action: utter_ke8_lay_off_intro
+      - action: utter_ke8_lay_off_intro2
+      - action: action_set_feedback_reminder
+      - action: utter_feedback
+      - checkpoint: Lomautus__branches
+    metadata:
+      group: KE8 Työttömyys
+  - story: Lomautus__Negative feedback
+    steps:
+      - checkpoint: Lomautus__branches
+      - or:
+          - intent: feedback_negative
+            entities: []
+          - intent: 'no'
+            entities: []
+      - action: utter_feedback_negative
+      - checkpoint: link-to-Työttömyys - näytä lisää/610bdc00-638c-4868-9261-364ef03bbf0c
+    metadata:
+      group: KE8 Työttömyys
+  - story: Lomautus__Positive feedback
+    steps:
+      - checkpoint: Lomautus__branches
+      - or:
+          - intent: feedback_positive
+            entities: []
+          - intent: 'yes'
+            entities: []
+      - action: utter_feedback_positive
+      - checkpoint: link-to-Työttömyys - näytä lisää/610bdc00-638c-4868-9261-364ef03bbf0c
+    metadata:
+      group: KE8 Työttömyys
+  - story: Työnhaku
+    steps:
+      - intent: ke8_find_jobs
+        entities: []
+      - action: utter_ke8_find_jobs_intro
+      - action: utter_ke8_find_jobs_intro2
+      - action: action_recommend_services_by_intent
+      - checkpoint: Työnhaku__branches
+    metadata:
+      group: KE8 Työttömyys
+  - story: Työnhaku__No services found
+    steps:
+      - checkpoint: Työnhaku__branches
+      - slot_was_set:
+          - recommend_services_success: false
+      - checkpoint: link-to-Työttömyys - näytä lisää/610bdc00-638c-4868-9261-364ef03bbf0c
+    metadata:
+      group: KE8 Työttömyys
+  - story: Työnhaku__Services found
+    steps:
+      - checkpoint: Työnhaku__branches
+      - slot_was_set:
+          - recommend_services_success: true
+      - action: action_set_feedback_reminder
+      - action: utter_feedback
+      - checkpoint: Työnhaku__Services_found__branches
+    metadata:
+      group: KE8 Työttömyys
+  - story: Työnhaku__Services found__Negative feedback
+    steps:
+      - checkpoint: Työnhaku__Services_found__branches
+      - or:
+          - intent: feedback_negative
+            entities: []
+          - intent: 'no'
+            entities: []
+      - action: utter_feedback_negative
+      - checkpoint: link-to-Työttömyys - näytä lisää/610bdc00-638c-4868-9261-364ef03bbf0c
+    metadata:
+      group: KE8 Työttömyys
+  - story: Työnhaku__Services found__Positive feedback
+    steps:
+      - checkpoint: Työnhaku__Services_found__branches
+      - or:
+          - intent: feedback_positive
+            entities: []
+          - intent: 'yes'
+            entities: []
+      - action: utter_feedback_positive
+      - checkpoint: link-to-Työttömyys - näytä lisää/610bdc00-638c-4868-9261-364ef03bbf0c
+    metadata:
+      group: KE8 Työttömyys
+  - story: Työpaikan vaihto
+    steps:
+      - intent: ke8_change_job
+        user: Haluan vaihtaa työpaikkaa
+        entities: []
+      - action: utter_ke8_change_job_intro
+      - action: utter_ke8_change_job_intro2
+      - checkpoint: link-to-Työttömyys - näytä lisää/610bdc00-638c-4868-9261-364ef03bbf0c
+    metadata:
+      group: KE8 Työttömyys
+  - story: Työttömäksi ilmoittautuminen
+    steps:
+      - intent: ke8_unemployment_registration
+        entities: []
+      - action: utter_ke8_unemployment_registration_intro
+      - action: action_recommend_services_by_intent
+      - checkpoint: Työttömäksi_ilmoittautuminen__branches
+    metadata:
+      group: KE8 Työttömyys
+  - story: Työttömäksi ilmoittautuminen__No services found
+    steps:
+      - checkpoint: Työttömäksi_ilmoittautuminen__branches
+      - slot_was_set:
+          - recommend_services_success: false
+      - checkpoint: link-to-Työttömyys - näytä lisää/610bdc00-638c-4868-9261-364ef03bbf0c
+    metadata:
+      group: KE8 Työttömyys
+  - story: Työttömäksi ilmoittautuminen__Services found
+    steps:
+      - checkpoint: Työttömäksi_ilmoittautuminen__branches
+      - slot_was_set:
+          - recommend_services_success: true
+      - action: action_set_feedback_reminder
+      - action: utter_feedback
+      - checkpoint: Työttömäksi_ilmoittautuminen__Services_found__branches
+    metadata:
+      group: KE8 Työttömyys
+  - story: Työttömäksi ilmoittautuminen__Services found__Negative feedback
+    steps:
+      - checkpoint: Työttömäksi_ilmoittautuminen__Services_found__branches
+      - or:
+          - intent: feedback_negative
+            entities: []
+          - intent: 'no'
+            entities: []
+      - action: utter_feedback_negative
+      - checkpoint: link-to-Työttömyys - näytä lisää/610bdc00-638c-4868-9261-364ef03bbf0c
+    metadata:
+      group: KE8 Työttömyys
+  - story: Työttömäksi ilmoittautuminen__Services found__Positive feedback
+    steps:
+      - checkpoint: Työttömäksi_ilmoittautuminen__Services_found__branches
+      - or:
+          - intent: feedback_positive
+            entities: []
+          - intent: 'yes'
+            entities: []
+      - action: utter_feedback_positive
+      - checkpoint: link-to-Työttömyys - näytä lisää/610bdc00-638c-4868-9261-364ef03bbf0c
+    metadata:
+      group: KE8 Työttömyys
+  - story: Työttömyys - muut
+    steps:
+      - intent: ke8_other
+        entities: []
+      - action: utter_ke8_other_intro
+      - action: action_recommend_services_by_intent
+      - checkpoint: Työttömyys_-_muut__branches
+    metadata:
+      group: KE8 Työttömyys
+  - story: Työttömyys - muut__No services found
+    steps:
+      - checkpoint: Työttömyys_-_muut__branches
+      - slot_was_set:
+          - recommend_services_success: false
+      - checkpoint: link-to-Työttömyys - näytä lisää/610bdc00-638c-4868-9261-364ef03bbf0c
+    metadata:
+      group: KE8 Työttömyys
+  - story: Työttömyys - muut__Services found
+    steps:
+      - checkpoint: Työttömyys_-_muut__branches
+      - slot_was_set:
+          - recommend_services_success: true
+      - action: action_set_feedback_reminder
+      - action: utter_feedback
+      - checkpoint: Työttömyys_-_muut__Services_found__branches
+    metadata:
+      group: KE8 Työttömyys
+  - story: Työttömyys - muut__Services found__Negative feedback
+    steps:
+      - checkpoint: Työttömyys_-_muut__Services_found__branches
+      - or:
+          - intent: feedback_negative
+            entities: []
+          - intent: 'no'
+            entities: []
+      - action: utter_feedback_negative
+      - checkpoint: link-to-Työttömyys - näytä lisää/610bdc00-638c-4868-9261-364ef03bbf0c
+    metadata:
+      group: KE8 Työttömyys
+  - story: Työttömyys - muut__Services found__Positive feedback
+    steps:
+      - checkpoint: Työttömyys_-_muut__Services_found__branches
+      - or:
+          - intent: feedback_positive
+            entities: []
+          - intent: 'yes'
+            entities: []
+      - action: utter_feedback_positive
+      - checkpoint: link-to-Työttömyys - näytä lisää/610bdc00-638c-4868-9261-364ef03bbf0c
+    metadata:
+      group: KE8 Työttömyys
+  - story: Työttömyys - näytä lisää
+    steps:
+      - checkpoint: link-to-Työttömyys - näytä lisää/610bdc00-638c-4868-9261-364ef03bbf0c
+      - action: utter_ke8_show_more
+      - checkpoint: Työttömyys_-_näytä_lisää__branches
+    metadata:
+      group: KE8 Työttömyys
+  - story: Työttömyys - näytä lisää__No more
+    steps:
+      - checkpoint: Työttömyys_-_näytä_lisää__branches
+      - intent: 'no'
+        entities: []
+      - checkpoint: link-to-Paluu alkuun/d91f6161-3ebe-4bee-86b0-d0fa9143bf99
+    metadata:
+      group: KE8 Työttömyys
+  - story: Työttömyys - näytä lisää__Show more
+    steps:
+      - checkpoint: Työttömyys_-_näytä_lisää__branches
+      - intent: 'yes'
+        entities: []
+      - action: utter_ke8_initial_choice
+    metadata:
+      group: KE8 Työttömyys
+  - story: Työttömyys intro
+    steps:
+      - intent: ke8_losing_job
+        user: jäin työttömäksi
+        entities: []
+      - action: utter_ke8_intro
+      - action: utter_ke8_initial_choice
+    metadata:
+      group: KE8 Työttömyys
+  - story: Työttömyystuet
+    steps:
+      - intent: ke8_unemployment_benefits
+        entities: []
+      - action: utter_ke8_unemployment_benefit_intro
+      - action: action_recommend_services_by_intent
+      - checkpoint: Työttömyystuet__branches
+    metadata:
+      group: KE8 Työttömyys
+  - story: Työttömyystuet__No services found
+    steps:
+      - checkpoint: Työttömyystuet__branches
+      - slot_was_set:
+          - recommend_services_success: false
+      - checkpoint: link-to-Työttömyys - näytä lisää/610bdc00-638c-4868-9261-364ef03bbf0c
+    metadata:
+      group: KE8 Työttömyys
+  - story: Työttömyystuet__Services found
+    steps:
+      - checkpoint: Työttömyystuet__branches
+      - slot_was_set:
+          - recommend_services_success: true
+      - action: action_set_feedback_reminder
+      - action: utter_feedback
+      - checkpoint: Työttömyystuet__Services_found__branches
+    metadata:
+      group: KE8 Työttömyys
+  - story: Työttömyystuet__Services found__Negative feedback
+    steps:
+      - checkpoint: Työttömyystuet__Services_found__branches
+      - or:
+          - intent: feedback_negative
+            entities: []
+          - intent: 'no'
+            entities: []
+      - action: utter_feedback_negative
+      - checkpoint: link-to-Työttömyys - näytä lisää/610bdc00-638c-4868-9261-364ef03bbf0c
+    metadata:
+      group: KE8 Työttömyys
+  - story: Työttömyystuet__Services found__Positive feedback
+    steps:
+      - checkpoint: Työttömyystuet__Services_found__branches
+      - or:
+          - intent: feedback_positive
+            entities: []
+          - intent: 'yes'
+            entities: []
+      - action: utter_feedback_positive
+      - checkpoint: link-to-Työttömyys - näytä lisää/610bdc00-638c-4868-9261-364ef03bbf0c
+    metadata:
+      group: KE8 Työttömyys
+rules: []
